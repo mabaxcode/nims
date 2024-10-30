@@ -56,12 +56,13 @@ class Main extends CI_Controller {
 	function login_process($data=false)
 	{
 		$data = $this->input->post();
+		// print_r($data); exit;
 		
 		$user_login = $this->DbMain->check_user_login($data);
 
 		if ($user_login == false) {
 
-			$this->session->set_flashdata('info', 'Sorry, the username or password is incorrect, please try again.');
+			$this->session->set_flashdata('info', 'Its look like your username or password is incorrect.');
 			redirect();
 
 		} else {
@@ -74,9 +75,7 @@ class Main extends CI_Controller {
 			);
 
 			$this->session->set_userdata($sess_data);
-
 			redirect('app');
-			
 		}
 
 	}

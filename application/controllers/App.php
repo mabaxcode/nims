@@ -17,7 +17,6 @@ class App extends CI_Controller {
 
 	public function index()
 	{	
-		echo "App Controller";
-		// $this->load->view('main');
+		$this->load->view('app/dashboard');
 	}
 }

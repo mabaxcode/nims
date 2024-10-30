@@ -18,13 +18,13 @@ class Main_model extends CI_Model {
         ));
         $query = $this->db->get($this->user_accounts);
 
-        if($query->num_rows() > 0){
-        	$response = array( 'status' => true, 'data' => $query->row_array() ); 
-        } else {
-        	$response = array('status' => false, 'msg' => 'Its look like your username or password is incorrect.');
-        }
+        // echo $this->db->last_query(); exit();
 
-        return $response;
+        if($query->num_rows() > 0){
+        	return true;
+        } else {
+            return false;
+        }
 
 	}
 }
