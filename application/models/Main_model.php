@@ -21,7 +21,7 @@ class Main_model extends CI_Model {
         // echo $this->db->last_query(); exit();
 
         if($query->num_rows() > 0){
-        	return true;
+        	return $query->row_array();
         } else {
             return false;
         }

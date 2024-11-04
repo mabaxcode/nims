@@ -1,41 +1,30 @@
 $( document ).ready(function() {
-	validateMaklumat('kt_account_profile_details_form_new');
+	validateMaklumat('kt_account_profile_details_form_kontak');
 });
 
-var validateFormMaklumat;
+var validateFormKontak;
 function validateMaklumat(formID)
 {   
-    const folderForm = document.getElementById(formID);
+    const kontakForm = document.getElementById(formID);
     // Init form validation rules. For more info check the FormValidation plugin's official documentation:https://formvalidation.io/
-    validateFormMaklumat = FormValidation.formValidation(
-    folderForm,
+    validateFormKontak = FormValidation.formValidation(
+    kontakForm,
     {
         fields: {
-            name: {
+            phone_no: {
                 validators: {
                     notEmpty: {
-                        message: "Sila isi nama"
+                        message: "Sila isi phone no."
                     }
                 }
             },
-            no_ic: {
+            email: {
                 validators: {
                     notEmpty: {
-                        message: "Sila isi no kad pengenalan"
-                    }
-                }
-            },
-            umur: {
-                validators: {
-                    notEmpty: {
-                        message: "Sila pilih umur"
-                    }
-                }
-            },
-            bangsa: {
-                validators: {
-                    notEmpty: {
-                        message: "Sila pilih bangsa"
+                        message: "Email is required"
+                    },
+                    emailAddress: {  // Correct validator for email
+                        message: "The value is not a valid email address"
                     }
                 }
             }
@@ -52,18 +41,18 @@ function validateMaklumat(formID)
     );
 }
 
-$(document).on('click', '.simpan-maklumat-peribadi', function (e) {
+$(document).on('click', '.simpan-maklumat-kontak', function (e) {
     e.preventDefault();
-    validateFormMaklumat.validate().then(function(status) {
+    validateFormKontak.validate().then(function(status) {
 
         if (status == 'Valid') {
 
-            var fileFormData = $('#kt_account_profile_details_form_new').serialize();
+            var fileFormDataKontak = $('#kt_account_profile_details_form_kontak').serialize();
 
             $.ajax({
-                url: base_url + 'app/simpanMaklumatPeribadi',
+                url: base_url + 'app/simpanMaklumatKontak',
                 type: "POST",
-                data: fileFormData,
+                data: fileFormDataKontak,
                 dataType: "json",
                 async: true,
                 success: function( response ) {

@@ -8,12 +8,7 @@ class Main extends CI_Controller {
 	{
         parent::__construct();
 
-        $this->load->model('Main_model', 'DbMain');
-
-        if ($this->session->userdata('user_id')) {
-        	redirect('app');
-        }
- 
+        $this->load->model('Main_model', 'DbMain'); 
 	}
 
 	/*
@@ -76,6 +71,8 @@ class Main extends CI_Controller {
 			);
 
 			$this->session->set_userdata($sess_data);
+			// print_r($sess_data); exit;
+
 			redirect('app');
 		}
 
