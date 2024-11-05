@@ -150,6 +150,56 @@
 					</div>
 					<!--end::Col-->
 				</div>
+				<div class="row mb-6">
+					<!--begin::Label-->
+					<label class="col-lg-12 col-form-label fw-semibold fs-6"><b>Maklumat Kompetensi/Kelayakan Profesional</b></label>
+				</div>
+				<div class="row mb-6">
+					<!--begin::Label-->
+					<label class="col-lg-4 col-form-label fw-semibold fs-6">Credential</label>
+					<!--end::Label-->
+					<!--begin::Col-->
+					<div class="col-lg-8 fv-row">
+						<input type="text" name="credential" class="form-control form-control-lg" placeholder="Credential" value="<?= $employment['credential']?>">
+					</div>
+					<!--end::Col-->
+				</div>
+				<div class="row mb-6">
+					<!--begin::Label-->
+					<label class="col-lg-4 col-form-label fw-semibold fs-6">Tarikh Credential</label>
+					<!--end::Label-->
+					<!--begin::Col-->
+					<div class="col-lg-8 fv-row">
+						<input type="date" name="tarikh_credential" class="form-control form-control-lg" placeholder="Tarikh Credential" value="<?= date('Y-m-d', strtotime($employment['tarikh_credential'])) ?>" />
+					</div>
+					<!--end::Col-->
+				</div>
+				<div class="row mb-6">
+					<!--begin::Label-->
+					<label class="col-lg-4 col-form-label fw-semibold fs-6">Tarikh Privilege</label>
+					<!--end::Label-->
+					<!--begin::Col-->
+					<div class="col-lg-4 fv-row">
+						<label class="col-lg-4 col-form-label fw-semibold fs-6">Tarikh Mula</label>
+					</div>
+					<div class="col-lg-4 fv-row">
+						<label class="col-lg-4 col-form-label fw-semibold fs-6">Tarikh Tamat</label>
+					</div>
+					<!--end::Col-->
+				</div>
+				<div class="row mb-6">
+					<!--begin::Label-->
+					<label class="col-lg-4 col-form-label fw-semibold fs-6"></label>
+					<!--end::Label-->
+					<!--begin::Col-->
+					<div class="col-lg-4 fv-row">
+						<input type="date" name="tarikh_privilege_start" class="form-control form-control-lg" placeholder="Tarikh Mula" value="<?= date('Y-m-d', strtotime($employment['tarikh_privilege_start'])) ?>" />
+					</div>
+					<div class="col-lg-4 fv-row">
+						<input type="date" name="tarikh_privilege_end" class="form-control form-control-lg" placeholder="Tarikh Tamat" value="<?= date('Y-m-d', strtotime($employment['tarikh_privilege_end'])) ?>" />
+					</div>
+					<!--end::Col-->
+				</div>
 				<!--end::Input group-->
 				<?/*
 				<!--begin::Input group-->

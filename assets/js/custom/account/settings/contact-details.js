@@ -69,7 +69,8 @@ $(document).on('click', '.simpan-maklumat-kontak', function (e) {
                         }).then((function(t) {
                             if (t.isConfirmed) {
                                 // loadDirectory(response.id);
-                                location.reload();
+                                // location.reload();
+                                // $(".tab-kontak").addClass('active');
                             }
                         }))
                     } else {

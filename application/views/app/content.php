@@ -23,12 +23,12 @@
 					</li>
 					<!--end::Item-->
 					<!--begin::Item-->
-					<li class="breadcrumb-item">
+					<!-- <li class="breadcrumb-item">
 						<span class="bullet bg-gray-500 w-5px h-2px"></span>
-					</li>
+					</li> -->
 					<!--end::Item-->
 					<!--begin::Item-->
-					<li class="breadcrumb-item text-muted">Dashboards</li>
+					<!-- <li class="breadcrumb-item text-muted">Dashboards</li> -->
 					<!--end::Item-->
 				</ul>
 				<!--end::Breadcrumb-->

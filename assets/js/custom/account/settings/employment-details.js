@@ -94,7 +94,8 @@ $(document).on('click', '.simpan-maklumat-kerja', function (e) {
                         }).then((function(t) {
                             if (t.isConfirmed) {
                                 // loadDirectory(response.id);
-                                location.reload();
+                                // location.reload();
+                                // $(".tab-pekerjaan").trigger('click');
                             }
                         }))
                     } else {

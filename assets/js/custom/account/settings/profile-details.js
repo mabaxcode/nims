@@ -1,13 +1,13 @@
 $( document ).ready(function() {
-	validateMaklumat('kt_account_profile_details_form_new');
+	validateMaklumatPeribadi('kt_account_profile_details_form_new');
 });
 
-var validateFormMaklumat;
-function validateMaklumat(formID)
+var validateFormMaklumatPeribadi;
+function validateMaklumatPeribadi(formID)
 {   
     const folderForm = document.getElementById(formID);
     // Init form validation rules. For more info check the FormValidation plugin's official documentation:https://formvalidation.io/
-    validateFormMaklumat = FormValidation.formValidation(
+    validateFormMaklumatPeribadi = FormValidation.formValidation(
     folderForm,
     {
         fields: {
@@ -53,8 +53,10 @@ function validateMaklumat(formID)
 }
 
 $(document).on('click', '.simpan-maklumat-peribadi', function (e) {
-    e.preventDefault();
-    validateFormMaklumat.validate().then(function(status) {
+    // e.preventDefault();
+    // validateFormMaklumatPeribadi.validate().then(function(status) {
+	e.preventDefault();
+    validateFormMaklumatPeribadi.validate().then(function(status) {
 
         if (status == 'Valid') {
 
@@ -80,7 +82,8 @@ $(document).on('click', '.simpan-maklumat-peribadi', function (e) {
                         }).then((function(t) {
                             if (t.isConfirmed) {
                                 // loadDirectory(response.id);
-                                location.reload();
+                                // location.reload();
+                                // $(".tab-peribadi").trigger('click');
                             }
                         }))
                     } else {
