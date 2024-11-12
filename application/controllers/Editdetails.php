@@ -1,40 +1,35 @@
 <?php
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class App extends CI_Controller {
+class Editdetails extends CI_Controller {
 
 	function __construct()
 	{
         parent::__construct();
-
-        $this->load->model('App_model', 'DbApp');
-
-        $this->user_id = $this->session->userdata('user_id');
-
-        if (!$this->session->userdata('user_id')) {
-        	redirect();
-        }
- 
+        $this->load->model('App_model', 'DbApp'); 
 	}
 
-	public function index()
-	{	
+	function index()
+	{
+		// $data = $this->input->post();
+		$data['all_nurse'] = $this->DbApp->get_all_nurse();
+		// echo "<pre>"; print_r($data['all_nurse']); echo "</pre>";
 
-		$data['user'] = get_any_table_row(array('id' => $this->user_id), 'user_accounts');
+		$data['all_wad'] = $this->DbApp->get_all_wad();
 
-		//$data['complete'] = get_any_table_row(array('id' => $this->user_id), 'user_accounts');
-
-		$this->load->view('app/dashboard', $data);
+		$this->load->view('app/senarai-semua-nurse', $data);
 	}
 
-	function kemaskiniMaklumat($data=false)
-	{	
-		$data['user'] = get_any_table_row(array('id' => $this->user_id), 'user_accounts');
+	function editFor($id)
+	{
+		$data['personal'] = get_any_table_row(array('user_id' => $id), 'personal_info');
+        $data['employment'] = get_any_table_row(array('user_id' => $id), 'employment_info');
+        $data['user'] = get_any_table_row(array('id' => $id), 'user_accounts');
 
-		$data['personal'] = get_any_table_row(array('user_id' => $this->user_id), 'personal_info');
-		$data['employment'] = get_any_table_row(array('user_id' => $this->user_id), 'employment_info');
+        $data['nurse_id'] = $id;
 
-		if ($data['user']['role'] == '2') {
+        if ($data['user']['role'] == '2') {
 			$data['role'] = "Sister";
 		} elseif ($data['user']['role'] == '3') {
 			$data['role'] = "Nurse";
@@ -42,41 +37,40 @@ class App extends CI_Controller {
 			$data['role'] = "Admin";
 		}
 
-		$this->load->view('app/kemaskini-maklumat', $data);
+		$this->load->view('app/edit-detail-nurse', $data);
 	}
 
-	function simpanMaklumatPeribadi($data=false)
+	function simpanMaklumatPeribadiAdmin($data=false)
 	{	
 		$post = $this->input->post();
 
+		$nurse_id = $post['nurse_id'];
+
 		// echo "<pre>"; print_r($post); echo "</pre>"; exit;
 
-		$check = get_any_table_row(array('user_id' => $this->user_id), 'personal_info');
+		$check = get_any_table_row(array('user_id' => $nurse_id), 'personal_info');
 
 		if ($check == true) {
-			$where = array('user_id' => $this->user_id);
-			$update = array('no_ic' => $post['no_ic'], 'umur' => $post['umur'], 'bangsa' => $post['bangsa'], 'status' => '1');
+			$where = array('user_id' => $nurse_id);
+			$update = array('umur' => $post['umur'], 'bangsa' => $post['bangsa'], 'status' => '1');
 			update_any_table($update, $where, 'personal_info');
-		} else {
-			$insert = array('no_ic' => $post['no_ic'], 'umur' => $post['umur'], 'bangsa' => $post['bangsa'], 'status' => '1', 'user_id' => $this->user_id);
-			insert_any_table($insert, 'personal_info');
 		}
 
-		$update_user = array('name' => $post['name']);
-		update_any_table($update_user, array('id' => $this->user_id), 'user_accounts');
+		$update_user = array('name' => $post['name'], 'no_kp' => $post['no_ic']);
+		update_any_table($update_user, array('id' => $nurse_id), 'user_accounts');
 
 		# personal
-		$personal = get_any_table_row(array('user_id' => $this->user_id), 'personal_info');
+		$personal = get_any_table_row(array('user_id' => $nurse_id), 'personal_info');
 
 		# employment
-		$employment = get_any_table_row(array('user_id' => $this->user_id), 'employment_info');
+		$employment = get_any_table_row(array('user_id' => $nurse_id), 'employment_info');
 
 		# contact
-		$contact = get_any_table_row(array('id' => $this->user_id), 'user_accounts');
+		$contact = get_any_table_row(array('id' => $nurse_id), 'user_accounts');
 
 		if ($personal['status'] == 1 && $employment['status'] == '1' && $contact['status'] == '1') {
 			$update = array('complete' => 'Y');
-			$where  = array('id' => $this->user_id);
+			$where  = array('id' => $nurse_id);
 			update_any_table($update, $where, 'user_accounts');
 		}
 
@@ -85,17 +79,19 @@ class App extends CI_Controller {
 		echo encode($response);
 	}
 
-	function simpanMaklumatKerja($data=false)
+	function simpanMaklumatKerjaAdmin($data=false)
 	{
 		$post = $this->input->post();
 
+		$nurse_id = $post['nurse_id'];
+
 		// echo "<pre>"; print_r($post); echo "</pre>"; exit;
 
-		$check = get_any_table_row(array('user_id' => $this->user_id), 'employment_info');
+		$check = get_any_table_row(array('user_id' => $nurse_id), 'employment_info');
 
 		if ($check == true) {
 
-			$where = array('user_id' => $this->user_id);
+			$where = array('user_id' => $nurse_id);
 			$update = array(
 				'wad' => $post['wad'], 
 				'tarikh_lantikan' => $post['tarikh_lantikan'], 
@@ -118,7 +114,7 @@ class App extends CI_Controller {
 			update_any_table($update, $where, 'employment_info');
 
 		} else {
-			// $insert = array('no_ic' => $post['no_ic'], 'umur' => $post['umur'], 'bangsa' => $post['bangsa'], 'status' => '1', 'user_id' => $this->user_id);
+			// $insert = array('no_ic' => $post['no_ic'], 'umur' => $post['umur'], 'bangsa' => $post['bangsa'], 'status' => '1', 'user_id' => $nurse_id);
 			$insert = array(
 				'wad' => $post['wad'], 
 				'tarikh_lantikan' => $post['tarikh_lantikan'], 
@@ -132,7 +128,7 @@ class App extends CI_Controller {
 				'tarikh_basik2' => $post['tarikh_basik2'],
 				'pos_basik_3' => $post['pos_basik_3'],
 				'tarikh_basik3' => $post['tarikh_basik3'],
-				'user_id' => $this->user_id,
+				'user_id' => $nurse_id,
 				'credential' => $post['credential'],
 				'tarikh_privilege_start' => $post['tarikh_privilege_start'],
 				'tarikh_credential' => $post['tarikh_credential'],
@@ -147,17 +143,17 @@ class App extends CI_Controller {
 
 
 		# personal
-		$personal = get_any_table_row(array('user_id' => $this->user_id), 'personal_info');
+		$personal = get_any_table_row(array('user_id' => $nurse_id), 'personal_info');
 
 		# employment
-		$employment = get_any_table_row(array('user_id' => $this->user_id), 'employment_info');
+		$employment = get_any_table_row(array('user_id' => $nurse_id), 'employment_info');
 
 		# contact
-		$contact = get_any_table_row(array('id' => $this->user_id), 'user_accounts');
+		$contact = get_any_table_row(array('id' => $nurse_id), 'user_accounts');
 
 		if ($personal['status'] == 1 && $employment['status'] == '1' && $contact['status'] == '1') {
 			$update = array('complete' => 'Y');
-			$where  = array('id' => $this->user_id);
+			$where  = array('id' => $nurse_id);
 			update_any_table($update, $where, 'user_accounts');
 		}
 
@@ -165,49 +161,34 @@ class App extends CI_Controller {
 		echo encode($response);
 	}
 
-	function simpanMaklumatKontak($data=false)
+	function simpanMaklumatKontakAdmin($data=false)
 	{
 		$post = $this->input->post();
 
+		$nurse_id = $post['nurse_id'];
+
 		// echo "<pre>"; print_r($post); echo "</pre>"; exit;
 
-		$where = array('id' => $this->user_id);
+		$where = array('id' => $nurse_id);
 		$update = array('email' => $post['email'], 'phone_no' => $post['phone_no'], 'status' => '1');
 		update_any_table($update, $where, 'user_accounts');
 
 		# personal
-		$personal = get_any_table_row(array('user_id' => $this->user_id), 'personal_info');
+		$personal = get_any_table_row(array('user_id' => $nurse_id), 'personal_info');
 
 		# employment
-		$employment = get_any_table_row(array('user_id' => $this->user_id), 'employment_info');
+		$employment = get_any_table_row(array('user_id' => $nurse_id), 'employment_info');
 
 		# contact
-		$contact = get_any_table_row(array('id' => $this->user_id), 'user_accounts');
+		$contact = get_any_table_row(array('id' => $nurse_id), 'user_accounts');
 
 		if ($personal['status'] == 1 && $employment['status'] == '1' && $contact['status'] == '1') {
 			$update = array('complete' => 'Y');
-			$where  = array('id' => $this->user_id);
+			$where  = array('id' => $nurse_id);
 			update_any_table($update, $where, 'user_accounts');
 		}
 
 		$response = array('status' => true, 'msg' => 'Maklumat berjaya disimpan !');
 		echo encode($response);
 	}
-
-
-	function addNewNurse($data=false)
-	{
-		$post = $this->input->post();
-
-		// echo "<pre>"; print_r($post); echo "</pre>";
-
-		$insert = array('name' => $post['name'], 'no_kp' => $post['no_kp'], 'role' => $post['role']);
-
-		insert_any_table($insert, 'user_accounts');
-
-		$response = array('status' => true, 'msg' => 'Akaun telah berjaya ditambah !');
-
-		echo encode($response);
-	}
-
 }

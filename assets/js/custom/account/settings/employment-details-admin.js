@@ -1,34 +1,55 @@
 $( document ).ready(function() {
-	validateMaklumatPeribadi('kt_account_profile_details_form_new');
+	validateMaklumatKerja('kt_account_profile_details_form_kerja');
 });
 
-var validateFormMaklumatPeribadi;
-function validateMaklumatPeribadi(formID)
+var validateFormMaklumatKerja;
+function validateMaklumatKerja(formID)
 {   
     const folderForm = document.getElementById(formID);
     // Init form validation rules. For more info check the FormValidation plugin's official documentation:https://formvalidation.io/
-    validateFormMaklumatPeribadi = FormValidation.formValidation(
+    validateFormMaklumatKerja = FormValidation.formValidation(
     folderForm,
     {
         fields: {
-            name: {
+            wad: {
                 validators: {
                     notEmpty: {
-                        message: "Sila isi nama"
+                        message: "Sila pilih wad/unit"
                     }
                 }
             },
-            umur: {
+            tarikh_lantikan: {
                 validators: {
                     notEmpty: {
-                        message: "Sila pilih umur"
+                        message: "Sila isi tarikh lantikan"
                     }
                 }
             },
-            bangsa: {
+            tarikh_naik_pangkat: {
                 validators: {
                     notEmpty: {
-                        message: "Sila pilih bangsa"
+                        message: "Sila isi tarikh kenaikan pangkat"
+                    }
+                }
+            },
+            tarikh_bersara: {
+                validators: {
+                    notEmpty: {
+                        message: "Sila isi tarikh bersara"
+                    }
+                }
+            },
+            no_ljm: {
+                validators: {
+                    notEmpty: {
+                        message: "Sila isi No LJM"
+                    }
+                }
+            },
+            tarikh_lapor_diri: {
+                validators: {
+                    notEmpty: {
+                        message: "Sila isi tarikh lapor diri"
                     }
                 }
             }
@@ -45,20 +66,18 @@ function validateMaklumatPeribadi(formID)
     );
 }
 
-$(document).on('click', '.simpan-maklumat-peribadi', function (e) {
-    // e.preventDefault();
-    // validateFormMaklumatPeribadi.validate().then(function(status) {
-	e.preventDefault();
-    validateFormMaklumatPeribadi.validate().then(function(status) {
+$(document).on('click', '.simpan-maklumat-kerja', function (e) {
+    e.preventDefault();
+    validateFormMaklumatKerja.validate().then(function(status) {
 
         if (status == 'Valid') {
 
-            var fileFormData = $('#kt_account_profile_details_form_new').serialize();
+            var fileFormDataKerja = $('#kt_account_profile_details_form_kerja').serialize();
 
             $.ajax({
-                url: base_url + 'app/simpanMaklumatPeribadi',
+                url: base_url + 'editdetails/simpanMaklumatKerjaAdmin',
                 type: "POST",
-                data: fileFormData,
+                data: fileFormDataKerja,
                 dataType: "json",
                 async: true,
                 success: function( response ) {
@@ -76,7 +95,7 @@ $(document).on('click', '.simpan-maklumat-peribadi', function (e) {
                             if (t.isConfirmed) {
                                 // loadDirectory(response.id);
                                 // location.reload();
-                                // $(".tab-peribadi").trigger('click');
+                                // $(".tab-pekerjaan").trigger('click');
                             }
                         }))
                     } else {

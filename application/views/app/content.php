@@ -57,7 +57,6 @@
 			
 			<? if(isAdmin($this->session->userdata('user_id')) == true){
 					$this->load->view('app/admin-content');
-
 			} else {
 					$this->load->view('app/user-content');
 			} ?>

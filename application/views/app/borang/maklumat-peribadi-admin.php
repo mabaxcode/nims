@@ -15,6 +15,7 @@
 	<div id="kt_form_maklumat_peribadi" class="collapse show">
 		<!--begin::Form-->
 		<form id="kt_account_profile_details_form_new" class="form">
+			<input type="hidden" name="nurse_id" value="<?=$nurse_id?>">
 			<!--begin::Card body-->
 			<div class="card-body border-top p-9">
 				<!--begin::Input group-->
@@ -36,7 +37,7 @@
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8 fv-row">
-						<input type="text" class="form-control form-control-lg" placeholder="No Kad Pengenalan" value="<?= $user['no_kp']?>" disabled />
+						<input type="number" name="no_ic" class="form-control form-control-lg" placeholder="No Kad Pengenalan" value="<?= $user['no_kp']?>" />
 					</div>
 					<!--end::Col-->
 				</div>

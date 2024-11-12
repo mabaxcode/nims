@@ -18,6 +18,13 @@ function validateMaklumatPeribadi(formID)
                     }
                 }
             },
+            no_ic: {
+                validators: {
+                    notEmpty: {
+                        message: "Sila isi no kad pengenalan"
+                    }
+                }
+            },
             umur: {
                 validators: {
                     notEmpty: {
@@ -56,7 +63,7 @@ $(document).on('click', '.simpan-maklumat-peribadi', function (e) {
             var fileFormData = $('#kt_account_profile_details_form_new').serialize();
 
             $.ajax({
-                url: base_url + 'app/simpanMaklumatPeribadi',
+                url: base_url + 'editdetails/simpanMaklumatPeribadiAdmin',
                 type: "POST",
                 data: fileFormData,
                 dataType: "json",

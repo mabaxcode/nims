@@ -121,6 +121,24 @@ function get_any_table_array($data_where = false, $table = false, $col_sort = fa
     }
 }
 
+function get_ref_code($module, $code)
+{
+    $tco = load_instance();
+    $tco->load->database();
+
+    $tco->db->select('*');
+    $tco->db->where(array('code' => $code));
+    $tco->db->where(array('module' => $module));
+    $query = $tco->db->get('ref_code');
+
+    if ($query->num_rows() > 0) {
+        $result = $query->row();
+        return $result->code_desc;
+    } else {
+        return false;
+    }
+}
+
 
 
 

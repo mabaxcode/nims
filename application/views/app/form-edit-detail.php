@@ -252,23 +252,19 @@
 
 <div class="tab-content" id="myTabContent">
 	<div class="tab-pane fade show active" id="maklumat-peribadi" role="tabpanel">
-	<? $this->load->view('app/borang/maklumat-peribadi'); ?>
+	<? $this->load->view('app/borang/maklumat-peribadi-admin'); ?>
 </div>
 
 <div class="tab-pane fade" id="maklumat-pekerjaan" role="tabpanel">
-	<? $this->load->view('app/borang/maklumat-pekerjaan'); ?>
+	<? $this->load->view('app/borang/maklumat-pekerjaan-admin'); ?>
 </div>
 
 <div class="tab-pane fade" id="maklumat-kontak" role="tabpanel">
-	<? $this->load->view('app/borang/maklumat-kontak'); ?>
+	<? $this->load->view('app/borang/maklumat-kontak-admin'); ?>
 </div>
 
 </div>
 
 
 </div>
-
-
-
-
 

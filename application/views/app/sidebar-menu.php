@@ -23,6 +23,7 @@
 
 				<!--end:Menu item-->
 				<!--begin:Menu item-->
+				<?/*
 				<div class="menu-item pt-5">
 					<!--begin:Menu content-->
 					<div class="menu-content">
@@ -30,9 +31,11 @@
 					</div>
 					<!--end:Menu content-->
 				</div>
+				*/?>
 				<!--end:Menu item-->
 				<!--begin:Menu item-->
-				<? if(isAdmin($this->session->userdata('user_id')) == true || isSister($this->session->userdata('user_id')) == true): ?>
+				<? if(isAdmin($this->session->userdata('user_id')) == true): ?>
+					<?/*
 				<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
 					<!--begin:Menu link-->
 					<span class="menu-link">
@@ -43,7 +46,7 @@
 								<span class="path3"></span>
 							</i>
 						</span>
-						<span class="menu-title">User Profile</span>
+						<span class="menu-title">Jururawat</span>
 						<span class="menu-arrow"></span>
 					</span>
 					<!--end:Menu link-->
@@ -52,51 +55,25 @@
 						<!--begin:Menu item-->
 						<div class="menu-item">
 							<!--begin:Menu link-->
-							<a class="menu-link" href="pages/user-profile/overview.html">
+							<a class="menu-link" href="<?= base_url('senaraijururawat')?>">
 								<span class="menu-bullet">
 									<span class="bullet bullet-dot"></span>
 								</span>
-								<span class="menu-title">Overview</span>
+								<span class="menu-title">Senarai</span>
 							</a>
 							<!--end:Menu link-->
 						</div>
 						<!--end:Menu item-->
 						<!--begin:Menu item-->
-						<div class="menu-item">
-							<!--begin:Menu link-->
-							<a class="menu-link" href="pages/user-profile/projects.html">
-								<span class="menu-bullet">
-									<span class="bullet bullet-dot"></span>
-								</span>
-								<span class="menu-title">Projects</span>
-							</a>
-							<!--end:Menu link-->
-						</div>
+						
 						<!--end:Menu item-->
 						<!--begin:Menu item-->
-						<div class="menu-item">
-							<!--begin:Menu link-->
-							<a class="menu-link" href="pages/user-profile/campaigns.html">
-								<span class="menu-bullet">
-									<span class="bullet bullet-dot"></span>
-								</span>
-								<span class="menu-title">Campaigns</span>
-							</a>
-							<!--end:Menu link-->
-						</div>
+						
 						<!--end:Menu item-->
 						<!--begin:Menu item-->
-						<div class="menu-item">
-							<!--begin:Menu link-->
-							<a class="menu-link" href="pages/user-profile/documents.html">
-								<span class="menu-bullet">
-									<span class="bullet bullet-dot"></span>
-								</span>
-								<span class="menu-title">Documents</span>
-							</a>
-							<!--end:Menu link-->
-						</div>
+						
 						<!--end:Menu item-->
+						
 						<!--begin:Menu item-->
 						<div class="menu-item">
 							<!--begin:Menu link-->
@@ -121,14 +98,17 @@
 							<!--end:Menu link-->
 						</div>
 						<!--end:Menu item-->
+						
 					</div>
 					<!--end:Menu sub-->
 				</div>
 				<!--begin:Menu item-->
+				*/?>
+
 				<div class="menu-item pt-5">
 					<!--begin:Menu content-->
 					<div class="menu-content">
-						<span class="menu-heading fw-bold text-uppercase fs-7">Help</span>
+						<span class="menu-heading fw-bold text-uppercase fs-7">Menu</span>
 					</div>
 					<!--end:Menu content-->
 				</div>
@@ -136,17 +116,103 @@
 				<!--begin:Menu item-->
 				<div class="menu-item">
 					<!--begin:Menu link-->
-					<a class="menu-link" href="https://preview.keenthemes.com/html/metronic/docs/base/utilities" target="_blank">
+					<a class="menu-link <? if($this->uri->segment(1) == 'senaraijururawat'){echo "active";} ?>" href="<?= base_url('senaraijururawat')?>">
 						<span class="menu-icon">
-							<i class="ki-duotone ki-rocket fs-2">
+							<i class="ki-duotone ki-abstract-26 fs-2">
 								<span class="path1"></span>
 								<span class="path2"></span>
 							</i>
 						</span>
-						<span class="menu-title">Components</span>
+						<span class="menu-title">Senarai Jururawat</span>
 					</a>
 					<!--end:Menu link-->
 				</div>
+
+				<?/*
+				<div class="menu-item">
+					<!--begin:Menu link-->
+					<a class="menu-link <? if($this->uri->segment(1) == 'cetak'){echo "active";} ?>" href="<?= base_url('cetak')?>">
+						<span class="menu-icon">
+							<i class="ki-duotone ki-printer fs-2">
+								<span class="path1"></span>
+								<span class="path2"></span>
+							</i>
+						</span>
+						
+						<span class="menu-title">Cetak Senarai</span>
+					</a>
+					<!--end:Menu link-->
+				</div>
+				*/?>
+
+				<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+					<!--begin:Menu link-->
+					<span class="menu-link">
+						<span class="menu-icon">
+							<i class="ki-duotone ki-address-book fs-2">
+								<span class="path1"></span>
+								<span class="path2"></span>
+								<span class="path3"></span>
+							</i>
+						</span>
+						<span class="menu-title">Kategori Maklumat</span>
+						<span class="menu-arrow"></span>
+					</span>
+					<!--end:Menu link-->
+					<!--begin:Menu sub-->
+					<div class="menu-sub menu-sub-accordion">
+						<!--begin:Menu item-->
+						<div class="menu-item">
+							<!--begin:Menu link-->
+							<a class="menu-link" href="<?= base_url('senaraijururawat')?>">
+								<span class="menu-bullet">
+									<span class="bullet bullet-dot"></span>
+								</span>
+								<span class="menu-title">Maklumat Peribadi</span>
+							</a>
+							<!--end:Menu link-->
+						</div>
+						<!--end:Menu item-->
+						<!--begin:Menu item-->
+						
+						<!--end:Menu item-->
+						<!--begin:Menu item-->
+						
+						<!--end:Menu item-->
+						<!--begin:Menu item-->
+						
+						<!--end:Menu item-->
+						
+						<!--begin:Menu item-->
+						<div class="menu-item">
+							<!--begin:Menu link-->
+							<a class="menu-link" href="pages/user-profile/followers.html">
+								<span class="menu-bullet">
+									<span class="bullet bullet-dot"></span>
+								</span>
+								<span class="menu-title">Maklumat Pekerjaan</span>
+							</a>
+							<!--end:Menu link-->
+						</div>
+						<!--end:Menu item-->
+						<!--begin:Menu item-->
+						<div class="menu-item">
+							<!--begin:Menu link-->
+							<a class="menu-link" href="pages/user-profile/activity.html">
+								<span class="menu-bullet">
+									<span class="bullet bullet-dot"></span>
+								</span>
+								<span class="menu-title">Maklumat Kompetensi</span>
+							</a>
+							<!--end:Menu link-->
+						</div>
+						<!--end:Menu item-->
+						
+					</div>
+					<!--end:Menu sub-->
+				</div>
+				<!--begin:Menu item-->
+				
 				<!--end:Menu item-->
 				<!--begin:Menu item-->
 				<? endif; ?>
