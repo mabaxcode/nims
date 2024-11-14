@@ -114,20 +114,7 @@
 				</div>
 				<!--end:Menu item-->
 				<!--begin:Menu item-->
-				<div class="menu-item">
-					<!--begin:Menu link-->
-					<a class="menu-link <? if($this->uri->segment(1) == 'senaraijururawat'){echo "active";} ?>" href="<?= base_url('senaraijururawat')?>">
-						<span class="menu-icon">
-							<i class="ki-duotone ki-abstract-26 fs-2">
-								<span class="path1"></span>
-								<span class="path2"></span>
-							</i>
-						</span>
-						<span class="menu-title">Senarai Jururawat</span>
-					</a>
-					<!--end:Menu link-->
-				</div>
-
+				
 				<?/*
 				<div class="menu-item">
 					<!--begin:Menu link-->
@@ -144,7 +131,7 @@
 					<!--end:Menu link-->
 				</div>
 				*/?>
-
+				<?/*
 				<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
 					<!--begin:Menu link-->
 					<span class="menu-link">
@@ -155,7 +142,7 @@
 								<span class="path3"></span>
 							</i>
 						</span>
-						<span class="menu-title">Kategori Maklumat</span>
+						<span class="menu-title">Rekod</span>
 						<span class="menu-arrow"></span>
 					</span>
 					<!--end:Menu link-->
@@ -212,6 +199,35 @@
 					<!--end:Menu sub-->
 				</div>
 				<!--begin:Menu item-->
+				*/?>
+				<div class="menu-item">
+					<!--begin:Menu link-->
+					<?/*<a class="menu-link <? if($this->uri->segment(1) == 'rekod'){echo "active";} ?>" href="<?= base_url('rekod')?>"> */?>
+					<a class="menu-link" href="#">
+						<span class="menu-icon">
+							<i class="ki-duotone ki-abstract-26 fs-2">
+								<span class="path1"></span>
+								<span class="path2"></span>
+							</i>
+						</span>
+						<span class="menu-title">Rekod Jururawat</span>
+					</a>
+					<!--end:Menu link-->
+				</div>
+				<div class="menu-item">
+					<!--begin:Menu link-->
+					<a class="menu-link <? if($this->uri->segment(1) == 'senaraijururawat'){echo "active";} ?>" href="<?= base_url('senaraijururawat')?>">
+						<span class="menu-icon">
+							<i class="ki-duotone ki-abstract-26 fs-2">
+								<span class="path1"></span>
+								<span class="path2"></span>
+							</i>
+						</span>
+						<span class="menu-title">Senarai Jururawat</span>
+					</a>
+					<!--end:Menu link-->
+				</div>
+
 				
 				<!--end:Menu item-->
 				<!--begin:Menu item-->

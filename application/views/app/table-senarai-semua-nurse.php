@@ -358,7 +358,7 @@
                                     <th class="min-w-125px">Nama</th>
                                     <th class="min-w-125px">Gred</th>
                                     <th class="min-w-125px">No LJM</th>
-                                    <th class="min-w-125px">Status</th>
+                                    <th class="min-w-125px">Status Borang</th>
                                     <th class="text-end min-w-100px">Actions</th>
                                 </tr>
                             </thead>
@@ -380,6 +380,13 @@
 
                                         <?= get_ref_code('wad', $employment['wad']); ?>
 
+                                    </td>
+                                    <td>
+                                        <div class="d-flex flex-column">
+                                            <a href="apps/user-management/users/view.html" class="text-gray-800 text-hover-primary mb-1"><?= $key['name']?></a>
+                                            <span><?= $key['email']?></span>
+
+                                        </div>
                                         <?
                                             if ($key['role'] == '2') { ?>
                                                 <div class="badge badge-light-primary fw-bold">Sister</div>
@@ -391,12 +398,6 @@
                                         ?>
                                     </td>
                                     <td>
-                                        <div class="d-flex flex-column">
-                                            <a href="apps/user-management/users/view.html" class="text-gray-800 text-hover-primary mb-1"><?= $key['name']?></a>
-                                            <span><?= $key['email']?></span>
-                                        </div>
-                                    </td>
-                                    <td>
                                         <?= $employment['gred']?>
                                         
                                     </td>
@@ -404,11 +405,11 @@
                                         <?= $employment['no_ljm']?>
                                     </td>
                                     <td>
-                                        <? if($key['status'] == '1'){ ?>
-                                        <div class="badge badge-light-success fw-bold">Active</div>
+                                        <? if($key['complete'] == 'Y'){ ?>
+                                        <div class="badge badge-light-success fw-bold">Lengkap</div>
                                         <? } else { ?>
 
-                                        <div class="badge badge-light-danger fw-bold">Not Active</div>
+                                        <div class="badge badge-light-danger fw-bold">Tidak Lengkap</div>
                                         <? } ?>
                                         
                                     </td>
