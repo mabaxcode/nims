@@ -83,4 +83,48 @@ class Main extends CI_Controller {
 	    $this->session->sess_destroy();
 	    redirect();
 	}
+
+	function createAccount()
+	{
+		$this->load->view('create_account');
+	}
+
+	function doCreateAccount($data=false)
+	{
+		$data = $this->input->post();
+		// print_r($data); exit();
+
+		$icExist = $this->DbMain->check_no_ic(array('no_kp' => $data['no_kp']));
+
+		if ($icExist['status'] == true) {
+			$response  = array('status' => false, 'msg' => 'This IC No is already exist');
+		} else {
+
+			# do register account
+			$data_insert = array(
+				'name' 	 	 => $data['name'],
+				'no_kp'  	 => $data['no_kp'],
+				'password' 	 => md5($data['password']),
+				'created_at' => current_date(),
+				'active' 	 => '1',
+				'role' 		 => '3'
+			);
+
+			$insert = $this->DbMain->insert_users_table('user_accounts', $data_insert);
+
+			// print_r($insert); exit;
+
+			if ($insert == true) {
+				$response    = array('status' => true, 'msg' => 'Account has been successfully created !');
+			} else {
+				$response = array('status' => false, 'msg' => 'Something when wrong !');
+			}
+
+		}
+
+		echo encode($response);
+		exit();
+	}
+
+
 }

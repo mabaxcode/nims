@@ -139,6 +139,12 @@ function get_ref_code($module, $code)
     }
 }
 
+function current_date()
+{
+    $now = date('Y-m-d H:i:s');
+    return $now;
+}
+
 
 
 

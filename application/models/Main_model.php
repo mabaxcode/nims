@@ -13,7 +13,7 @@ class Main_model extends CI_Model {
 	{
 		$this->db->select('*');
         $this->db->where(array(
-            'login_id'   => $data['login_id'], 
+            'no_kp'      => $data['no_kp'], 
             'password'   => md5($data['password']),
         ));
         $query = $this->db->get($this->user_accounts);
@@ -27,4 +27,28 @@ class Main_model extends CI_Model {
         }
 
 	}
+
+    function check_no_ic($where)
+    {
+        $this->db->select('*');
+        $this->db->where($where);
+        $query = $this->db->get($this->user_accounts);
+
+        // return $this->db->last_query();
+
+        if($query->num_rows() > 0){
+            $response = array('status' => true); 
+        } else {
+            $response = array('status' => false);
+        }
+
+        return $response;
+
+    }
+
+    function insert_users_table($table, $data)
+    {   
+        $this->db->insert($table, $data);
+        return $this->db->affected_rows();
+    }
 }

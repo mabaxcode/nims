@@ -5,10 +5,10 @@ var KTSigninGeneral = function() {
         init: function() {
             t = document.querySelector("#kt_sign_in_form"), e = document.querySelector("#kt_sign_in_submit"), r = FormValidation.formValidation(t, {
                 fields: {
-                    login_id: {
+                    no_kp: {
                         validators: {
                             notEmpty: {
-                                message: "Login ID is required"
+                                message: "IC No is required"
                             }
                         }
                     },

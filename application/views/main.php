@@ -14,7 +14,7 @@ License: For each use you must have a valid license purchased only from above li
 	<!--begin::Head-->
 <head>
 	<base href="../../../" />
-	<title>Metronic - The World's #1 Selling Tailwind CSS & Bootstrap Admin Template by KeenThemes</title>
+	<title>NIMS</title>
 	<meta charset="utf-8" />
 	<meta name="description" content="The most advanced Tailwind CSS & Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
 	<meta name="keywords" content="tailwind, tailwindcss, metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
@@ -55,7 +55,7 @@ License: For each use you must have a valid license purchased only from above li
 						</a>
 						<!--end::Logo-->
 						<!--begin::Title-->
-						<h2 class="text-white fw-normal m-0">Branding tools designed for your business</h2>
+						<h2 class="text-white fw-normal m-0">Nurse Information Management System</h2>
 						<!--end::Title-->
 					</div>
 					<!--begin::Aside-->
@@ -93,7 +93,7 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Input group=-->
 								<div class="fv-row mb-8">
 									<!--begin::Email-->
-									<input type="text" placeholder="Login ID" name="login_id" autocomplete="off" class="form-control bg-transparent" />
+									<input type="text" placeholder="IC No" name="no_kp" autocomplete="off" class="form-control bg-transparent" />
 									<!--end::Email-->
 								</div>
 								<!--end::Input group=-->
@@ -117,19 +117,16 @@ License: For each use you must have a valid license purchased only from above li
 									</button>
 								</div>
 								<!--end::Submit button-->
+								<!--begin::Sign up-->
+								<div class="text-gray-500 text-center fw-semibold fs-6">Not have account yet? 
+								<a href="<?=base_url('main/createAccount')?>" class="link-primary">Create account</a></div>
+								<!--end::Sign up-->
 							</form>
 							<!--end::Form-->
 						</div>
 						<!--end::Wrapper-->
 						<!--begin::Footer-->
-						<div class="d-flex flex-stack px-lg-10">
-							<!--end::Languages-->
-							<!--begin::Links-->
-							<div class="d-flex fw-semibold text-primary fs-base gap-5">
-								<a href="javascript:void(0);">Terms & Condition</a>
-							</div>
-							<!--end::Links-->
-						</div>
+						
 						<!--end::Footer-->
 					</div>
 					<!--end::Card-->
