@@ -74,14 +74,14 @@ class Rekod_model extends CI_Model {
         
     }
 
-    public function count_all_cancel($requestData)
+    public function count_all_nurse($requestData)
     {
         $this->_dt_search_nurse_query($requestData);
 
         return $this->db->count_all_results();
     }
 
-    public function count_filtered_cancel($requestData)
+    public function count_filtered_nurse($requestData)
     {
         $this->_dt_search_nurse_query($requestData);
         $query = $this->db->get();

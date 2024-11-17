@@ -25,31 +25,33 @@ class Rekod extends CI_Controller {
 	{	
 		$requestData    = $this->input->post();
 
+
+
 		$output 		= $this->DbRekod->dt_search_nurse($requestData);
 		$aaData 	  	= array();
+
+		// echo "<pre>"; print_r($output); echo "</pre>"; exit;
 		
 		$no = 1;
 		foreach($output as $key)
 		{
-			$form_id = ec($key['form_id']);
+			//$form_id = ec($key['form_id']);
 
-			$img_path 		= base_url('office/ep/view_photo/'.$form_id);
-			$photo    		= "<img class=\"img-fluid img-thumbnail\" width=\"60\" src=\"$img_path\">";
-			$company_name 	= get_table_code("company", "account_id", "name", $key['account_id']);
+			//$img_path 		= base_url('office/ep/view_photo/'.$form_id);
+			//photo    		= "<img class=\"img-fluid img-thumbnail\" width=\"60\" src=\"$img_path\">";
+			//$company_name 	= get_table_code("company", "account_id", "name", $key['account_id']);
 
 			// $action = "<button class=\"btn btn-primary btn-sm cancel-app\">CANCEL</button>";
-			$action = "<button class=\"btn btn-primary btn-sm cancel-app\" data-formid=\"$form_id\">CANCEL</button>";
+			//$action = "<button class=\"btn btn-primary btn-sm cancel-app\" data-formid=\"$form_id\">CANCEL</button>";
 
 			#Final Data
 				$aaData[] = array(
 					'no'		=>	$no++, 
-					'form_id'	=>	$key['form_id'], 
-					'photo'		=>	$photo,
-					'name'		=>	$key['fullname'].'<br><b>('.$key['application_type'].")</b>", 
-					'passport'	=>	upper($key['passport']), 
-					'company'	=>	upper($company_name), 
-					'pass'		=>	get_mastercode_val(array('module' => 'pass_type_desc', 'code_id' => $key['pass_type']))['description'],
-					'action'		=>	$action, 
+					'name'	=>	$key['name'], 
+					'email'		=>	$key['email'],
+					'phone_no'		=>	$key['phone_no'], 
+					'no_kp'	=>	$key['no_kp'],
+					'action'		=>	'', 
 				);
 				
 
@@ -58,8 +60,8 @@ class Rekod extends CI_Controller {
 		$sOutput = array
 		(
 			'draw'                => $this->input->post('draw'),
-			'recordsTotal'        => $this->DbRekod->count_all_cancel($requestData),
-			'recordsFiltered'     => $this->DbRekod->count_filtered_cancel($requestData),
+			'recordsTotal'        => $this->DbRekod->count_all_nurse($requestData),
+			'recordsFiltered'     => $this->DbRekod->count_filtered_nurse($requestData),
 			'data'                => $aaData
 		);
 

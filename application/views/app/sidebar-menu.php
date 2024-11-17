@@ -203,7 +203,7 @@
 				<div class="menu-item">
 					<!--begin:Menu link-->
 					<?/*<a class="menu-link <? if($this->uri->segment(1) == 'rekod'){echo "active";} ?>" href="<?= base_url('rekod')?>"> */?>
-					<a class="menu-link" href="#">
+					<a class="menu-link <? if($this->uri->segment(1) == 'rekod'){echo "active";} ?>" href="<?= base_url('rekod')?>">
 						<span class="menu-icon">
 							<i class="ki-duotone ki-abstract-26 fs-2">
 								<span class="path1"></span>
@@ -214,6 +214,7 @@
 					</a>
 					<!--end:Menu link-->
 				</div>
+				<?/*
 				<div class="menu-item">
 					<!--begin:Menu link-->
 					<a class="menu-link <? if($this->uri->segment(1) == 'senaraijururawat'){echo "active";} ?>" href="<?= base_url('senaraijururawat')?>">
@@ -227,6 +228,7 @@
 					</a>
 					<!--end:Menu link-->
 				</div>
+				*/?>
 
 				
 				<!--end:Menu item-->

@@ -4815,6 +4815,188 @@
 		<script src="<?= base_url(); ?>assets/js/custom/utilities/modals/users-search.js"></script>
 		<!--end::Custom Javascript-->
 		<!--end::Javascript-->
+
+		<script>
+
+    var table_nurse_complete = $('#rekod-nurse-table');
+
+    var KTDatatablesDataSourceAjaxServer3 = function () {
+
+        var initTableComplete = function () {
+            var qData = {};
+            // begin first table
+            table_nurse_complete.DataTable({
+                responsive: true,
+                autoWidth: false,
+                // dom: '<"top"l>rt<"bottom"ip><"clear">',
+                searching: false,
+                processing: true,
+                serverSide: true,
+                ajax: {
+                    url: base_url + "rekod/rekodNurse", type: "POST",
+                    data: function (d) {
+                        return $.extend({}, d, {
+                            "inpt_data": $('.inpt_data').val(),
+                            "inpt_pass_type": $('.inpt_pass_type').val(),
+                        }, qData);
+                    },
+                    error: function (data, textStatus, xhr) {
+
+                    }
+                },
+                columns: [
+                    {
+                        data: 'no',
+                        // width: "5%",
+                        searchable: false,
+                        orderable: false
+                    },
+                    {
+                        data: 'name',
+                        // width: "10%",
+                        searchable: false,
+                        orderable: false
+                    },
+                    {
+                        data: 'email',
+                        width: "10%",
+                        searchable: false,
+                        orderable: false
+                    },
+                    {
+                        data: 'phone_no',
+                        // width: "15%",
+                        searchable: false,
+                        orderable: false
+                    },
+                    {
+                        data: 'no_kp',
+                        width: "5%",
+                        searchable: false,
+                        orderable: false
+                    },
+                    {
+                        data: 'action',
+                        width: "11%",
+                        searchable: false,
+                        orderable: false
+                    },
+                ],
+                order: false,
+            });
+            var timeout = null;
+
+            $('.btn-search').on('click', function (e) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                table_nurse_complete.DataTable().columns().search().draw();
+                // alert($('.inpt_month').val() + $('.inpt_year').val(),);
+            });
+
+            $('.btn-reset-search-expats').on('click', function (e) {
+                e.preventDefault();
+                $('.inpt_data').each(function () {
+                    $(this).val('');
+                    $('.dt-select').val(null).trigger('change');
+                });
+
+                table_nurse_complete.DataTable().columns().search().draw();
+            });
+
+
+
+        };
+
+        return {
+
+            //main function to initiate the module
+            init: function () {
+                initTableComplete();
+            }
+        };
+    }();
+
+    $(document).ready(function () {
+        KTDatatablesDataSourceAjaxServer3.init();
+
+    });
+
+    // $('body').on('click', '.cancel-app', function(){
+
+    //     // var jobid  = $(this).data('jobid');
+    //     var formid = $(this).data('formid');
+
+    //     $.ajax({
+    //         type: "POST",
+    //         // url: base_url+'_admin/view_ep_epass',
+    //         url: base_url+'_admin/cancel_modal',
+    //         data: {
+    //             // job_id: jobid,
+    //             form_id: formid
+    //         },
+    //         async: true,
+    //         success: function(data){
+    //             $('#modal-view-cancel').html(data);
+    //             $('#modal-view-cancel').modal();
+
+    //         },
+    //         error: function(data){
+    //             console.log(data);
+    //         },
+    //     });
+    // });
+
+    // $('body').on('click', '.proceed-cancel', function() {
+
+    //     var remarkC = $("#remark-cancel").val();
+    //     if (remarkC=='') {alert_msg('error', 'Please insert remark');return;}
+
+    //     var formData = $("#cancel-form-data").serialize();
+
+    //     Swal.fire({
+    //         title: "Are you sure want to cancel this application?",
+    //         showDenyButton: true,
+    //         // showCancelButton: true,
+    //         confirmButtonText: "Yes",
+    //         denyButtonText: `Close`
+    //     }).then((result) => {
+    //         /* Read more about isConfirmed, isDenied below */
+    //         if (result.isConfirmed) {
+    //             // Swal.fire("Saved!", "", "success");
+    //             $.ajax({
+    //                 type: "POST",
+    //                 url:base_url+'_admin/do_cancel',
+    //                 data:formData,
+    //                 async: true,
+    //                 dataType:"json",
+    //                 success: function(data){
+
+    //                     $('#modal-view-cancel').modal('hide');
+
+    //                     if (data.status == true) {
+    //                         alert_msg('success', data.msg);
+    //                         setTimeout(function() {
+    //                             ajaxLoadHtml('div-pp-admin', '_admin/cancellation_application', '');
+    //                         }, 1000);
+    //                         // alert_msg('success', data.msg);
+    //                         // location.reload();
+    //                         // $('#modal-view-cancel').modal('hide');
+    //                         // ajaxLoadHtml('div-pp-admin', '_admin/cancellation_application', '');
+    //                     }
+    //                 },
+    //                 error: function(data){
+    //                     console.log(data);
+    //                 },
+    //             });
+    //         } 
+    //     });
+        
+    //     // $('#loading').show();
+
+    // });
+    
+
+</script>
 	</body>
 	<!--end::Body-->
 </html>
