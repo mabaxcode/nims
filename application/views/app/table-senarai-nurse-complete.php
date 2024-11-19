@@ -43,17 +43,17 @@
                             <tr>
                                 <th class="pt-5" style="width:11%;">KEYWORD</th>
                                 <td>
-                                    <input type="text" class="form-control inpt_data dt-select" name="inpt_data" value="" placeholder="Name / Passport Number">
+                                    <input type="text" class="form-control inpt_data dt-select" name="inpt_data" value="" placeholder="Name / No Kad Pengenalan">
                                 </td>
                             </tr>
                             <tr>
-                                <th class="pt-5" style="width:11%;">PASS TYPE</th>
+                                <th class="pt-5" style="width:11%;">JAWATAN</th>
                                 <td colspan="3">
                                 <select class="js-example-basic-single form-control select-single inpt_pass_type dt-select">
                                     <option value="">SELECT OPTION</option>
-                                    <option value="EP">EP</option>
+                                    <!-- <option value="EP">EP</option>
                                     <option value="PVP">PVP</option>
-                                    <option value="DEP">DEP</option>
+                                    <option value="DEP">DEP</option> -->
                                 </select>
                             </td>
                             </tr>
