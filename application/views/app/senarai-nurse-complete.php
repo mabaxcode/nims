@@ -4837,7 +4837,7 @@
                     data: function (d) {
                         return $.extend({}, d, {
                             "inpt_data": $('.inpt_data').val(),
-                            "inpt_pass_type": $('.inpt_pass_type').val(),
+                            "inpt_gred": $('.inpt_gred').val(),
                         }, qData);
                     },
                     error: function (data, textStatus, xhr) {
@@ -4893,7 +4893,7 @@
                 // alert($('.inpt_month').val() + $('.inpt_year').val(),);
             });
 
-            $('.btn-reset-search-expats').on('click', function (e) {
+            $('.btn-reset-search-nurse').on('click', function (e) {
                 e.preventDefault();
                 $('.inpt_data').each(function () {
                     $(this).val('');

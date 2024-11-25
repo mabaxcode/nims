@@ -201,11 +201,18 @@ class App extends CI_Controller {
 
 		// echo "<pre>"; print_r($post); echo "</pre>";
 
-		$insert = array('name' => $post['name'], 'no_kp' => $post['no_kp'], 'role' => $post['role']);
+		$insert = array(
+			'name' => $post['name'], 
+			'no_kp' => $post['no_kp'], 
+			'role' => $post['role'],
+			'email' => $post['email'],
+			'phone_no' => $post['phone_no'],
+			'password' => md5($post['password'])
+		);
 
 		insert_any_table($insert, 'user_accounts');
 
-		$response = array('status' => true, 'msg' => 'Akaun telah berjaya ditambah !');
+		$response = array('status' => true, 'msg' => 'Pengguna telah berjaya ditambah !');
 
 		echo encode($response);
 	}

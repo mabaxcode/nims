@@ -8,7 +8,7 @@
                 <!--begin::Page title-->
                 <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                     <!--begin::Title-->
-                    <h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">Senarai Jururawat</h1>
+                    <h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">Senarai Pengguna</h1>
                     <!--end::Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -23,7 +23,7 @@
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">Jururawat</li>
+                        <li class="breadcrumb-item text-muted">Pengurusan Pengguna</li>
                         <!--end::Item-->
                         <!--begin::Item-->
                         <li class="breadcrumb-item">
@@ -31,7 +31,7 @@
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">Senarai</li>
+                        <li class="breadcrumb-item text-muted">Senarai Pengguna</li>
                         <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->
@@ -87,12 +87,16 @@
                                     <div class="px-7 py-5" data-kt-user-table-filter="form">
                                         <!--begin::Input group-->
                                         <div class="mb-10">
-                                            <label class="form-label fs-6 fw-semibold">Unit/Wad :</label>
+                                            <label class="form-label fs-6 fw-semibold">Status Borang :</label>
                                             <select class="form-select form-select-solid fw-bold" data-kt-select2="true" data-placeholder="Select option" data-allow-clear="true" data-kt-user-table-filter="role" data-hide-search="true">
                                                 <option></option>
+                                                <option value="Lengkap">Lengkap</option>
+                                                <option value="Tidak Lengkap">Tidak Lengkap</option>
+                                                <?/*
                                                 <? foreach($all_wad as $val){ ?>
                                                 <option value="<?= $val['code_desc']?>"><?= $val['code_desc']?></option>
                                                 <? } ?>
+                                                */?>
                                             </select>
                                         </div>
                                         <!--end::Input group-->
@@ -114,7 +118,7 @@
                                 <!--end::Export-->
                                 <!--begin::Add user-->
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
-                                <i class="ki-duotone ki-plus fs-2"></i>Tambah Jururawat</button>
+                                <i class="ki-duotone ki-plus fs-2"></i>Tambah Pengguna</button>
                                 <!--end::Add user-->
                             </div>
                             <!--end::Toolbar-->
@@ -206,13 +210,13 @@
                             <!--begin::Modal - Add task-->
                             <div class="modal fade" id="kt_modal_add_user" tabindex="-1" aria-hidden="true">
                                 <!--begin::Modal dialog-->
-                                <div class="modal-dialog modal-dialog-centered mw-650px">
+                                <div class="modal-dialog modal-dialog-centered mw-750px">
                                     <!--begin::Modal content-->
                                     <div class="modal-content">
                                         <!--begin::Modal header-->
                                         <div class="modal-header" id="kt_modal_add_user_header">
                                             <!--begin::Modal title-->
-                                            <h2 class="fw-bold">Tambah Jururawat</h2>
+                                            <h2 class="fw-bold">Tambah Pengguna</h2>
                                             <!--end::Modal title-->
                                             <!--begin::Close-->
                                             <div class="btn btn-icon btn-sm btn-active-icon-primary" onclick="$('#kt_modal_add_user').modal('hide');">
@@ -234,6 +238,7 @@
                                                 <div class="d-flex flex-column scroll-y px-5 px-lg-10" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
 
                                                     <!--begin::Alert-->
+                                                    <?/*
                                                     <div class="alert alert-dismissible bg-light-primary d-flex flex-column flex-sm-row p-5 mb-10">
                                                         <!--begin::Icon-->
                                                         <i class="ki-duotone ki-notification-bing fs-2hx text-primary me-4 mb-5 mb-sm-0"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
@@ -251,6 +256,7 @@
                                                         </div>
                                                         <!--end::Wrapper-->
                                                     </div>
+                                                    */?>
                                                     <!--end::Alert-->
                                                     <!--begin::Input group-->
                                                 
@@ -274,6 +280,45 @@
                                                         <input type="number" name="no_kp" class="form-control mb-3 mb-lg-0" placeholder="No K/P" />
                                                         <!--end::Input-->
                                                     </div>
+                                                    <div class="row g-9 mb-8">
+                                                    <!--begin::Col-->
+                                                    <div class="col-md-6 fv-row">
+                                                        <label class="required fs-6 fw-semibold mb-2">Email</label>
+                                                        <input type="email" name="email" class="form-control mb-3 mb-lg-0" placeholder="Email" />
+                                                    </div>
+                                                    <!--end::Col-->
+                                                    <!--begin::Col-->
+                                                    <div class="col-md-6 fv-row">
+                                                        <label class="required fs-6 fw-semibold mb-2">Nombor Telefon</label>
+                                                        <input type="text" name="phone_no" class="form-control mb-3 mb-lg-0" placeholder="Nombor Telefon" />
+                                                    </div>
+                                                    <!--end::Col-->
+                                                </div>
+                                                    <div class="row g-9 mb-8">
+                                                    <!--begin::Col-->
+                                                    <!-- <div class="col-md-6 fv-row">
+                                                        <label class="required fs-6 fw-semibold mb-2">Kata Laluan</label>
+                                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="target_assign">
+                                                            <option value="">Select user...</option>
+                                                            <option value="1">Karina Clark</option>
+                                                            <option value="2">Robert Doe</option>
+                                                            <option value="3">Niel Owen</option>
+                                                            <option value="4">Olivia Wild</option>
+                                                            <option value="5">Sean Bean</option>
+                                                        </select>
+                                                    </div> -->
+                                                    <div class="col-md-6 fv-row">
+                                                        <label class="required fs-6 fw-semibold mb-2">Katalaluan</label>
+                                                        <input type="password" name="password" class="form-control mb-3 mb-lg-0" placeholder="Katalaluan" />
+                                                    </div>
+                                                    <!--end::Col-->
+                                                    <!--begin::Col-->
+                                                    <div class="col-md-6 fv-row">
+                                                        <label class="required fs-6 fw-semibold mb-2">Sahkan Katalaluan</label>
+                                                        <input type="password" name="c_password" class="form-control mb-3 mb-lg-0" placeholder="Sahkan Katalaluan" />
+                                                    </div>
+                                                    <!--end::Col-->
+                                                </div>
                                                     <!--end::Input group-->
                                                     <!--begin::Input group-->
                                                     <div class="mb-5">
@@ -309,6 +354,24 @@
                                                                 <!--begin::Label-->
                                                                 <label class="form-check-label" for="kt_modal_update_role_option_1">
                                                                     <div class="fw-bold text-gray-800">Sister</div>
+                                                                    <!-- <div class="text-gray-600">Best for developers or people primarily using the API</div> -->
+                                                                </label>
+                                                                <!--end::Label-->
+                                                            </div>
+                                                            <!--end::Radio-->
+                                                        </div>
+                                                        <!--end::Input row-->
+                                                        <div class='separator separator-dashed my-5'></div>
+                                                        <!--begin::Input row-->
+                                                        <div class="d-flex fv-row">
+                                                            <!--begin::Radio-->
+                                                            <div class="form-check form-check-custom form-check-solid">
+                                                                <!--begin::Input-->
+                                                                <input class="form-check-input me-3" name="role" type="radio" value="1" id="kt_modal_update_role_option_1" />
+                                                                <!--end::Input-->
+                                                                <!--begin::Label-->
+                                                                <label class="form-check-label" for="kt_modal_update_role_option_1">
+                                                                    <div class="fw-bold text-gray-800">Admin</div>
                                                                     <!-- <div class="text-gray-600">Best for developers or people primarily using the API</div> -->
                                                                 </label>
                                                                 <!--end::Label-->

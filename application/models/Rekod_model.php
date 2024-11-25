@@ -54,7 +54,7 @@ class Rekod_model extends CI_Model {
     {
         $this->db->select('*');
         $this->db->from('user_accounts');
-        //$this->db->join('job', 'user_accounts.id = form.form_id');
+        $this->db->join('employment_info', 'user_accounts.id = employment_info.user_id');
         $this->db->where('user_accounts.complete', 'Y');
         $this->db->where_in('role',['2','3']);
         //$this->db->where('user_accounts.job_status', 'A');
@@ -63,13 +63,12 @@ class Rekod_model extends CI_Model {
         # search
         if (!empty($requestData['inpt_data']) && isset($requestData['inpt_data'])) {
             $this->db->group_start();
-            $this->db->like('passport', $requestData['inpt_data']);
-            $this->db->or_like('passport_old', $requestData['inpt_data']);
-            $this->db->or_like('fullname', $requestData['inpt_data']);
+            $this->db->like('name', $requestData['inpt_data']);
+            $this->db->or_like('no_kp', $requestData['inpt_data']);
             $this->db->group_end();
         }
-        if (!empty($requestData['inpt_pass_type']) && isset($requestData['inpt_pass_type'])) {
-            $this->db->where('pass_type', $requestData['inpt_pass_type']);
+        if (!empty($requestData['inpt_gred']) && isset($requestData['inpt_gred'])) {
+            $this->db->where('employment_info.gred', $requestData['inpt_gred']);
         }
         
     }

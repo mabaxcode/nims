@@ -143,7 +143,38 @@ function validateAddNurse(formID)
                         message: "Sila isi no kad pengenalan"
                     }
                 }
-            }
+            },
+            email: {
+                validators: {
+                    regexp: {
+                        regexp: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                        message: "The value is not a valid email address"
+                    },
+                    notEmpty: {
+                        message: "Sila isi alamat email"
+                    }
+                }
+            },
+            password: {
+                validators: {
+                    notEmpty: {
+                        message: "Sila isi katalaluan"
+                    }
+                }
+            },
+            c_password: {
+                validators: {
+                    notEmpty: {
+                        message: "Sila sahkan katalaluan"
+                    },
+                    identical: {
+                        compare: function() {
+                            return folderForm.querySelector('[name="password"]').value
+                        },
+                        message: "Kataluan dan Sahkan katalaluan tidak sama"
+                    }
+                }
+            },
         },
         plugins: {
             trigger: new FormValidation.plugins.Trigger,

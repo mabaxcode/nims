@@ -210,7 +210,7 @@
 								<span class="path2"></span>
 							</i>
 						</span>
-						<span class="menu-title">Rekod Jururawat</span>
+						<span class="menu-title">Laporan</span>
 					</a>
 					<!--end:Menu link-->
 				</div>
@@ -229,6 +229,61 @@
 					<!--end:Menu link-->
 				</div>
 				*/?>
+
+				<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+					<!--begin:Menu link-->
+					<span class="menu-link">
+						<span class="menu-icon">
+							<i class="ki-duotone ki-address-book fs-2">
+								<span class="path1"></span>
+								<span class="path2"></span>
+								<span class="path3"></span>
+							</i>
+						</span>
+						<span class="menu-title">Pengurusan Pengguna</span>
+						<span class="menu-arrow"></span>
+					</span>
+					<!--end:Menu link-->
+					<!--begin:Menu sub-->
+					<div class="menu-sub menu-sub-accordion <? if($this->uri->segment(1) == 'senaraijururawat'){echo "show active";} ?>">
+						<!--begin:Menu item-->
+						<div class="menu-item">
+							<!--begin:Menu link-->
+							<a class="menu-link <? if($this->uri->segment(1) == 'senaraijururawat'){echo "active";} ?>" href="<?= base_url('senaraijururawat')?>">
+								<span class="menu-bullet">
+									<span class="bullet bullet-dot"></span>
+								</span>
+								<span class="menu-title">Senarai Pengguna</span>
+							</a>
+							<!--end:Menu link-->
+						</div>
+						
+						<!--begin:Menu item-->
+						<div class="menu-item">
+							<!--begin:Menu link-->
+							<a class="menu-link" href="<?=base_url()?>">
+								<span class="menu-bullet">
+									<span class="bullet bullet-dot"></span>
+								</span>
+								<span class="menu-title">Senarai Pengguna Dihapus</span>
+							</a>
+							<!--end:Menu link-->
+						</div>
+						<!--end:Menu item-->
+						<!--begin:Menu item-->
+						<!-- <div class="menu-item">
+							<a class="menu-link" href="pages/user-profile/activity.html">
+								<span class="menu-bullet">
+									<span class="bullet bullet-dot"></span>
+								</span>
+								<span class="menu-title">Maklumat Kompetensi</span>
+							</a>
+						</div> -->
+						<!--end:Menu item-->
+						
+					</div>
+					<!--end:Menu sub-->
+				</div>
 
 				
 				<!--end:Menu item-->

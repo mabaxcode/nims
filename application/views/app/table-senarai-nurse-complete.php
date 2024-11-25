@@ -47,13 +47,13 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th class="pt-5" style="width:11%;">JAWATAN</th>
+                                <th class="pt-5" style="width:11%;">GRED</th>
                                 <td colspan="3">
-                                <select class="js-example-basic-single form-control select-single inpt_pass_type dt-select">
-                                    <option value="">SELECT OPTION</option>
-                                    <!-- <option value="EP">EP</option>
-                                    <option value="PVP">PVP</option>
-                                    <option value="DEP">DEP</option> -->
+                                <select class="js-example-basic-single form-control select-single inpt_gred dt-select">
+                                    <option value="">Pilih Gred</option>
+                                    <option value="U29">U29</option>
+                                    <option value="KUP U32">KUP U32</option>
+                                    <option value="TBK 2 U36">TBK 2 U36</option>
                                 </select>
                             </td>
                             </tr>
@@ -62,7 +62,7 @@
                     </table>
                 </div>
                 <div class="col-lg-12" style="text-align: right;">
-                    <a class="btn btn-warning font-weight-bold mr-2 mb-5 btn-reset-search-expats">Reset</a>
+                    <a class="btn btn-warning font-weight-bold mr-2 mb-5 btn-reset-search-nurse">Reset</a>
                     <a class="btn btn-primary font-weight-bold mr-2 mb-5 btn-search">Search</a>
                 </div>
                 <div class="col-lg-12 mb-5 mt-5" id="result-company-search">

@@ -25,6 +25,7 @@ class Rekod extends CI_Controller {
 	{	
 		$requestData    = $this->input->post();
 
+		// echo "<pre>"; print_r($requestData); echo "</pre>"; exit;
 
 
 		$output 		= $this->DbRekod->dt_search_nurse($requestData);
