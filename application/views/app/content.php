@@ -19,7 +19,7 @@
 				<ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
 					<!--begin::Item-->
 					<li class="breadcrumb-item text-muted">
-						<a href="index.html" class="text-muted text-hover-primary">Home</a>
+						<a href="javascript:void(0);" class="text-muted text-hover-primary">Dashboard</a>
 					</li>
 					<!--end::Item-->
 					<!--begin::Item-->
@@ -33,6 +33,17 @@
 				</ul>
 				<!--end::Breadcrumb-->
 			</div>
+			<? if($user['role'] == '1'){ ?>
+			<span class="badge badge-info badge-lg">Administrator</span>
+			<? } else if ($user['role'] == '2') { ?>
+			<?
+			$sister = get_any_table_row(array('nurse_id' => $user['id']), 'sister');
+			?>
+			<span class="badge badge-info badge-lg">Sister : <?=get_ref_code('wad', $sister['wad_id'])?></span>
+			<? } else { ?>
+			<span class="badge badge-success badge-lg">Nurse</span>
+			<? } ?>
+			
 			<!--end::Page title-->
 			<?/*
 			<!--begin::Actions-->

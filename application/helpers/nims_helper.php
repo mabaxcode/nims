@@ -123,13 +123,13 @@ function get_any_table_array($data_where = false, $table = false, $col_sort = fa
 
 function get_ref_code($module, $code)
 {
-    $tco = load_instance();
-    $tco->load->database();
+    $ci = load_instance();
+    $ci->load->database();
 
-    $tco->db->select('*');
-    $tco->db->where(array('code' => $code));
-    $tco->db->where(array('module' => $module));
-    $query = $tco->db->get('ref_code');
+    $ci->db->select('*');
+    $ci->db->where(array('code' => $code));
+    $ci->db->where(array('module' => $module));
+    $query = $ci->db->get('ref_code');
 
     if ($query->num_rows() > 0) {
         $result = $query->row();
@@ -143,6 +143,59 @@ function current_date()
 {
     $now = date('Y-m-d H:i:s');
     return $now;
+}
+
+function get_keytab_value($key)
+{
+    $ci = load_instance();
+    $ci->load->database();
+
+    $ci->db->select('*');
+    $ci->db->where(array('type' => $key));
+    $query = $ci->db->get('keytab');
+
+    if ($query->num_rows() > 0) {
+        $result = $query->row();
+        update_keytab_value($key, $result->key_num);
+        return $result->key_num;
+    } else {
+        return false;
+    }
+}
+
+function update_keytab_value($key, $val)
+{
+    $ci = load_instance();
+    $ci->load->database();
+
+    $ci->db->set(array('key_num' => $val + 1));
+    $ci->db->where(array('type' => $key));
+    $ci->db->update('keytab');
+
+    return $ci->db->affected_rows();
+}
+
+function delete_any_table($where, $table)
+{
+    $ci = load_instance();
+    $ci->load->database();
+    $ci->db->delete($table, $where);
+    return $ci->db->affected_rows();
+}
+
+function count_any_table($where, $table)
+{   
+    $ci = load_instance();
+    $ci->load->database();
+
+    $ci->db->select('*');
+    $ci->db->from($table);
+    $ci->db->where($where);
+    $query = $ci->db->get();
+   
+    $row_count = $query->num_rows();
+    return $row_count;
+    
 }
 
 

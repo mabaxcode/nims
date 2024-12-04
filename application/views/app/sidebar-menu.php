@@ -21,6 +21,34 @@
 					</a>
 				</div>
 
+
+				<? if(isSister($this->session->userdata('user_id')) == true): ?>
+
+				<div class="menu-item pt-5">
+					<!--begin:Menu content-->
+					<div class="menu-content">
+						<span class="menu-heading fw-bold text-uppercase fs-7">Menu</span>
+					</div>
+					<!--end:Menu content-->
+				</div>
+
+				<div class="menu-item">
+					<!--begin:Menu link-->
+					<?/*<a class="menu-link <? if($this->uri->segment(1) == 'rekod'){echo "active";} ?>" href="<?= base_url('rekod')?>"> */?>
+					<a class="menu-link <? if($this->uri->segment(2) == 'wadSelian'){echo "active";} ?>" href="<?= base_url('sister/wadSelian')?>">
+						<span class="menu-icon">
+							<i class="ki-duotone ki-abstract-26 fs-2">
+								<span class="path1"></span>
+								<span class="path2"></span>
+							</i>
+						</span>
+						<span class="menu-title">Wad Selian</span>
+					</a>
+					<!--end:Menu link-->
+				</div>
+
+				<? endif; ?>
+
 				<!--end:Menu item-->
 				<!--begin:Menu item-->
 				<?/*
@@ -351,7 +379,7 @@
 				<div class="menu-item">
 					<!--begin:Menu link-->
 					<?/*<a class="menu-link <? if($this->uri->segment(1) == 'rekod'){echo "active";} ?>" href="<?= base_url('rekod')?>"> */?>
-					<a class="menu-link <? if($this->uri->segment(1) == 'senaraijururawat' && $this->uri->segment(2) <> 'hapus'){echo "active";} ?>" href="<?= base_url('senaraijururawat')?>">
+					<a class="menu-link <? if($this->uri->segment(2) == 'jawatan'){echo "active";} ?>" href="<?= base_url('setting/jawatan')?>">
 						<span class="menu-icon">
 							<i class="ki-duotone ki-abstract-26 fs-2">
 								<span class="path1"></span>
@@ -365,7 +393,7 @@
 				<div class="menu-item">
 					<!--begin:Menu link-->
 					<?/*<a class="menu-link <? if($this->uri->segment(1) == 'rekod'){echo "active";} ?>" href="<?= base_url('rekod')?>"> */?>
-					<a class="menu-link <? if($this->uri->segment(1) == 'senaraijururawat' && $this->uri->segment(2) <> 'hapus'){echo "active";} ?>" href="<?= base_url('senaraijururawat')?>">
+					<a class="menu-link <? if($this->uri->segment(2) == 'gred'){echo "active";} ?>" href="<?= base_url('setting/gred')?>">
 						<span class="menu-icon">
 							<i class="ki-duotone ki-abstract-26 fs-2">
 								<span class="path1"></span>
