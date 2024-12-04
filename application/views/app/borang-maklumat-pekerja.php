@@ -12,7 +12,7 @@
 					<div class="d-flex flex-column">
 						<!--begin::Name-->
 						<div class="d-flex align-items-center mb-2">
-							<a href="#" class="text-gray-900 text-hover-primary fs-2 fw-bold me-1">
+							<a href="javascript:void(0);" class="text-gray-900 text-hover-primary fs-2 fw-bold me-1">
 								<?= strtoupper($user['name'])?>
 							</a>
 							<a href="#">

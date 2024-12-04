@@ -51,9 +51,14 @@
                                 <td colspan="3">
                                 <select class="js-example-basic-single form-control select-single inpt_gred dt-select">
                                     <option value="">Pilih Gred</option>
-                                    <option value="U29">U29</option>
+
+                                    <? $allGred = get_any_table_array(array('module' => 'gred'), 'ref_code'); ?>
+                                    <? foreach($allGred as $key){ ?>
+                                    <option value="<?=$key['code']?>"><?=$key['code_desc']?></option>
+                                    <? } ?>
+                                    <!-- 
                                     <option value="KUP U32">KUP U32</option>
-                                    <option value="TBK 2 U36">TBK 2 U36</option>
+                                    <option value="TBK 2 U36">TBK 2 U36</option> -->
                                 </select>
                             </td>
                             </tr>
@@ -75,12 +80,13 @@
                                             class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold dataTable no-footer">
                                             <thead class="fs-7 text-gray-500 text-uppercase">
                                                 <tr>
-                                                    <th class="min-w-10px sorting_disabled" tabindex="0" rowspan="1" colspan="1" style="width: 0px;">NO</th>
-                                                    <th class="min-w-10px sorting_disabled" tabindex="0" rowspan="1" colspan="1" style="width: 0px;">NAMA</th>
-                                                    <th class="min-w-90px sorting_disabled" tabindex="0" rowspan="1" colspan="1" style="width: 0px;">EMAIL</th>
-                                                    <th class="min-w-90px sorting_disabled" tabindex="0" rowspan="1" colspan="1" style="width: 0px;">PHONE NO</th>
-                                                    <th class="min-w-50px text-end sorting_disabled" rowspan="1" colspan="1"  style="width: 0px;">NO K/P</th>
-                                                    <th class="min-w-10px text-end sorting_disabled" rowspan="1" colspan="1"  style="width: 0px;">ACTION</th>
+                                                    <th class="" tabindex="0" rowspan="1" colspan="1" style="width: 0px;">NO</th>
+                                                    <th class="" tabindex="0" rowspan="1" colspan="1" style="width: 0px;">NAMA</th>
+                                                    <th class="" tabindex="0" rowspan="1" colspan="1" style="width: 0px;">EMAIL</th>
+                                                    <th class="" tabindex="0" rowspan="1" colspan="1" style="width: 0px;">PHONE NO</th>
+                                                    <th class="" rowspan="1" colspan="1"  style="width: 0px;">NO K/P</th>
+                                                    <th class="" tabindex="0" rowspan="1" colspan="1" style="width: 0px;">GRED</th>
+                                                    <th class="" rowspan="1" colspan="1"  style="width: 0px;">ACTION</th>
 
                                                 </tr>
                                             </thead>

@@ -485,6 +485,11 @@
                                             <div class="menu-item px-3">
                                                 <a href="<?= base_url('editdetails/editFor/'.$key['id'])?>" class="menu-link px-3">Edit</a>
                                             </div>
+                                            <?/*
+                                            <div class="menu-item px-3">
+                                                <a href="javascript:void(0);" class="menu-link px-3 deactive-nurse" data-init="<?=$key['id']?>">Hapuskan</a>
+                                            </div>
+                                            */?>
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->
                                             <!-- <div class="menu-item px-3">

@@ -38,6 +38,48 @@
 					</div>
 					<!--end::Col-->
 				</div>
+
+
+				<div class="row mb-6">
+					<!--begin::Label-->
+					<label class="col-lg-4 col-form-label fw-semibold fs-6">
+						<span class="required">Jawatan</span>
+					</label>
+					<!--end::Label-->
+					<!--begin::Col-->
+					<div class="col-lg-8 fv-row">
+						<select name="jawatan" aria-label="Select a Country" data-control="select2" data-placeholder="Pilih jawatan..." class="form-select form-select-lg fw-semibold">
+							<option value="">Pilih jawatan...</option>
+							<? $allJawatan = get_any_table_array(array('module' => 'jawatan'), 'ref_code'); ?>
+							<? foreach ($allJawatan as $jawatan) { ?>
+							<option data-kt-flag="" <? if($jawatan['code'] == $employment['jawatan']){echo "selected";} ?> value="<?= $jawatan['code']?>"><?= $jawatan['code_desc']?></option>
+							<? } ?>
+							
+						</select>
+					</div>
+					<!--end::Col-->
+				</div>
+
+				<div class="row mb-6">
+					<!--begin::Label-->
+					<label class="col-lg-4 col-form-label fw-semibold fs-6">
+						<span class="required">Gred</span>
+					</label>
+					<!--end::Label-->
+					<!--begin::Col-->
+					<div class="col-lg-8 fv-row">
+						<select name="gred" aria-label="Select a Country" data-control="select2" data-placeholder="Pilih gred..." class="form-select form-select-lg fw-semibold">
+							<option value="">Pilih gred...</option>
+							<? $allGred = get_any_table_array(array('module' => 'gred'), 'ref_code'); ?>
+							<? foreach ($allGred as $gred) { ?>
+							<option data-kt-flag="" <? if($gred['code'] == $employment['gred']){echo "selected";} ?> value="<?= $gred['code']?>"><?= $gred['code_desc']?></option>
+							<? } ?>
+							
+						</select>
+					</div>
+					<!--end::Col-->
+				</div>
+
 				<!--end::Input group-->
 				<!--begin::Input group-->
 				<div class="row mb-6">
@@ -46,7 +88,16 @@
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8 fv-row">
-						<input type="date" name="tarikh_lantikan" class="form-control form-control-lg" placeholder="Nama" value="<?= date('Y-m-d', strtotime($employment['tarikh_lantikan'])) ?>" />
+
+						<?
+						if ($employment['tarikh_lantikan']) {
+							$tarikh_lantikan =  date('Y-m-d', strtotime($employment['tarikh_lantikan']));
+						} else {
+							$tarikh_lantikan = '';
+						}
+						?>
+
+						<input type="date" name="tarikh_lantikan" class="form-control form-control-lg" placeholder="Nama" value="<?=$tarikh_lantikan ?>" />
 					</div>
 					<!--end::Col-->
 				</div>
@@ -56,7 +107,14 @@
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8 fv-row">
-						<input type="date" name="tarikh_naik_pangkat" class="form-control form-control-lg" placeholder="Nama" value="<?= date('Y-m-d', strtotime($employment['tarikh_naik_pangkat'])) ?>" />
+						<?
+						if ($employment['tarikh_naik_pangkat']) {
+							$tarikh_naik_pangkat =  date('Y-m-d', strtotime($employment['tarikh_naik_pangkat']));
+						} else {
+							$tarikh_naik_pangkat = '';
+						}
+						?>
+						<input type="date" name="tarikh_naik_pangkat" class="form-control form-control-lg" placeholder="Nama" value="<?=$tarikh_naik_pangkat?>" />
 					</div>
 					<!--end::Col-->
 				</div>
@@ -66,7 +124,14 @@
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8 fv-row">
-						<input type="date" name="tarikh_bersara" class="form-control form-control-lg" placeholder="Nama" value="<?= date('Y-m-d', strtotime($employment['tarikh_bersara'])) ?>" />
+						<?
+						if ($employment['tarikh_bersara']) {
+							$tarikh_bersara =  date('Y-m-d', strtotime($employment['tarikh_bersara']));
+						} else {
+							$tarikh_bersara = '';
+						}
+						?>
+						<input type="date" name="tarikh_bersara" class="form-control form-control-lg" placeholder="Nama" value="<?=$tarikh_bersara?>" />
 					</div>
 					<!--end::Col-->
 				</div>
@@ -86,7 +151,14 @@
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8 fv-row">
-						<input type="date" name="tarikh_lapor_diri" class="form-control form-control-lg" placeholder="Nama" value="<?= date('Y-m-d', strtotime($employment['tarikh_lapor_diri'])) ?>" />
+						<?
+						if ($employment['tarikh_lapor_diri']) {
+							$tarikh_lapor_diri =  date('Y-m-d', strtotime($employment['tarikh_lapor_diri']));
+						} else {
+							$tarikh_lapor_diri = '';
+						}
+						?>
+						<input type="date" name="tarikh_lapor_diri" class="form-control form-control-lg" placeholder="Nama" value="<?= $tarikh_lapor_diri?>" />
 					</div>
 					<!--end::Col-->
 				</div>
@@ -106,7 +178,14 @@
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8 fv-row">
-						<input type="date" name="tarikh_basik1" class="form-control form-control-lg" placeholder="Nama" value="<?= date('Y-m-d', strtotime($employment['tarikh_basik1'])) ?>" />
+						<?
+						if ($employment['tarikh_basik1']) {
+							$tarikh_basik1 =  date('Y-m-d', strtotime($employment['tarikh_basik1']));
+						} else {
+							$tarikh_basik1 = '';
+						}
+						?>
+						<input type="date" name="tarikh_basik1" class="form-control form-control-lg" placeholder="Nama" value="<?=$tarikh_basik1?>" />
 					</div>
 					<!--end::Col-->
 				</div>
@@ -126,7 +205,14 @@
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8 fv-row">
-						<input type="date" name="tarikh_basik2" class="form-control form-control-lg" placeholder="Tarikh" value="<?= date('Y-m-d', strtotime($employment['tarikh_basik2'])) ?>" />
+						<?
+						if ($employment['tarikh_basik2']) {
+							$tarikh_basik2 =  date('Y-m-d', strtotime($employment['tarikh_basik2']));
+						} else {
+							$tarikh_basik2 = '';
+						}
+						?>
+						<input type="date" name="tarikh_basik2" class="form-control form-control-lg" placeholder="Tarikh" value="<?=$tarikh_basik2?>" />
 					</div>
 					<!--end::Col-->
 				</div>
@@ -146,7 +232,14 @@
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8 fv-row">
-						<input type="date" name="tarikh_basik3" class="form-control form-control-lg" placeholder="Nama" value="<?= date('Y-m-d', strtotime($employment['tarikh_basik3'])) ?>" />
+						<?
+						if ($employment['tarikh_basik3']) {
+							$tarikh_basik3 =  date('Y-m-d', strtotime($employment['tarikh_basik3']));
+						} else {
+							$tarikh_basik3 = '';
+						}
+						?>
+						<input type="date" name="tarikh_basik3" class="form-control form-control-lg" placeholder="Nama" value="<?=$tarikh_basik3?>" />
 					</div>
 					<!--end::Col-->
 				</div>
@@ -170,7 +263,14 @@
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8 fv-row">
-						<input type="date" name="tarikh_credential" class="form-control form-control-lg" placeholder="Tarikh Credential" value="<?= date('Y-m-d', strtotime($employment['tarikh_credential'])) ?>" />
+						<?
+						if ($employment['tarikh_credential']) {
+							$tarikh_credential =  date('Y-m-d', strtotime($employment['tarikh_credential']));
+						} else {
+							$tarikh_credential = '';
+						}
+						?>
+						<input type="date" name="tarikh_credential" class="form-control form-control-lg" placeholder="Tarikh Credential" value="<?=$tarikh_credential?>" />
 					</div>
 					<!--end::Col-->
 				</div>
@@ -193,10 +293,24 @@
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-4 fv-row">
-						<input type="date" name="tarikh_privilege_start" class="form-control form-control-lg" placeholder="Tarikh Mula" value="<?= date('Y-m-d', strtotime($employment['tarikh_privilege_start'])) ?>" />
+						<?
+						if ($employment['tarikh_privilege_start']) {
+							$tarikh_privilege_start =  date('Y-m-d', strtotime($employment['tarikh_privilege_start']));
+						} else {
+							$tarikh_privilege_start = '';
+						}
+						?>
+						<input type="date" name="tarikh_privilege_start" class="form-control form-control-lg" placeholder="Tarikh Mula" value="<?=$tarikh_privilege_start?>" />
 					</div>
 					<div class="col-lg-4 fv-row">
-						<input type="date" name="tarikh_privilege_end" class="form-control form-control-lg" placeholder="Tarikh Tamat" value="<?= date('Y-m-d', strtotime($employment['tarikh_privilege_end'])) ?>" />
+						<?
+						if ($employment['tarikh_privilege_end']) {
+							$tarikh_privilege_end =  date('Y-m-d', strtotime($employment['tarikh_privilege_end']));
+						} else {
+							$tarikh_privilege_end = '';
+						}
+						?>
+						<input type="date" name="tarikh_privilege_end" class="form-control form-control-lg" placeholder="Tarikh Tamat" value="<?=$tarikh_privilege_end?>" />
 					</div>
 					<!--end::Col-->
 				</div>

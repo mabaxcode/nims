@@ -2,7 +2,7 @@
 <html lang="en">
 	<!--begin::Head-->
 	<head>
-		<title>NIMS</title>
+		<title>Nurse Information System</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="The most advanced Tailwind CSS & Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
 		<meta name="keywords" content="tailwind, tailwindcss, metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap ontactboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
@@ -227,11 +227,12 @@
 						<!--begin::Logo-->
 						<div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
 							<!--begin::Logo image-->
-							<a href="<?= base_url('app'); ?>">
+							<!-- <a href="<?= base_url('app'); ?>">
 								<img alt="Logo" src="<?= base_url(); ?>assets/media/logos/default-dark.svg" class="h-25px app-sidebar-logo-default" />
 								<img alt="Logo" src="<?= base_url(); ?>assets/media/logos/default-small.svg" class="h-20px app-sidebar-logo-minimize" />
-							</a>
+							</a> -->
 							<!--end::Sidebar toggle-->
+							<h5 class="text-muted">Nurse Information System</h5>
 						</div>
 						<!--end::Logo-->
 						<!--begin::sidebar menu-->
@@ -4853,31 +4854,37 @@
                     },
                     {
                         data: 'name',
-                        // width: "10%",
+                        width: "30%",
                         searchable: false,
                         orderable: false
                     },
                     {
                         data: 'email',
-                        width: "10%",
+                        width: "15%",
                         searchable: false,
                         orderable: false
                     },
                     {
                         data: 'phone_no',
-                        // width: "15%",
+                        width: "13%",
                         searchable: false,
                         orderable: false
                     },
                     {
                         data: 'no_kp',
-                        width: "5%",
+                        // width: "5%",
+                        searchable: false,
+                        orderable: false
+                    },
+                    {
+                        data: 'gred',
+                        // width: "5%",
                         searchable: false,
                         orderable: false
                     },
                     {
                         data: 'action',
-                        width: "11%",
+                        // width: "11%",
                         searchable: false,
                         orderable: false
                     },

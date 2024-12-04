@@ -55,10 +55,10 @@ class App extends CI_Controller {
 
 		if ($check == true) {
 			$where = array('user_id' => $this->user_id);
-			$update = array('no_ic' => $post['no_ic'], 'umur' => $post['umur'], 'bangsa' => $post['bangsa'], 'status' => '1');
+			$update = array('umur' => $post['umur'], 'bangsa' => $post['bangsa'], 'status' => '1');
 			update_any_table($update, $where, 'personal_info');
 		} else {
-			$insert = array('no_ic' => $post['no_ic'], 'umur' => $post['umur'], 'bangsa' => $post['bangsa'], 'status' => '1', 'user_id' => $this->user_id);
+			$insert = array('umur' => $post['umur'], 'bangsa' => $post['bangsa'], 'status' => '1', 'user_id' => $this->user_id);
 			insert_any_table($insert, 'personal_info');
 		}
 
@@ -114,6 +114,8 @@ class App extends CI_Controller {
 				'tarikh_credential' => $post['tarikh_credential'],
 				'tarikh_privilege_end' => $post['tarikh_privilege_end'],
 				'status' => '1',
+				'jawatan' => $post['jawatan'],
+				'gred' => $post['gred'],
 			);
 			update_any_table($update, $where, 'employment_info');
 

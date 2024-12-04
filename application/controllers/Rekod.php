@@ -45,13 +45,16 @@ class Rekod extends CI_Controller {
 			// $action = "<button class=\"btn btn-primary btn-sm cancel-app\">CANCEL</button>";
 			//$action = "<button class=\"btn btn-primary btn-sm cancel-app\" data-formid=\"$form_id\">CANCEL</button>";
 
+			$gredDesc = get_ref_code('gred', $key['gred']);
+
 			#Final Data
 				$aaData[] = array(
 					'no'		=>	$no++, 
-					'name'	=>	$key['name'], 
+					'name'	=>	$key['name'] . "<br><span class='badge badge-primary'>".$key['no_ljm']."</span>", 
 					'email'		=>	$key['email'],
 					'phone_no'		=>	$key['phone_no'], 
 					'no_kp'	=>	$key['no_kp'],
+					'gred' => $gredDesc,
 					'action'		=>	'', 
 				);
 				

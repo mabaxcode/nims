@@ -210,7 +210,7 @@
 								<span class="path2"></span>
 							</i>
 						</span>
-						<span class="menu-title">Laporan</span>
+						<span class="menu-title">Rekod</span>
 					</a>
 					<!--end:Menu link-->
 				</div>

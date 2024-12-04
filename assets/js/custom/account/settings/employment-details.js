@@ -18,6 +18,20 @@ function validateMaklumatKerja(formID)
                     }
                 }
             },
+            jawatan: {
+                validators: {
+                    notEmpty: {
+                        message: "Sila pilih jawatan"
+                    }
+                }
+            },
+            gred: {
+                validators: {
+                    notEmpty: {
+                        message: "Sila pilih gred"
+                    }
+                }
+            },
             tarikh_lantikan: {
                 validators: {
                     notEmpty: {
