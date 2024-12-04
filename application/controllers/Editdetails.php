@@ -110,6 +110,8 @@ class Editdetails extends CI_Controller {
 				'tarikh_credential' => $post['tarikh_credential'],
 				'tarikh_privilege_end' => $post['tarikh_privilege_end'],
 				'status' => '1',
+				'jawatan' => $post['jawatan'],
+				'gred' => $post['gred'],
 			);
 			update_any_table($update, $where, 'employment_info');
 
@@ -134,6 +136,8 @@ class Editdetails extends CI_Controller {
 				'tarikh_credential' => $post['tarikh_credential'],
 				'tarikh_privilege_end' => $post['tarikh_privilege_end'],
 				'status' => '1',
+				'jawatan' => $post['jawatan'],
+				'gred' => $post['gred'],
 			);
 
 			// echo "<pre>"; print_r($insert); exit;

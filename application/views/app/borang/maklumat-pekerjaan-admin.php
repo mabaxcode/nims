@@ -39,6 +39,47 @@
 					</div>
 					<!--end::Col-->
 				</div>
+
+				<div class="row mb-6">
+					<!--begin::Label-->
+					<label class="col-lg-4 col-form-label fw-semibold fs-6">
+						<span class="required">Jawatan</span>
+					</label>
+					<!--end::Label-->
+					<!--begin::Col-->
+					<div class="col-lg-8 fv-row">
+						<select name="jawatan" aria-label="Select a Country" data-control="select2" data-placeholder="Pilih jawatan..." class="form-select form-select-lg fw-semibold">
+							<option value="">Pilih jawatan...</option>
+							<? $allJawatan = get_any_table_array(array('module' => 'jawatan'), 'ref_code'); ?>
+							<? foreach ($allJawatan as $jawatan) { ?>
+							<option data-kt-flag="" <? if($jawatan['code'] == $employment['jawatan']){echo "selected";} ?> value="<?= $jawatan['code']?>"><?= $jawatan['code_desc']?></option>
+							<? } ?>
+							
+						</select>
+					</div>
+					<!--end::Col-->
+				</div>
+
+				<div class="row mb-6">
+					<!--begin::Label-->
+					<label class="col-lg-4 col-form-label fw-semibold fs-6">
+						<span class="required">Gred</span>
+					</label>
+					<!--end::Label-->
+					<!--begin::Col-->
+					<div class="col-lg-8 fv-row">
+						<select name="gred" aria-label="Select a Country" data-control="select2" data-placeholder="Pilih gred..." class="form-select form-select-lg fw-semibold">
+							<option value="">Pilih gred...</option>
+							<? $allGred = get_any_table_array(array('module' => 'gred'), 'ref_code'); ?>
+							<? foreach ($allGred as $gred) { ?>
+							<option data-kt-flag="" <? if($gred['code'] == $employment['gred']){echo "selected";} ?> value="<?= $gred['code']?>"><?= $gred['code_desc']?></option>
+							<? } ?>
+							
+						</select>
+					</div>
+					<!--end::Col-->
+				</div>
+				
 				<!--end::Input group-->
 				<!--begin::Input group-->
 				<div class="row mb-6">
