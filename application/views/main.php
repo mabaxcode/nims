@@ -41,7 +41,7 @@ License: For each use you must have a valid license purchased only from above li
 		<!--begin::Root-->
 		<div class="d-flex flex-column flex-root" id="kt_app_root">
 			<!--begin::Page bg image-->
-			<style>body { background-image: url('<?= base_url(); ?>assets/media/auth/bg4.jpg'); } [data-bs-theme="dark"] body { background-image: url('<?= base_url(); ?>assets/media/auth/bg4-dark.jpg'); }</style>
+			<style>body { background-image: url('<?= base_url(); ?>assets/media/auth/bg1.jpg'); } [data-bs-theme="dark"] body { background-image: url('<?= base_url(); ?>assets/media/auth/bg4-dark.jpg'); }</style>
 			<!--end::Page bg image-->
 			<!--begin::Authentication - Sign-in -->
 			<div class="d-flex flex-column flex-column-fluid flex-lg-row">
@@ -50,12 +50,12 @@ License: For each use you must have a valid license purchased only from above li
 					<!--begin::Aside-->
 					<div class="d-flex flex-center flex-lg-start flex-column">
 						<!--begin::Logo-->
-						<a href="index.html" class="mb-7">
-							<!-- <img alt="Logo" src="<?= base_url(); ?>assets/media/logos/custom-3.svg" /> -->
+						<a href="javascript:void(0);" class="mb-0">
+							<img alt="Logo" src="<?= base_url(); ?>assets/media/logos/logo-new.png" width="200px" />
 						</a>
 						<!--end::Logo-->
 						<!--begin::Title-->
-						<h2 class="text-white fw-normal m-0"><b>Nurse Information Management System</b></h2>
+						<h1 class="text-white fw-normal m-10"><b>Nurse Information Management System</b></h1>
 						<!--end::Title-->
 					</div>
 					<!--begin::Aside-->
@@ -73,7 +73,9 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Heading-->
 								<div class="text-center mb-11">
 									<!--begin::Title-->
-									<h1 class="text-gray-900 fw-bolder mb-3">Sign In</h1>
+									<img alt="Logo" src="<?= base_url(); ?>assets/media/logos/logo-new.png" width="100px" />
+									<h1 class="text-gray-900 fw-bolder mb-3">Log Masuk</h1>
+									<!-- <div class="text-gray-500 fw-semibold fs-6">Nurse Information Management System</div> -->
 									<!--end::Title-->
 									<!--begin::Subtitle-->
 									<!--end::Subtitle=-->
@@ -93,13 +95,13 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Input group=-->
 								<div class="fv-row mb-8">
 									<!--begin::Email-->
-									<input type="text" placeholder="IC No" name="no_kp" autocomplete="off" class="form-control bg-transparent" />
+									<input type="text" placeholder="Nombor Kad Pengenalan" name="no_kp" autocomplete="off" class="form-control bg-transparent" />
 									<!--end::Email-->
 								</div>
 								<!--end::Input group=-->
 								<div class="fv-row mb-3">
 									<!--begin::Password-->
-									<input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control bg-transparent" />
+									<input type="password" placeholder="Kata Laluan" name="password" autocomplete="off" class="form-control bg-transparent" />
 									<!--end::Password-->
 								</div>
 								<!--end::Input group=-->
@@ -108,7 +110,7 @@ License: For each use you must have a valid license purchased only from above li
 								<div class="d-grid mb-10">
 									<button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
 										<!--begin::Indicator label-->
-										<span class="indicator-label">Sign In</span>
+										<span class="indicator-label">Log Masuk</span>
 										<!--end::Indicator label-->
 										<!--begin::Indicator progress-->
 										<span class="indicator-progress">Please wait... 
@@ -118,8 +120,8 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--end::Submit button-->
 								<!--begin::Sign up-->
-								<div class="text-gray-500 text-center fw-semibold fs-6">Not have account yet? 
-								<a href="<?=base_url('main/createAccount')?>" class="link-primary">Create account</a></div>
+								<div class="text-gray-500 text-center fw-semibold fs-6">Daftar akaun baru 
+								<a href="<?=base_url('main/createAccount')?>" class="link-primary">Daftar Akaun</a></div>
 								<!--end::Sign up-->
 							</form>
 							<!--end::Form-->

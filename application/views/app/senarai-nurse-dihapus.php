@@ -227,10 +227,10 @@
 						<!--begin::Logo-->
 						<div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
 							<!--begin::Logo image-->
-							<!-- <a href="<?= base_url('app'); ?>">
-								<img alt="Logo" src="<?= base_url(); ?>assets/media/logos/default-dark.svg" class="h-25px app-sidebar-logo-default" />
-								<img alt="Logo" src="<?= base_url(); ?>assets/media/logos/default-small.svg" class="h-20px app-sidebar-logo-minimize" />
-							</a> -->
+							<a href="<?= base_url('app'); ?>">
+								<img alt="Logo" src="<?= base_url(); ?>assets/media/logos/logo-new.png" class="h-25px app-sidebar-logo-default" />
+								<img alt="Logo" src="<?= base_url(); ?>assets/media/logos/logo-new.png" class="h-20px app-sidebar-logo-minimize" />
+							</a>
 							<h5 class="text-muted">Nurse Information System</h5>
 							<!--end::Sidebar toggle-->
 						</div>

@@ -245,7 +245,7 @@
 					<!--begin::Main-->
 					<div class="app-main flex-column flex-row-fluid" id="kt_app_main">
 						<!--begin::Content wrapper-->
-						<? $this->load->view('app/table-senarai-semua-nurse'); ?>
+						<? $this->load->view('app/table-senarai-semua-sister'); ?>
 						<!--end::Content wrapper-->
 						<!--begin::Footer-->
 						<? $this->load->view('app/footer'); ?>
@@ -4807,7 +4807,8 @@
 		<!--begin::Custom Javascript(used for this page only)-->
 		<script src="<?= base_url(); ?>assets/js/custom/apps/user-management/users/list/table.js"></script>
 		<script src="<?= base_url(); ?>assets/js/custom/apps/user-management/users/list/export-users.js"></script>
-		<script src="<?= base_url(); ?>assets/js/custom/apps/user-management/users/list/add.js"></script>
+		<script src="<?= base_url(); ?>assets/js/custom/apps/user-management/users/list/add-sister.js"></script>
+		<script src="<?= base_url(); ?>assets/js/custom/apps/user-management/users/list/pindah-wad.js"></script>
 		<script src="<?= base_url(); ?>assets/js/widgets.bundle.js"></script>
 		<script src="<?= base_url(); ?>assets/js/custom/widgets.js"></script>
 		<script src="<?= base_url(); ?>assets/js/custom/apps/chat/chat.js"></script>
@@ -4817,7 +4818,27 @@
 		<!--end::Custom Javascript-->
 		<!--end::Javascript-->
 
+		<div class="modal fade" id="modal_settting_sister" tabindex="-1" aria-hidden="true">
+
 		<script type="text/javascript">
+
+			$(document).on('click', '.tukar-wad', function(e){
+				var id = $(this).data('init');
+			    e.preventDefault();
+			    $.ajax({
+			        url: base_url + 'setting/tukarWad',
+			        type: "POST",
+			        data: {id:id},
+			        async: true,
+			        success: function( response ){
+			            $('#modal_settting_sister').html(response);
+			            $('#modal_settting_sister').modal('show');
+			        },
+			        error: function(data){
+			            // console.log(data);
+			        },
+			    });
+			});
 			
 			$(document).on('click', '.state-to-inactive', function(e){
 			    var id = $(this).data('init');
