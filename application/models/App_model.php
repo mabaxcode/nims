@@ -14,6 +14,7 @@ class App_model extends CI_Model {
     {
         $this->db->select('*');
         $this->db->where_in('role',['2','3']);
+        $this->db->where('active', '1');
         $query = $this->db->get($this->user_accounts);
 
         if ($query->num_rows() > 0) {
@@ -34,6 +35,20 @@ class App_model extends CI_Model {
         } else {
             return false;
         }
-    }    
+    }  
+
+    function get_all_hapus_nurse()
+    {
+        $this->db->select('*');
+        $this->db->where_in('role',['2','3']);
+        $this->db->where('active', '0');
+        $query = $this->db->get($this->user_accounts);
+
+        if ($query->num_rows() > 0) {
+            return $query->result_array();
+        } else {
+            return false;
+        }
+    }  
 
 }

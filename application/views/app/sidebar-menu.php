@@ -245,11 +245,11 @@
 					</span>
 					<!--end:Menu link-->
 					<!--begin:Menu sub-->
-					<div class="menu-sub menu-sub-accordion <? if($this->uri->segment(1) == 'senaraijururawat'){echo "show active";} ?>">
+					<div class="menu-sub menu-sub-accordion <? if($this->uri->segment(1) == 'senaraijururawat' || $this->uri->segment(2) == 'hapus'){echo "show active";} ?>">
 						<!--begin:Menu item-->
 						<div class="menu-item">
 							<!--begin:Menu link-->
-							<a class="menu-link <? if($this->uri->segment(1) == 'senaraijururawat'){echo "active";} ?>" href="<?= base_url('senaraijururawat')?>">
+							<a class="menu-link <? if($this->uri->segment(1) == 'senaraijururawat' && $this->uri->segment(2) <> 'hapus'){echo "active";} ?>" href="<?= base_url('senaraijururawat')?>">
 								<span class="menu-bullet">
 									<span class="bullet bullet-dot"></span>
 								</span>
@@ -261,11 +261,11 @@
 						<!--begin:Menu item-->
 						<div class="menu-item">
 							<!--begin:Menu link-->
-							<a class="menu-link" href="<?=base_url()?>">
+							<a class="menu-link <? if($this->uri->segment(2) == 'hapus'){echo "active";} ?> " href="<?= base_url('senaraijururawat/hapus')?>">
 								<span class="menu-bullet">
 									<span class="bullet bullet-dot"></span>
 								</span>
-								<span class="menu-title">Senarai Pengguna Dihapus</span>
+								<span class="menu-title">Pengguna Dihapus</span>
 							</a>
 							<!--end:Menu link-->
 						</div>

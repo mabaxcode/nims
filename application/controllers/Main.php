@@ -63,6 +63,12 @@ class Main extends CI_Controller {
 
 		} else {
 
+			if ($user_login['active'] == '0') {
+				// code...
+				$this->session->set_flashdata('info', 'Akaun tidak aktif, hubungi admin untuk aktifkan akaun');
+				redirect();
+			}
+
 			$sess_data = array(
 				'user_id' 	=> $user_login['id'],
 				'name' 	  	=> $user_login['name'],
@@ -107,7 +113,7 @@ class Main extends CI_Controller {
 				'password' 	 => md5($data['password']),
 				'created_at' => current_date(),
 				'active' 	 => '1',
-				'role' 		 => '3'
+				'role' 		 => '3',
 			);
 
 			$insert = $this->DbMain->insert_users_table('user_accounts', $data_insert);

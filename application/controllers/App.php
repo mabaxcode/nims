@@ -209,7 +209,8 @@ class App extends CI_Controller {
 			'role' => $post['role'],
 			'email' => $post['email'],
 			'phone_no' => $post['phone_no'],
-			'password' => md5($post['password'])
+			'password' => md5($post['password']),
+			'active' => '1',
 		);
 
 		insert_any_table($insert, 'user_accounts');

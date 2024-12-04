@@ -14,6 +14,7 @@ class Rekod_model extends CI_Model {
     {
         $this->db->select('*');
         $this->db->where('complete', 'Y');
+        $this->db->where('status', '1');
         $this->db->where_in('role',['2','3']);
         $query = $this->db->get($this->user_accounts);
 
@@ -56,6 +57,7 @@ class Rekod_model extends CI_Model {
         $this->db->from('user_accounts');
         $this->db->join('employment_info', 'user_accounts.id = employment_info.user_id');
         $this->db->where('user_accounts.complete', 'Y');
+        $this->db->where('user_accounts.active', '1');
         $this->db->where_in('role',['2','3']);
         //$this->db->where('user_accounts.job_status', 'A');
         // $this->db->order_by('user_accounts.create_dt', 'DESC');

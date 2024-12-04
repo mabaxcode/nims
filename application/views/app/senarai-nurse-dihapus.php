@@ -245,7 +245,7 @@
 					<!--begin::Main-->
 					<div class="app-main flex-column flex-row-fluid" id="kt_app_main">
 						<!--begin::Content wrapper-->
-						<? $this->load->view('app/table-senarai-semua-nurse'); ?>
+						<? $this->load->view('app/table-senarai-nurse-dihapus'); ?>
 						<!--end::Content wrapper-->
 						<!--begin::Footer-->
 						<? $this->load->view('app/footer'); ?>
@@ -4819,17 +4819,17 @@
 
 		<script type="text/javascript">
 			
-			$(document).on('click', '.state-to-inactive', function(e){
+			$(document).on('click', '.akifkan-pengguna', function(e){
 			    var id = $(this).data('init');
 			    e.preventDefault();
 			    Swal.fire({
 			      // title: "Are you sure?",
-			      text: "Hapuskan Pengguna ?",
+			      text: "Aktifkan Pengguna ?",
 			      icon: "warning",
 			      showCancelButton: true,
 			      confirmButtonColor: "#3085d6",
 			      cancelButtonColor: "#d33",
-			      confirmButtonText: "Hapuskan"
+			      confirmButtonText: "Aktifkan"
 			    }).then((result) => {
 			      if (result.isConfirmed) {
 			        // Swal.fire({
@@ -4838,7 +4838,7 @@
 			        //   icon: "success"
 			        // });
 			        $.ajax({
-			            url: base_url + 'senaraijururawat/hapusPengguna',
+			            url: base_url + 'senaraijururawat/aktifkanPengguna',
 			            type: "POST",
 			            data: {id:id},
 			            async: true,
