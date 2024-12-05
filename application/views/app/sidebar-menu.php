@@ -379,6 +379,21 @@
 				<div class="menu-item">
 					<!--begin:Menu link-->
 					<?/*<a class="menu-link <? if($this->uri->segment(1) == 'rekod'){echo "active";} ?>" href="<?= base_url('rekod')?>"> */?>
+					<a class="menu-link <? if($this->uri->segment(2) == 'wad'){echo "active";} ?>" href="<?= base_url('setting/wad')?>">
+						<span class="menu-icon">
+							<i class="ki-duotone ki-abstract-26 fs-2">
+								<span class="path1"></span>
+								<span class="path2"></span>
+							</i>
+						</span>
+						<span class="menu-title">Wad</span>
+					</a>
+					<!--end:Menu link-->
+				</div>
+
+				<div class="menu-item">
+					<!--begin:Menu link-->
+					<?/*<a class="menu-link <? if($this->uri->segment(1) == 'rekod'){echo "active";} ?>" href="<?= base_url('rekod')?>"> */?>
 					<a class="menu-link <? if($this->uri->segment(2) == 'jawatan'){echo "active";} ?>" href="<?= base_url('setting/jawatan')?>">
 						<span class="menu-icon">
 							<i class="ki-duotone ki-abstract-26 fs-2">

@@ -245,7 +245,7 @@
 					<!--begin::Main-->
 					<div class="app-main flex-column flex-row-fluid" id="kt_app_main">
 						<!--begin::Content wrapper-->
-						<? $this->load->view('app/table-senarai-semua-gred'); ?>
+						<? $this->load->view('app/table-senarai-semua-wad'); ?>
 						<!--end::Content wrapper-->
 						<!--begin::Footer-->
 						<? $this->load->view('app/footer'); ?>
@@ -4808,7 +4808,7 @@
 		<script src="<?= base_url(); ?>assets/js/custom/apps/user-management/users/list/list-setting.js"></script>
 		<script src="<?= base_url(); ?>assets/js/custom/apps/user-management/users/list/export-users.js"></script>
 		<script src="<?= base_url(); ?>assets/js/custom/apps/user-management/users/list/jawatan.js"></script>
-		<script src="<?= base_url(); ?>assets/js/custom/apps/user-management/users/list/add-gred.js"></script>
+		<script src="<?= base_url(); ?>assets/js/custom/apps/user-management/users/list/add-wad.js"></script>
 		<script src="<?= base_url(); ?>assets/js/widgets.bundle.js"></script>
 		<script src="<?= base_url(); ?>assets/js/custom/widgets.js"></script>
 		<script src="<?= base_url(); ?>assets/js/custom/apps/chat/chat.js"></script>
@@ -4822,11 +4822,11 @@
 
 		<script type="text/javascript">
 
-			$(document).on('click', '.edit-gred', function(e){
+			$(document).on('click', '.edit-wad', function(e){
 				var id = $(this).data('init');
 			    e.preventDefault();
 			    $.ajax({
-			        url: base_url + 'setting/editGred',
+			        url: base_url + 'setting/editWad',
 			        type: "POST",
 			        data: {id:id},
 			        async: true,
@@ -4840,12 +4840,12 @@
 			    });
 			});
 			
-			$(document).on('click', '.hapus-gred', function(e){
+			$(document).on('click', '.hapus-wad', function(e){
 			    var id = $(this).data('init');
 			    e.preventDefault();
 			    Swal.fire({
 			      // title: "Are you sure?",
-			      text: "Hapuskan Gred ?",
+			      text: "Hapuskan Wad ?",
 			      icon: "warning",
 			      showCancelButton: true,
 			      confirmButtonColor: "#3085d6",
@@ -4859,7 +4859,7 @@
 			        //   icon: "success"
 			        // });
 			        $.ajax({
-			            url: base_url + 'setting/hapusGred',
+			            url: base_url + 'setting/hapusWad',
 			            type: "POST",
 			            data: {id:id},
 			            async: true,

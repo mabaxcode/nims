@@ -109,6 +109,18 @@ class Setting extends CI_Controller {
 		$this->load->view('app/modal-edit-ref-code', $data);
 	}
 
+	function editWad($data=false)
+	{
+		$id = $this->input->post('id');
+
+		$data['ref_data'] = get_any_table_row(array('id' => $id, 'module' => 'wad'), 'ref_code');
+
+		$data['label'] = "Wad";
+
+
+		$this->load->view('app/modal-edit-ref-code', $data);
+	}
+
 	function doTukarWad($data=false)
 	{
 		$post = $this->input->post();
@@ -142,6 +154,12 @@ class Setting extends CI_Controller {
 	{	
 		$data['gred'] = get_any_table_array(array('module' => 'gred'), 'ref_code');
 		$this->load->view('app/senarai-semua-gred', $data);
+	}
+
+	function wad($data=false)
+	{	
+		$data['wad'] = get_any_table_array(array('module' => 'wad'), 'ref_code');
+		$this->load->view('app/senarai-semua-wad', $data);
 	}
 
 	function doEditRefCode($data=false)
@@ -195,6 +213,26 @@ class Setting extends CI_Controller {
 		}
 	}
 
+	function addNewWad($data=false)
+	{
+		$post = $this->input->post();
+
+		// echo "<pre>"; print_r($post); echo "</pre>";
+
+		$code_id = get_keytab_value('wad');
+
+		$insert_data = array('module' => 'wad', 'code' => $code_id, 'code_desc' => strtoupper($post['name']));
+
+		$insert_process = insert_any_table($insert_data, 'ref_code');
+
+		if ($insert_process == true) {
+			// code...
+			echo encode(array('status' => true, 'msg' => 'Wad Telah Berjaya Ditambah !'));
+		} else {
+			echo encode(array('status' => true, 'msg' => 'Gagal Untuk Menambah Wad !'));
+		}
+	}
+
 	function hapusJawatan($data=false)
 	{
 		$delete = delete_any_table(array('id' => $this->input->post('id'), 'module' => 'jawatan'), 'ref_code');
@@ -234,6 +272,18 @@ class Setting extends CI_Controller {
 			echo encode(array('status' => true, 'msg' => 'Gred Telah Berjaya Dihapus !'));
 		} else {
 			echo encode(array('status' => true, 'msg' => 'Gagal Untuk Menghapus Gred !'));
+		}
+	}
+
+	function hapusWad($data=false)
+	{
+		$delete = delete_any_table(array('id' => $this->input->post('id'), 'module' => 'wad'), 'ref_code');
+
+		if ($delete == true) {
+			// code...
+			echo encode(array('status' => true, 'msg' => 'Wad Telah Berjaya Dihapus !'));
+		} else {
+			echo encode(array('status' => true, 'msg' => 'Gagal Untuk Menghapus Wad !'));
 		}
 	}
 }
