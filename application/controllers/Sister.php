@@ -35,8 +35,22 @@ class Sister extends CI_Controller {
 
 		$data['total_nurse_selian'] = count_any_table(array('wad' => $sister['wad_id']), 'employment_info');
 
-		$data['nurse_list'] = get_any_table_array(array('wad' => $sister['wad_id']), 'employment_info');
+		$data['nurse_list'] = get_any_table_array(array('wad' => $sister['wad_id'], 'user_id !=' => $data['user']['id']), 'employment_info');
 
 		$this->load->view('app/senarai-semua-selian', $data);
+	}
+
+	function viewNurseDetails($data=false)
+	{	
+		$user_id = $this->input->post('id');
+
+		$data['user_accounts'] = get_any_table_row(array('id' => $user_id), 'user_accounts');
+
+		$data['personal_info'] = get_any_table_row(array('user_id' => $user_id), 'personal_info');
+
+		$data['employment_info'] = get_any_table_row(array('user_id' => $user_id), 'employment_info');
+
+
+		$this->load->view('app/modal-nurse-details', $data);	
 	}
 }

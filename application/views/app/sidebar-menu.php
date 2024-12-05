@@ -42,7 +42,7 @@
 								<span class="path2"></span>
 							</i>
 						</span>
-						<span class="menu-title">Wad Selian</span>
+						<span class="menu-title">Wad Seliaan</span>
 					</a>
 					<!--end:Menu link-->
 				</div>

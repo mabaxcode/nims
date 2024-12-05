@@ -4817,6 +4817,8 @@
 		<!--end::Custom Javascript-->
 		<!--end::Javascript-->
 
+		<div class="modal bg-body fade" tabindex="-1" id="modal_view_nurse_detail"></div>
+
 		<script type="text/javascript">
 			
 			$(document).on('click', '.state-to-inactive', function(e){
@@ -4884,8 +4886,31 @@
 			    //     },
 			    // });
 			});
+
+
+			
+			$(document).on('click', '.view-nurse-details', function(e){
+				var id = $(this).data('init');
+			    e.preventDefault();
+			    $.ajax({
+			        url: base_url + 'sister/viewNurseDetails',
+			        type: "POST",
+			        data: {id:id},
+			        async: true,
+			        success: function( response ){
+			            $('#modal_view_nurse_detail').html(response);
+			            $('#modal_view_nurse_detail').modal('show');
+			        },
+			        error: function(data){
+			            // console.log(data);
+			        },
+			    });
+			});
+
+
 		</script>
 
+		
 
 	</body>
 	<!--end::Body-->

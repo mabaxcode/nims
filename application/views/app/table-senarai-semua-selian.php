@@ -6,7 +6,7 @@
 									<!--begin::Page title-->
 									<div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
 										<!--begin::Title-->
-										<h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">Maklumat Wad Selian</h1>
+										<h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">Maklumat Wad Seliaan</h1>
 										<!--end::Title-->
 										<!--begin::Breadcrumb-->
 										<ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -21,7 +21,7 @@
 											</li>
 											<!--end::Item-->
 											<!--begin::Item-->
-											<li class="breadcrumb-item text-muted">Maklumat Wad Selian</li>
+											<li class="breadcrumb-item text-muted">Maklumat Wad Seliaan</li>
 											<!--end::Item-->
 										</ul>
 										<!--end::Breadcrumb-->
@@ -369,7 +369,7 @@
 											<ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-semibold mb-8">
 												<!--begin:::Tab item-->
 												<li class="nav-item">
-													<a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab" href="#kt_user_view_overview_tab">Senarai Nurse Dalam Wad Selian</a>
+													<a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab" href="#kt_user_view_overview_tab">Senarai Nurse Dalam Wad Seliaan</a>
 												</li>
 												<!--end:::Tab item-->
 												<!--begin:::Tab item-->
@@ -535,7 +535,7 @@
 									                                    </td>
 									                                    
 									                                    <td class="text-end">
-									                                        <a href="#" class="btn btn-light btn-active-light-primary btn-flex btn-center btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">View
+									                                        <a href="javascript:void(0);" class="btn btn-light btn-active-light-primary btn-flex btn-center btn-sm view-nurse-details" data-init="<?=$employment['user_id']?>">View
 									                                        <!--end::Menu-->
 									                                    </td>
 									                                </tr>

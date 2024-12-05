@@ -98,7 +98,7 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<div class="fv-row mb-8">
 									<!--begin::Email-->
-									<input type="text" placeholder="Nombor Kad Pengenalan" name="no_kp" autocomplete="off" class="form-control bg-transparent" />
+									<input type="text" maxlength="12" placeholder="Nombor Kad Pengenalan" name="no_kp" autocomplete="off" class="form-control bg-transparent" />
 									<!--end::Email-->
 								</div>
 								<!--begin::Input group-->
@@ -106,12 +106,29 @@ License: For each use you must have a valid license purchased only from above li
 									<!--begin::Wrapper-->
 									<div class="mb-1">
 										<!--begin::Input wrapper-->
+										<?/*
 										<div class="position-relative mb-3">
 											<input class="form-control bg-transparent" type="password" placeholder="Katalaluan" name="password" autocomplete="off" />
 											<span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
 												<i class="ki-duotone ki-eye-slash fs-2"></i>
 												<i class="ki-duotone ki-eye fs-2 d-none"></i>
 											</span>
+										</div>
+										*/?>
+										<div class="input-group mb-5">
+										    <input type="password" class="form-control bg-transparent" placeholder="Katalaluan" aria-describedby="basic-addon2" name="password" autocomplete="off" id="katalaluan-idd" />
+
+
+										    <!-- <input class="form-control bg-transparent" type="password" placeholder="Katalaluan" name="password" autocomplete="off" /> -->
+
+
+										    <span class="input-group-text" id="basic-addon2-password">
+										        <i class="ki-duotone ki-eye fs-2">
+												 <span class="path1"></span>
+												 <span class="path2"></span>
+												 <span class="path3"></span>
+												</i>
+										    </span>
 										</div>
 										<!--end::Input wrapper-->
 										<!--begin::Meter-->
@@ -130,10 +147,27 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--end::Input group=-->
 								<!--end::Input group=-->
+								<?/*
 								<div class="fv-row mb-8">
 									<!--begin::Repeat Password-->
 									<input placeholder="Sahkan Katalaluan" name="confirm-password" type="password" autocomplete="off" class="form-control bg-transparent" />
 									<!--end::Repeat Password-->
+								</div>
+								*/?>
+								<div class="input-group mb-5">
+								    <input type="password" class="form-control bg-transparent" placeholder="Sahkan Katalaluan" aria-describedby="basic-addon2" name="confirm-password" autocomplete="off" id="sahkan-katalaluan-idd" />
+
+
+								    <!-- <input class="form-control bg-transparent" type="password" placeholder="Katalaluan" name="password" autocomplete="off" /> -->
+
+
+								    <span class="input-group-text" id="basic-addon2-sahkan-password">
+								        <i class="ki-duotone ki-eye fs-2">
+										 <span class="path1"></span>
+										 <span class="path2"></span>
+										 <span class="path3"></span>
+										</i>
+								    </span>
 								</div>
 								<!--end::Input group=-->
 								<!--begin::Accept-->
@@ -182,6 +216,33 @@ License: For each use you must have a valid license purchased only from above li
 		<script src="<?=base_url()?>assets/js/custom/authentication/sign-up/general.js"></script>
 		<!--end::Custom Javascript-->
 		<!--end::Javascript-->
+
+
+		<script type="text/javascript">
+			document.getElementById('basic-addon2-password').addEventListener('click', function () {
+			  const passwordField = document.getElementById('katalaluan-idd');
+			  const currentType = passwordField.type;
+			  
+			  // Toggle the type of the password field between 'password' and 'text'
+			  if (currentType === 'password') {
+			    passwordField.type = 'text';
+			  } else {
+			    passwordField.type = 'password';
+			  }
+			});
+			document.getElementById('basic-addon2-sahkan-password').addEventListener('click', function () {
+			  const passwordFieldSah = document.getElementById('sahkan-katalaluan-idd');
+			  const currentTypeSah = passwordFieldSah.type;
+			  
+			  // Toggle the type of the password field between 'password' and 'text'
+			  if (currentTypeSah === 'password') {
+			    passwordFieldSah.type = 'text';
+			  } else {
+			    passwordFieldSah.type = 'password';
+			  }
+			});
+		</script>
+
 	</body>
 	<!--end::Body-->
 </html>
