@@ -115,7 +115,8 @@ License: For each use you must have a valid license purchased only from above li
 											</span>
 										</div>
 										*/?>
-										<div class="input-group mb-5">
+										<!-- <div class="input-group mb-5"> -->
+										<div class="position-relative mb-3 input-group">
 										    <input type="password" class="form-control bg-transparent" placeholder="Katalaluan" aria-describedby="basic-addon2" name="password" autocomplete="off" id="katalaluan-idd" />
 
 
@@ -154,7 +155,8 @@ License: For each use you must have a valid license purchased only from above li
 									<!--end::Repeat Password-->
 								</div>
 								*/?>
-								<div class="input-group mb-5">
+								<!-- <div class="input-group mb-5"> -->
+								<div class="fv-row mb-8 input-group">
 								    <input type="password" class="form-control bg-transparent" placeholder="Sahkan Katalaluan" aria-describedby="basic-addon2" name="confirm-password" autocomplete="off" id="sahkan-katalaluan-idd" />
 
 
