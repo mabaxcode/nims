@@ -5027,28 +5027,50 @@
 
 
 	$(document).on('click', '.generate-csv-file', function(e){
-
-		var keyword = $('.inpt_data').val(),
-                            "inpt_gred": $('.inpt_gred').val(),
-                            "inpt_jawatan": $('.inpt_jawatan').val(),
-                            "inpt_wad": $('.inpt_wad').val(),
-
 	    e.preventDefault();
-	    $.ajax({
-	        url: base_url + 'sister/viewNurseDetails',
-	        type: "POST",
-	        data: {id:id},
-	        async: true,
-	        success: function( response ){
-	            $('#modal_view_nurse_detail').html(response);
-	            $('#modal_view_nurse_detail').modal('show');
-	        },
-	        error: function(data){
-	            // console.log(data);
-	        },
-	    });
-	});
 
+	    var inpt_data 		= $('.inpt_data').val();
+        var inpt_gred 		= $('.inpt_gred').val();
+        var inpt_jawatan 	= $('.inpt_jawatan').val();
+        var inpt_wad 		= $('.inpt_wad').val();
+
+	    // $.ajax({
+	    //     url: base_url + 'SpreadsheetController/export',
+	    //     type: "POST",
+	    //     data: {inpt_data:inpt_data,inpt_gred:inpt_gred,inpt_jawatan:inpt_jawatan,inpt_wad:inpt_wad},
+	    //     async: true,
+	    //     success: function( response ){
+
+	    //     },
+	    //     error: function(data){
+	    //         // console.log(data);
+	    //     },
+	    // });
+
+	    $.ajax({
+            url: base_url + 'SpreadsheetController/export',
+            method: 'POST',
+            data: {inpt_data:inpt_data,inpt_gred:inpt_gred,inpt_jawatan:inpt_jawatan,inpt_wad:inpt_wad},
+            dataType: 'json',
+            success: function (response) {
+                if (response.file_url) {
+
+                    // Trigger file download
+                    const link = document.createElement('a');
+                    link.href = response.file_url;
+                    link.download = 'rekod.xlsx';
+                    link.click();
+
+                } else {
+                    alert('Failed to generate the file.');
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('AJAX Error:', error);
+            }
+        });
+
+	});
 
 </script>
 	</body>
