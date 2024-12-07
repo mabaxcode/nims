@@ -42,7 +42,7 @@ class Rekod extends CI_Controller {
 			//photo    		= "<img class=\"img-fluid img-thumbnail\" width=\"60\" src=\"$img_path\">";
 			//$company_name 	= get_table_code("company", "account_id", "name", $key['account_id']);
 
-			// $action = "<button class=\"btn btn-primary btn-sm cancel-app\">CANCEL</button>";
+			$action = "<a class=\"btn btn-primary btn-sm view-nurse-details\" data-init=".$key['user_id']." style='float:right;'>View</a>";
 			//$action = "<button class=\"btn btn-primary btn-sm cancel-app\" data-formid=\"$form_id\">CANCEL</button>";
 
 			$gredDesc = get_ref_code('gred', $key['gred']);
@@ -50,12 +50,12 @@ class Rekod extends CI_Controller {
 			#Final Data
 				$aaData[] = array(
 					'no'		=>	$no++, 
-					'name'	=>	$key['name'] . "<br><span class='badge badge-primary'>".$key['no_ljm']."</span>", 
+					'name'		=>	$key['name'] . "<br><span class='badge badge-primary'>".$key['no_ljm']."</span>", 
 					'email'		=>	$key['email'],
 					'phone_no'		=>	$key['phone_no'], 
 					'no_kp'	=>	$key['no_kp'],
 					'gred' => $gredDesc,
-					'action'		=>	'', 
+					'action'		=>	$action, 
 				);
 				
 

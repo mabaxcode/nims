@@ -4817,6 +4817,8 @@
 		<!--end::Custom Javascript-->
 		<!--end::Javascript-->
 
+		<div class="modal bg-body fade" tabindex="-1" id="modal_view_nurse_detail"></div>
+
 		<script>
 
     var table_nurse_complete = $('#rekod-nurse-table');
@@ -4839,6 +4841,8 @@
                         return $.extend({}, d, {
                             "inpt_data": $('.inpt_data').val(),
                             "inpt_gred": $('.inpt_gred').val(),
+                            "inpt_jawatan": $('.inpt_jawatan').val(),
+                            "inpt_wad": $('.inpt_wad').val(),
                         }, qData);
                     },
                     error: function (data, textStatus, xhr) {
@@ -5002,6 +5006,25 @@
 
     // });
     
+
+    $(document).on('click', '.view-nurse-details', function(e){
+		var id = $(this).data('init');
+	    e.preventDefault();
+	    $.ajax({
+	        url: base_url + 'sister/viewNurseDetails',
+	        type: "POST",
+	        data: {id:id},
+	        async: true,
+	        success: function( response ){
+	            $('#modal_view_nurse_detail').html(response);
+	            $('#modal_view_nurse_detail').modal('show');
+	        },
+	        error: function(data){
+	            // console.log(data);
+	        },
+	    });
+	});
+
 
 </script>
 	</body>

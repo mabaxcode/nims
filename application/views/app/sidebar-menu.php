@@ -233,18 +233,20 @@
 					<?/*<a class="menu-link <? if($this->uri->segment(1) == 'rekod'){echo "active";} ?>" href="<?= base_url('rekod')?>"> */?>
 					<a class="menu-link <? if($this->uri->segment(1) == 'rekod'){echo "active";} ?>" href="<?= base_url('rekod')?>">
 						<span class="menu-icon">
-							<i class="ki-duotone ki-abstract-26 fs-2">
-								<span class="path1"></span>
-								<span class="path2"></span>
+							<i class="ki-duotone ki-menu">
+							 <span class="path1"></span>
+							 <span class="path2"></span>
+							 <span class="path3"></span>
+							 <span class="path4"></span>
 							</i>
 						</span>
 						<span class="menu-title">Rekod</span>
 					</a>
 					<!--end:Menu link-->
 				</div>
+				<?/*
 				<div class="menu-item">
 					<!--begin:Menu link-->
-					<?/*<a class="menu-link <? if($this->uri->segment(1) == 'rekod'){echo "active";} ?>" href="<?= base_url('rekod')?>"> */?>
 					<a class="menu-link <? if($this->uri->segment(1) == 'rekod'){echo "active";} ?>" href="<?= base_url('rekod')?>">
 						<span class="menu-icon">
 							<i class="ki-duotone ki-abstract-26 fs-2">
@@ -256,7 +258,7 @@
 					</a>
 					<!--end:Menu link-->
 				</div>
-				<?/*
+				
 				<div class="menu-item">
 					<!--begin:Menu link-->
 					<a class="menu-link <? if($this->uri->segment(1) == 'senaraijururawat'){echo "active";} ?>" href="<?= base_url('senaraijururawat')?>">
@@ -285,9 +287,11 @@
 					<?/*<a class="menu-link <? if($this->uri->segment(1) == 'rekod'){echo "active";} ?>" href="<?= base_url('rekod')?>"> */?>
 					<a class="menu-link <? if($this->uri->segment(1) == 'senaraijururawat' && $this->uri->segment(2) <> 'hapus'){echo "active";} ?>" href="<?= base_url('senaraijururawat')?>">
 						<span class="menu-icon">
-							<i class="ki-duotone ki-abstract-26 fs-2">
-								<span class="path1"></span>
-								<span class="path2"></span>
+							<i class="ki-duotone ki-menu">
+							 <span class="path1"></span>
+							 <span class="path2"></span>
+							 <span class="path3"></span>
+							 <span class="path4"></span>
 							</i>
 						</span>
 						<span class="menu-title">Senarai Pengguna</span>
@@ -300,9 +304,11 @@
 					<?/*<a class="menu-link <? if($this->uri->segment(1) == 'rekod'){echo "active";} ?>" href="<?= base_url('rekod')?>"> */?>
 					<a class="menu-link <? if($this->uri->segment(2) == 'hapus'){echo "active";} ?>" href="<?= base_url('senaraijururawat/hapus')?>">
 						<span class="menu-icon">
-							<i class="ki-duotone ki-abstract-26 fs-2">
-								<span class="path1"></span>
-								<span class="path2"></span>
+							<i class="ki-duotone ki-menu">
+							 <span class="path1"></span>
+							 <span class="path2"></span>
+							 <span class="path3"></span>
+							 <span class="path4"></span>
 							</i>
 						</span>
 						<span class="menu-title">Pengguna Dihapus</span>
@@ -381,9 +387,11 @@
 					<?/*<a class="menu-link <? if($this->uri->segment(1) == 'rekod'){echo "active";} ?>" href="<?= base_url('rekod')?>"> */?>
 					<a class="menu-link <? if($this->uri->segment(2) == 'wad'){echo "active";} ?>" href="<?= base_url('setting/wad')?>">
 						<span class="menu-icon">
-							<i class="ki-duotone ki-abstract-26 fs-2">
-								<span class="path1"></span>
-								<span class="path2"></span>
+							<i class="ki-duotone ki-menu">
+							 <span class="path1"></span>
+							 <span class="path2"></span>
+							 <span class="path3"></span>
+							 <span class="path4"></span>
 							</i>
 						</span>
 						<span class="menu-title">Wad</span>
@@ -396,9 +404,11 @@
 					<?/*<a class="menu-link <? if($this->uri->segment(1) == 'rekod'){echo "active";} ?>" href="<?= base_url('rekod')?>"> */?>
 					<a class="menu-link <? if($this->uri->segment(2) == 'jawatan'){echo "active";} ?>" href="<?= base_url('setting/jawatan')?>">
 						<span class="menu-icon">
-							<i class="ki-duotone ki-abstract-26 fs-2">
-								<span class="path1"></span>
-								<span class="path2"></span>
+							<i class="ki-duotone ki-menu">
+							 <span class="path1"></span>
+							 <span class="path2"></span>
+							 <span class="path3"></span>
+							 <span class="path4"></span>
 							</i>
 						</span>
 						<span class="menu-title">Jawatan</span>
@@ -410,9 +420,11 @@
 					<?/*<a class="menu-link <? if($this->uri->segment(1) == 'rekod'){echo "active";} ?>" href="<?= base_url('rekod')?>"> */?>
 					<a class="menu-link <? if($this->uri->segment(2) == 'gred'){echo "active";} ?>" href="<?= base_url('setting/gred')?>">
 						<span class="menu-icon">
-							<i class="ki-duotone ki-abstract-26 fs-2">
-								<span class="path1"></span>
-								<span class="path2"></span>
+							<i class="ki-duotone ki-menu">
+							 <span class="path1"></span>
+							 <span class="path2"></span>
+							 <span class="path3"></span>
+							 <span class="path4"></span>
 							</i>
 						</span>
 						<span class="menu-title">Gred</span>
@@ -424,9 +436,11 @@
 					<?/*<a class="menu-link <? if($this->uri->segment(1) == 'rekod'){echo "active";} ?>" href="<?= base_url('rekod')?>"> */?>
 					<a class="menu-link <? if($this->uri->segment(2) == 'senaraiSister'){echo "active";} ?>" href="<?= base_url('setting/senaraiSister')?>">
 						<span class="menu-icon">
-							<i class="ki-duotone ki-abstract-26 fs-2">
-								<span class="path1"></span>
-								<span class="path2"></span>
+							<i class="ki-duotone ki-menu">
+							 <span class="path1"></span>
+							 <span class="path2"></span>
+							 <span class="path3"></span>
+							 <span class="path4"></span>
 							</i>
 						</span>
 						<span class="menu-title">Sister</span>

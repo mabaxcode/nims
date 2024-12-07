@@ -62,7 +62,7 @@ class App extends CI_Controller {
 			insert_any_table($insert, 'personal_info');
 		}
 
-		$update_user = array('name' => $post['name']);
+		$update_user = array('name' => $post['name'], 'no_kp' => $post['no_kp']);
 		update_any_table($update_user, array('id' => $this->user_id), 'user_accounts');
 
 		# personal
@@ -220,6 +220,89 @@ class App extends CI_Controller {
 		$response = array('status' => true, 'msg' => 'Pengguna telah berjaya ditambah !');
 
 		echo encode($response);
+	}
+
+	function statistic_nurse($data=false)
+	{	
+		
+		//$nurse = get_any_table_row(array('user_id' => $this->session->userdata('user_id')), 'staff_details');
+
+		$allwad = get_any_table_array(array('module' => 'wad'), 'ref_code');
+
+		$data_wad = [];
+
+		foreach ($allwad as $key) {
+
+			$wad_id     = $key[$key['code']];
+
+			$countNurse = count_any_table(array('wad' => $key['code']), 'employment_info');
+
+			$statisticData[] = array(
+				'country' => $key['code_desc'],
+				'visits'  => $countNurse,
+			);
+
+		}
+
+		header('Content-Type: application/json');
+
+		echo json_encode($statisticData);
+
+		/*
+
+	
+		$month = array('01','02','03','04','05','06','07','08','09','10','11','12');
+
+		$monthNames = array(
+		    '01' => 'January',
+		    '02' => 'February',
+		    '03' => 'March',
+		    '04' => 'April',
+		    '05' => 'May',
+		    '06' => 'June',
+		    '07' => 'July',
+		    '08' => 'August',
+		    '09' => 'September',
+		    '10' => 'October',
+		    '11' => 'November',
+		    '12' => 'December'
+		);
+
+		$currentYear  = date('Y');
+
+		$countriesData = [];
+
+		foreach ($month as $key) {
+
+			$trans = $this->DbWallet->get_trans_this_month($staffdata['staff_id'], $key, $currentYear);
+
+			if ( !$trans) {
+				$trans = 0;
+			}
+
+			$countriesDatax[] = array(
+				'country' => $monthNames[$key],
+				'visits'  => $trans,
+			);
+
+
+		}
+
+		header('Content-Type: application/json');
+
+		// Example server-side data (this could be from a database query)
+		// $countriesData = [
+		//     ["country" => "US", "visits" => 1],
+		//     ["country" => "UK", "visits" => 4],
+		// ];
+
+		// echo "<pre>"; print_r($countriesData); echo "</pre>"; exit;
+
+		// Output the data as JSON
+		echo json_encode($countriesDatax);
+
+		*/
+
 	}
 
 }

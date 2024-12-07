@@ -47,6 +47,22 @@
                                 </td>
                             </tr>
                             <tr>
+                                <th class="pt-5" style="width:11%;">JAWATAN</th>
+                                <td colspan="3">
+                                <select class="js-example-basic-single form-control select-single inpt_jawatan dt-select">
+                                    <option value="">Pilih Jawatan</option>
+
+                                    <? $alljawatan = get_any_table_array(array('module' => 'jawatan'), 'ref_code'); ?>
+                                    <? foreach($alljawatan as $jawatan){ ?>
+                                    <option value="<?=$jawatan['code']?>"><?=$jawatan['code_desc']?></option>
+                                    <? } ?>
+                                    <!-- 
+                                    <option value="KUP U32">KUP U32</option>
+                                    <option value="TBK 2 U36">TBK 2 U36</option> -->
+                                </select>
+                            </td>
+                            </tr>
+                            <tr>
                                 <th class="pt-5" style="width:11%;">GRED</th>
                                 <td colspan="3">
                                 <select class="js-example-basic-single form-control select-single inpt_gred dt-select">
@@ -55,6 +71,22 @@
                                     <? $allGred = get_any_table_array(array('module' => 'gred'), 'ref_code'); ?>
                                     <? foreach($allGred as $key){ ?>
                                     <option value="<?=$key['code']?>"><?=$key['code_desc']?></option>
+                                    <? } ?>
+                                    <!-- 
+                                    <option value="KUP U32">KUP U32</option>
+                                    <option value="TBK 2 U36">TBK 2 U36</option> -->
+                                </select>
+                            </td>
+                            </tr>
+                            <tr>
+                                <th class="pt-5" style="width:11%;">WAD</th>
+                                <td colspan="3">
+                                <select class="js-example-basic-single form-control select-single inpt_wad dt-select">
+                                    <option value="">Pilih Wad</option>
+
+                                    <? $allWad = get_any_table_array(array('module' => 'wad'), 'ref_code'); ?>
+                                    <? foreach($allWad as $wad){ ?>
+                                    <option value="<?=$wad['code']?>"><?=$wad['code_desc']?></option>
                                     <? } ?>
                                     <!-- 
                                     <option value="KUP U32">KUP U32</option>
@@ -86,7 +118,7 @@
                                                     <th class="" tabindex="0" rowspan="1" colspan="1" style="width: 0px;">PHONE NO</th>
                                                     <th class="" rowspan="1" colspan="1"  style="width: 0px;">NO K/P</th>
                                                     <th class="" tabindex="0" rowspan="1" colspan="1" style="width: 0px;">GRED</th>
-                                                    <th class="" rowspan="1" colspan="1"  style="width: 0px;">ACTION</th>
+                                                    <th class="" rowspan="1" colspan="1"  style="width: 0px; text-align: right;">ACTION</th>
 
                                                 </tr>
                                             </thead>

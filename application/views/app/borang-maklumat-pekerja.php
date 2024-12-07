@@ -31,7 +31,8 @@
 								<span class="path2"></span>
 								<span class="path3"></span>
 							</i>
-							<?= $role?> (<?= $user['no_kp']?>)
+							<span class="badge badge-success"><?= $role?> </span>
+							<!-- (<?= $user['no_kp']?>) -->
 							</a>
 							<a href="#" class="d-flex align-items-center text-gray-500 text-hover-primary mb-2">
 							<i class="ki-duotone ki-sms fs-4">

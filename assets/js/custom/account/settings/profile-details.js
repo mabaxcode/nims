@@ -25,6 +25,13 @@ function validateMaklumatPeribadi(formID)
                     }
                 }
             },
+            no_kp: {
+                validators: {
+                    notEmpty: {
+                        message: "Sila isi no kad pengenalan"
+                    }
+                }
+            },
             bangsa: {
                 validators: {
                     notEmpty: {
@@ -75,7 +82,7 @@ $(document).on('click', '.simpan-maklumat-peribadi', function (e) {
                         }).then((function(t) {
                             if (t.isConfirmed) {
                                 // loadDirectory(response.id);
-                                // location.reload();
+                                location.reload();
                                 // $(".tab-peribadi").trigger('click');
                             }
                         }))
