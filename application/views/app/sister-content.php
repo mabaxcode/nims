@@ -1,8 +1,4 @@
-<? if($user['complete'] == "Y"){ ?>
-
-
-		<!--begin::Content wrapper-->
-		<div class="d-flex flex-column flex-column-fluid">
+<div class="d-flex flex-column flex-column-fluid">
 			<!--begin::Toolbar-->
 			
 			<!--end::Toolbar-->
@@ -30,10 +26,15 @@
 										<a href="#" class="fs-3 text-gray-800 text-hover-primary fw-bold mb-3"><?=strtoupper($user['name'])?></a>
 										<!--end::Name-->
 										<!--begin::Position-->
+
+										<?
+										$sisterxx = get_any_table_row(array('nurse_id' => $user['id']), 'sister');
+
+										?>
 										<div class="mb-9">
 											<!--begin::Badge-->
-											<div class="badge badge-lg badge-primary d-inline">Nurse</div>
-											<div class="badge badge-lg badge-light-danger d-inline"><?=get_ref_code('wad', $emp['wad'])?></div>
+											<div class="badge badge-lg badge-primary d-inline">Sister Kepada <?=get_ref_code('wad', $sisterxx['wad_id'])?></div>
+											
 											<!--begin::Badge-->
 										</div>
 										<!--end::Position-->
@@ -89,117 +90,35 @@
 						<!--end::Sidebar-->
 						<!--begin::Content-->
 						<div class="flex-lg-row-fluid ms-lg-15">
-							<!--begin:::Tabs-->
-							<ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-semibold mb-8">
-								<!--begin:::Tab item-->
-								<li class="nav-item">
-									<a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab" href="#kt_user_view_overview_tab">Sister</a>
-								</li>
-								<!--end:::Tab item-->
-								<!--begin:::Tab item-->
-								
-								<!--end:::Tab item-->
-								<!--begin:::Tab item-->
-								
-								<!--end:::Tab item-->
-							</ul>
-							<!--end:::Tabs-->
-							<!--begin:::Tab content-->
-							<div class="tab-content" id="myTabContent">
-								<!--begin:::Tab pane-->
-								
-								<div class="tab-pane fade show active" id="kt_user_view_overview_tab" role="tabpanel">
-													<!--begin::Card-->
-													<div class="card pt-4 mb-6 mb-xl-9">
-														<!--begin::Card header-->
-														<div class="card-header border-0">
-															<!--begin::Card title-->
-															<div class="card-title">
-																<h2>Profile Sister</h2>
-															</div>
-															<!--end::Card title-->
-														</div>
-														<!--end::Card header-->
-														<!--begin::Card body-->
-														<div class="card-body pt-0 pb-5">
-															<!--begin::Table wrapper-->
-															<?
-															if ($get_my_sister) {
-
-															$sister_data = get_any_table_row(array('id' => $get_my_sister['nurse_id']), 'user_accounts');
-
-															?>
-															<div class="table-responsive">
-																<!--begin::Table-->
-																<table class="table align-middle table-row-dashed gy-5" id="kt_table_users_login_session">
-																	<tbody class="fs-6 fw-semibold text-gray-600">
-																		<tr>
-																			<td>Nama</td>
-																			<td><?=strtoupper($sister_data['name'])?></td>
-																		</tr>
-																		<tr>
-																			<td>Email</td>
-																			<td><?=$sister_data['email']?></td>
-																		</tr>
-																		<tr>
-																			<td>Phone No.</td>
-																			<td><?=$sister_data['phone_no']?><td>
-																			<!-- <td class="text-end">
-																				<button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px ms-auto" data-bs-toggle="modal" data-bs-target="#kt_modal_update_password">
-																					<i class="ki-outline ki-pencil fs-3"></i>
-																				</button>
-																			</td> -->
-																		</tr>
-																		<?/*
-																		<tr>
-																			<td>Role</td>
-																			<td>Administrator</td>
-																			<td class="text-end">
-																				<button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px ms-auto" data-bs-toggle="modal" data-bs-target="#kt_modal_update_role">
-																					<i class="ki-outline ki-pencil fs-3"></i>
-																				</button>
-																			</td>
-																		</tr>
-																		*/?>
-																	</tbody>
-																</table>
-																<!--end::Table-->
-															</div>
-															<? } else { ?>
-															<!--begin::Alert-->
-															<div class="alert alert-primary d-flex align-items-center p-5">
-															    <!--begin::Icon-->
-															    <i class="ki-duotone ki-shield-tick fs-2hx text-success me-4"><span class="path1"></span><span class="path2"></span></i>
-															    <!--end::Icon-->
-
-															    <!--begin::Wrapper-->
-															    <div class="d-flex flex-column">
-															        <!--begin::Title-->
-															        <h4 class="mb-1 text-dark">Nota !</h4>
-															        <!--end::Title-->
-
-															        <!--begin::Content-->
-															        <span>Tiada sister dalam wad ini</span>
-															        <!--end::Content-->
-															    </div>
-															    <!--end::Wrapper-->
-															</div>
-															<!--end::Alert-->
-															<? } ?>
-															<!--end::Table wrapper-->
-														</div>
-														<!--end::Card body-->
-													</div>
-													<!--end::Card-->
-													<!--begin::Card-->
-												
-													
-												</div>
-								<!--end:::Tab pane-->
-						
-								<!--end:::Tab pane-->
+							<div class="col-lg-12">
+								<!--begin::Card-->
+								<div class="card card-custom gutter-b">
+									
+									<div class="card-header mt-0">
+										<!--begin::Card title-->
+										<div class="card-title flex-column">
+											<h3 class="card-label">Statistik Jururawat Di Bawah Seliaan</h3>
+										</div>
+										<!--end::Card title-->
+										<!--begin::Card toolbar-->
+										<div class="card-toolbar">
+											<a class="btn btn-secondary btn-sm" href="<?=base_url('sister/wadSelian')?>">
+											<i class="ki-outline ki-file fs-3"></i>Lihat Statistik</a>
+										</div>
+										<!--end::Card toolbar-->
+									</div>
+									
+									<div class="card-body">
+										<!--begin::Chart-->
+										<!-- <div id="chart_11" class="d-flex justify-content-center"></div> -->
+										<canvas id="kt_chartjs_3" class="mh-300px"></canvas>
+										<!--end::Chart-->
+										<br><br><br><br>
+										<br><br><br>
+									</div>
+								</div>
+								<!--end::Card-->
 							</div>
-							<!--end:::Tab content-->
 						</div>
 						<!--end::Content-->
 					</div>
@@ -1332,51 +1251,3 @@
 			</div>
 			<!--end::Content-->
 		</div>
-		<!--end::Content wrapper-->
-
-
-
-
-<? } else { ?>
-<div class="col-xxl-12">
-	<!--begin::Engage widget 8-->
-	<div class="card border-0 h-md-100" data-bs-theme="light" style="background: linear-gradient(112.14deg, #00D2FF 0%, #3A7BD5 100%)">
-		<!--begin::Body-->
-		<div class="card-body">
-			<!--begin::Row-->
-			<div class="row align-items-center h-100">
-				<!--begin::Col-->
-				<div class="col-7 ps-xl-13">
-					<!--begin::Title-->
-					<div class="text-white mb-6 pt-6">
-						<!-- <span class="fs-4 fw-semibold me-2 d-block lh-1 pb-2 opacity-75">Get best offer</span> -->
-						<span class="fs-2qx fw-bold">Nurse Information Management System</span>
-					</div>
-					<!--end::Title-->
-					<!--begin::Text-->
-					<span class="fw-semibold text-white fs-3 mb-8 d-block opacity-75">Sila klik butang Maklumat Pekerjaan dan lengkapkan maklumat anda</span>
-					<!--end::Text-->
-					<!--end::Items-->
-					<!--begin::Action-->
-					<div class="d-flex flex-column flex-sm-row d-grid gap-2">
-						<a href="<?= base_url('app/kemaskiniMaklumat'); ?>" class="btn btn-success flex-shrink-0 me-lg-2">Maklumat Pekerjaan</a>
-						<!-- <a href="#" class="btn btn-primary flex-shrink-0" style="background: rgba(255, 255, 255, 0.2)" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">Read Guides</a> -->
-					</div>
-					<!--end::Action-->
-				</div>
-				<!--end::Col-->
-				<!--begin::Col-->
-				<div class="col-5 pt-10">
-					<!--begin::Illustration-->
-					<div class="bgi-no-repeat bgi-size-contain bgi-position-x-end h-225px"></div>
-					<!--end::Illustration-->
-				</div>
-				<!--end::Col-->
-			</div>
-			<!--end::Row-->
-		</div>
-		<!--end::Body-->
-	</div>
-	<!--end::Engage widget 8-->
-</div>
-<? } ?>

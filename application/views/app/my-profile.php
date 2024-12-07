@@ -248,7 +248,7 @@
 					<!--begin::Main-->
 					<div class="app-main flex-column flex-row-fluid" id="kt_app_main">
 						<!--begin::Content wrapper-->
-						<? $this->load->view('app/table-senarai-semua-gred'); ?>
+						<? $this->load->view('app/profile-content'); ?>
 						<!--end::Content wrapper-->
 						<!--begin::Footer-->
 						<? $this->load->view('app/footer'); ?>
@@ -4808,10 +4808,9 @@
 		<!--begin::Custom Javascript(used for this page only)-->
 		<!--end::Vendors Javascript-->
 		<!--begin::Custom Javascript(used for this page only)-->
-		<script src="<?= base_url(); ?>assets/js/custom/apps/user-management/users/list/list-setting.js"></script>
+		<script src="<?= base_url(); ?>assets/js/custom/apps/user-management/users/list/table.js"></script>
 		<script src="<?= base_url(); ?>assets/js/custom/apps/user-management/users/list/export-users.js"></script>
-		<script src="<?= base_url(); ?>assets/js/custom/apps/user-management/users/list/jawatan.js"></script>
-		<script src="<?= base_url(); ?>assets/js/custom/apps/user-management/users/list/add-gred.js"></script>
+		<script src="<?= base_url(); ?>assets/js/custom/apps/user-management/users/list/add.js"></script>
 		<script src="<?= base_url(); ?>assets/js/widgets.bundle.js"></script>
 		<script src="<?= base_url(); ?>assets/js/custom/widgets.js"></script>
 		<script src="<?= base_url(); ?>assets/js/custom/apps/chat/chat.js"></script>
@@ -4821,95 +4820,7 @@
 		<!--end::Custom Javascript-->
 		<!--end::Javascript-->
 
-		<div class="modal fade" id="modal_settting_jawatan" tabindex="-1" aria-hidden="true">
-
-		<script type="text/javascript">
-
-			$(document).on('click', '.edit-gred', function(e){
-				var id = $(this).data('init');
-			    e.preventDefault();
-			    $.ajax({
-			        url: base_url + 'setting/editGred',
-			        type: "POST",
-			        data: {id:id},
-			        async: true,
-			        success: function( response ){
-			            $('#modal_settting_jawatan').html(response);
-			            $('#modal_settting_jawatan').modal('show');
-			        },
-			        error: function(data){
-			            // console.log(data);
-			        },
-			    });
-			});
-			
-			$(document).on('click', '.hapus-gred', function(e){
-			    var id = $(this).data('init');
-			    e.preventDefault();
-			    Swal.fire({
-			      // title: "Are you sure?",
-			      text: "Hapuskan Gred ?",
-			      icon: "warning",
-			      showCancelButton: true,
-			      confirmButtonColor: "#3085d6",
-			      cancelButtonColor: "#d33",
-			      confirmButtonText: "Hapuskan"
-			    }).then((result) => {
-			      if (result.isConfirmed) {
-			        // Swal.fire({
-			        //   title: "Deleted!",
-			        //   text: "Your file has been deleted.",
-			        //   icon: "success"
-			        // });
-			        $.ajax({
-			            url: base_url + 'setting/hapusGred',
-			            type: "POST",
-			            data: {id:id},
-			            async: true,
-			            dataType:"json",
-			            success: function( response ){
-			                if (response.status == true) {
-
-			                    Swal.fire({
-			                      title: "Success!",
-			                      text: response.msg,
-			                      icon: "success"
-			                    });
-
-			                    setTimeout(function() {
-			                        location.reload();
-			                    }, 1000); // Wait for 3 seconds (3000 milliseconds)
-
-			                } else {
-			                    Swal.fire({
-			                      title: "Error!",
-			                      text: response.msg,
-			                      icon: "error"
-			                    });
-			                }
-			            },
-			            error: function(data){
-			                // console.log(data);
-			            },
-			        });
-			      }
-			    });
-			    // $.ajax({
-			    //     url: base_url + 'office/add_new_kit_modal',
-			    //     type: "POST",
-			    //     // data: {id:id},
-			    //     async: true,
-			    //     success: function( response ){
-			    //         $('#kt_modal_create_kit').html(response);
-			    //         $('#kt_modal_create_kit').modal('show');
-			    //     },
-			    //     error: function(data){
-			    //         // console.log(data);
-			    //     },
-			    // });
-			});
-		</script>
-
+		<div class="modal bg-body fade" tabindex="-1" id="modal_view_nurse_detail"></div>
 
 	</body>
 	<!--end::Body-->

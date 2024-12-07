@@ -34,12 +34,30 @@
 
 				<div class="menu-item">
 					<!--begin:Menu link-->
+					<a class="menu-link <?= ($this->uri->segment(2) == 'kemaskiniMaklumat') ? 'active' : '' ; ?>" href="<?= base_url('app/kemaskiniMaklumat');?>">
+						<span class="menu-icon">
+							<i class="ki-duotone ki-menu">
+							 <span class="path1"></span>
+							 <span class="path2"></span>
+							 <span class="path3"></span>
+							 <span class="path4"></span>
+							</i>
+						</span>
+						<span class="menu-title">Kemaskini Maklumat</span>
+					</a>
+					<!--end:Menu link-->
+				</div>
+
+				<div class="menu-item">
+					<!--begin:Menu link-->
 					<?/*<a class="menu-link <? if($this->uri->segment(1) == 'rekod'){echo "active";} ?>" href="<?= base_url('rekod')?>"> */?>
 					<a class="menu-link <? if($this->uri->segment(2) == 'wadSelian'){echo "active";} ?>" href="<?= base_url('sister/wadSelian')?>">
 						<span class="menu-icon">
-							<i class="ki-duotone ki-abstract-26 fs-2">
-								<span class="path1"></span>
-								<span class="path2"></span>
+							<i class="ki-duotone ki-menu">
+							 <span class="path1"></span>
+							 <span class="path2"></span>
+							 <span class="path3"></span>
+							 <span class="path4"></span>
 							</i>
 						</span>
 						<span class="menu-title">Wad Seliaan</span>
@@ -458,13 +476,14 @@
 					<!--begin:Menu link-->
 					<a class="menu-link <?= ($this->uri->segment(2) == 'kemaskiniMaklumat') ? 'active' : '' ; ?>" href="<?= base_url('app/kemaskiniMaklumat');?>">
 						<span class="menu-icon">
-							<i class="ki-duotone ki-address-book fs-2">
-								<span class="path1"></span>
-								<span class="path2"></span>
-								<span class="path3"></span>
+							<i class="ki-duotone ki-menu">
+							 <span class="path1"></span>
+							 <span class="path2"></span>
+							 <span class="path3"></span>
+							 <span class="path4"></span>
 							</i>
 						</span>
-						<span class="menu-title">Maklumat Pekerjaan</span>
+						<span class="menu-title">Kemaskini Maklumat</span>
 					</a>
 					<!--end:Menu link-->
 				</div>

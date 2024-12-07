@@ -22,6 +22,10 @@ class App extends CI_Controller {
 
 		$data['user'] = get_any_table_row(array('id' => $this->user_id), 'user_accounts');
 
+		$data['emp'] = get_any_table_row(array('user_id' => $this->user_id), 'employment_info');
+
+		$data['get_my_sister'] = get_any_table_row(array('wad_id' => $data['emp']['wad']), 'sister');
+
 		//$data['complete'] = get_any_table_row(array('id' => $this->user_id), 'user_accounts');
 
 		$this->load->view('app/dashboard', $data);
@@ -304,5 +308,150 @@ class App extends CI_Controller {
 		*/
 
 	}
+
+	function myProfile($data=false)
+	{
+		$data['profile'] = get_any_table_row(array('id' => $this->user_id), 'user_accounts');	
+
+		$this->load->view('app/my-profile', $data);
+	}
+
+	function setting($data=false)
+	{
+		$data['user'] = get_any_table_row(array('id' => $this->user_id), 'user_accounts');	
+
+		$this->load->view('app/my-setting', $data);
+	}
+
+	public function updateProfile($data=false)
+	{
+		// code...
+		$post = $this->input->post();
+
+	    $update_profile = array(
+	    	'name' => $post['name'],
+	    	'phone_no' => $post['phone_no']
+	    );
+
+	    $whereUser = array('id' => $this->user_id );
+
+
+	    update_any_table($update_profile, $whereUser, 'user_accounts');
+
+        
+		// echo "<pre>"; print_r($post); echo "</pre>";
+
+	
+		// echo "<pre>"; print_r($_FILES['avatar']); echo "</pre>"; exit();
+
+	    $response = array('status' => true, 'msg' => 'Berjya Kemaskini !' );
+	    echo encode($response);
+
+	}
+
+	function updateEmail($data=false)
+	{
+		$post = $this->input->post();
+
+	    $update_profile = array(
+	    	'email' => $post['email']
+	    );
+
+	    $whereUser = array('id' => $this->user_id );
+
+
+	    $update_process = update_any_table($update_profile, $whereUser, 'user_accounts');
+
+	    if ($update_process == true) {
+	    	// code...
+	    	$response = array('status' => true, 'msg' => 'Email telah dikemaskini !' );
+	    	echo encode($response);
+	    }else{
+	    	$response = array('status' => false, 'msg' => 'Gagal untuk kemaskini !' );
+	    	echo encode($response);
+	    }
+
+	    
+	}
+
+	function change_password($data=false)
+	{
+		$post        = $this->input->post();
+		$currentPass = md5($post['currentpassword']);
+		$newPass     = $post['newpassword'];
+		$confirmPass = $post['confirmpassword'];
+
+		// echo $currentPass; exit;
+
+		$is_password = $this->DbApp->checking_user_password($currentPass, $this->user_id);
+
+		if ($is_password == true) {
+			$data_upd   = array('password' => md5($newPass));
+			$data_where = array('id' => $this->user_id, 'password' => $currentPass);
+			update_any_table($data_upd, $data_where, 'user_accounts');
+
+			$response = array('status' => true, 'msg' => 'Katalaluan berjaya ditukar');
+		} else {
+			$response = array('status' => false, 'msg' => 'Gagal untuk menukar Katalaluan');
+		}
+		echo encode($response);
+		exit;
+	}
+
+	function count_nurse_under_sister()
+    {   
+
+    	$sister = get_any_table_row(array('nurse_id' => $this->user_id), 'sister');
+
+    	// $data['total'] = count_any_table(array('wad' => $sister['wad_id'], 'user_id !=' => $this->user_id), 'employment_info');
+
+
+    	$total_all = get_any_table_array(array('wad' => $sister['wad_id'], 'user_id !=' => $this->user_id), 'employment_info');
+
+    	$jumlah_lengkap = 0;
+    	$jumlah_xlengkap = 0;
+
+    	foreach($total_all as $key){
+
+    		$nurse_seliaan_id = $key['user_id'];
+
+    		$user_accounts = get_any_table_row(array('id' => $nurse_seliaan_id), 'user_accounts');
+
+
+    		if ($user_accounts['complete'] == "Y") {
+    			// code...
+    			$jumlah_lengkap = $jumlah_lengkap + 1;
+    		}
+
+    	}
+
+    	foreach($total_all as $key){
+
+    		$nurse_seliaan_id_x = $key['user_id'];
+
+    		$user_accounts_x = get_any_table_row(array('id' => $nurse_seliaan_id_x), 'user_accounts');
+
+
+    		if ($user_accounts_x['complete'] <> "Y") {
+    			// code...
+    			$jumlah_xlengkap = $jumlah_xlengkap + 1;
+    		}
+
+    	}
+
+
+        $lengkap   		= $jumlah_lengkap;
+        $tidak_lengkap  = $jumlah_xlengkap;
+
+        // $response = array('series' => [$male, $female]);
+        // echo encode($response);
+
+        // Simulate fetching data
+		$data = [$lengkap, $tidak_lengkap];
+
+		// Output as JSON
+		header('Content-Type: application/json');
+		echo json_encode($data);
+    }
 
 }

@@ -869,7 +869,7 @@
 										<!--end::Menu separator-->
 										<!--begin::Menu item-->
 										<div class="menu-item px-5">
-											<a href="javascript:void(0);" class="menu-link px-5">My Profile</a>
+											<a href="<?=base_url('app/myProfile')?>" class="menu-link px-5">My Profile</a>
 										</div>
 										<!--end::Menu item-->
 					
@@ -5499,6 +5499,61 @@
 		<script src="assets/js/custom/utilities/modals/create-app.js"></script>
 		<script src="assets/js/custom/utilities/modals/new-target.js"></script>
 		<script src="assets/js/custom/utilities/modals/users-search.js"></script>
+
+		<script>
+        // Define colors
+        var primaryColor = '#3699FF';
+        var dangerColor = '#F64E60';
+
+        // Fetch data from server
+        $.ajax({
+            url: base_url + 'app/count_nurse_under_sister', // Replace with your PHP script URL
+            method: 'GET',
+            dataType: 'json',
+            success: function (response) {
+                // Chart labels (manually defined since server only returns values)
+                const labels = ['Borang Lengkap', 'Borang Tidak Lengkap']; // Update these labels to match your data
+                
+                // Chart configuration
+                const config = {
+                    type: 'pie',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Jumlah',
+                            data: response, // Use server-provided values here
+                            backgroundColor: [
+                                primaryColor,
+                                dangerColor
+                            ],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: 'top'
+                            },
+                            title: {
+                                display: true,
+                                text: 'Status Borang'
+                            }
+                        },
+                        responsive: true
+                    }
+                };
+
+                // Initialize the chart
+                var ctx = document.getElementById('kt_chartjs_3').getContext('2d');
+                var myChart = new Chart(ctx, config);
+            },
+            error: function (xhr, status, error) {
+                console.error('Error fetching data:', error);
+            }
+        });
+    </script>
+
 		<!--end::Custom Javascript-->
 		<!--end::Javascript-->
 	</body>

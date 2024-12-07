@@ -65,4 +65,15 @@ class App_model extends CI_Model {
             return false;
         }
     }
+
+    function checking_user_password($password, $user_id)
+    {
+        $this->db->select('id');
+        $this->db->where('id', $user_id);
+        $this->db->where('password', $password);
+        $query = $this->db->get('user_accounts');
+    
+        if($query->num_rows() > 0){ return $query->row_array(); }
+        return false;
+    }
 }

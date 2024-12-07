@@ -41,7 +41,7 @@
 			?>
 			<span class="badge badge-info badge-lg">Sister : <?=get_ref_code('wad', $sister['wad_id'])?></span>
 			<? } else { ?>
-			<span class="badge badge-success badge-lg">Nurse</span>
+			
 			<? } ?>
 			
 			<!--end::Page title-->
@@ -66,11 +66,20 @@
 		<!--begin::Content container-->
 		<div id="kt_app_content_container" class="app-container container-fluid">
 			
-			<? if(isAdmin($this->session->userdata('user_id')) == true){
+			<? 
+			if(isAdmin($this->session->userdata('user_id')) == true){
 					$this->load->view('app/admin-content');
-			} else {
-					$this->load->view('app/user-content');
-			} ?>
+			} 
+
+			if(isSister($this->session->userdata('user_id')) == true){
+				$this->load->view('app/sister-content');
+			}
+
+			if(isNurse($this->session->userdata('user_id')) == true){
+				$this->load->view('app/user-content');
+			}
+
+			?>
 
 		</div>
 		<!--end::Content container-->

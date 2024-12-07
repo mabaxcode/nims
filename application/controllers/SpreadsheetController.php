@@ -66,7 +66,7 @@ class SpreadsheetController extends CI_Controller {
             $gred                   = get_ref_code('gred', $item['gred']);
             $no_kp                  = $item['no_kp'];
             $umur                   = $personal_info['umur'];
-            $bangsa                 = $itepersonal_infom['bangsa'];
+            $bangsa                 = $personal_info['bangsa'];
             $tarikh_lantikan        = $item['tarikh_lantikan'];
             $tarikh_naik_pangkat    = $item['tarikh_naik_pangkat'];
             $tarikh_bersara         = $item['tarikh_bersara'];
