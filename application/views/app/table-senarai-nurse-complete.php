@@ -99,8 +99,12 @@
                     </table>
                 </div>
                 <div class="col-lg-12" style="text-align: right;">
-                    <a class="btn btn-warning font-weight-bold mr-2 mb-5 btn-reset-search-nurse">Reset</a>
-                    <a class="btn btn-primary font-weight-bold mr-2 mb-5 btn-search">Search</a>
+                    <a href="#" class="btn btn-sm btn-success font-weight-bold mr-2 mb-5 generate-csv-file">
+                    <i class="fas fa-envelope-open-text fs-4"></i>
+                    Cetak CSV
+                    </a>
+                    <a class="btn btn-sm btn-warning font-weight-bold mr-2 mb-5 btn-reset-search-nurse">Reset</a>
+                    <a class="btn btn-sm btn-primary font-weight-bold mr-2 mb-5 btn-search">Search</a>
                 </div>
                 <div class="col-lg-12 mb-5 mt-5" id="result-company-search">
                     <div class="tab-content mt-5">

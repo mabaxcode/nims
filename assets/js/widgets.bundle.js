@@ -2094,7 +2094,7 @@ var KTChartsWidget15 = {
 KTChartsWidget15.init();
 
 
-KTChartsWidget15.init();
+// KTChartsWidget15.init();
 
 
 /*

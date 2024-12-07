@@ -8,7 +8,7 @@
                 <!--begin::Page title-->
                 <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                     <!--begin::Title-->
-                    <h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">Senarai Wad</h1>
+                    <h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">Senarai Unit/Wad</h1>
                     <!--end::Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -31,7 +31,7 @@
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">Senarai Wad</li>
+                        <li class="breadcrumb-item text-muted">Senarai Unit/Wad</li>
                         <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->
@@ -114,7 +114,7 @@
                                 <!--end::Export-->
                                 <!--begin::Add user-->
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_wad">
-                                <i class="ki-duotone ki-plus fs-2"></i>Tambah Wad</button>
+                                <i class="ki-duotone ki-plus fs-2"></i>Tambah Unit/Wad</button>
                                 <!--end::Add user-->
                             </div>
                             <!--end::Toolbar-->
@@ -212,7 +212,7 @@
                                         <!--begin::Modal header-->
                                         <div class="modal-header" id="kt_modal_add_user_header">
                                             <!--begin::Modal title-->
-                                            <h2 class="fw-bold">Tambah Wad</h2>
+                                            <h2 class="fw-bold">Tambah Unit/Wad</h2>
                                             <!--end::Modal title-->
                                             <!--begin::Close-->
                                             <div class="btn btn-icon btn-sm btn-active-icon-primary" onclick="$('#kt_modal_add_wad').modal('hide');">
@@ -260,7 +260,7 @@
                                                     <!--begin::Input group-->
                                                     <div class="fv-row mb-7">
                                                         <!--begin::Label-->
-                                                        <label class="required fw-semibold fs-6 mb-2">Nama Wad</label>
+                                                        <label class="required fw-semibold fs-6 mb-2">Nama Unit/Wad</label>
                                                         <!--end::Label-->
                                                         <!--begin::Input-->
                                                         <input type="text" name="name" class="form-control mb-3 mb-lg-0" placeholder="" style="text-transform: uppercase;" />

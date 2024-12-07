@@ -5026,6 +5026,30 @@
 	});
 
 
+	$(document).on('click', '.generate-csv-file', function(e){
+
+		var keyword = $('.inpt_data').val(),
+                            "inpt_gred": $('.inpt_gred').val(),
+                            "inpt_jawatan": $('.inpt_jawatan').val(),
+                            "inpt_wad": $('.inpt_wad').val(),
+
+	    e.preventDefault();
+	    $.ajax({
+	        url: base_url + 'sister/viewNurseDetails',
+	        type: "POST",
+	        data: {id:id},
+	        async: true,
+	        success: function( response ){
+	            $('#modal_view_nurse_detail').html(response);
+	            $('#modal_view_nurse_detail').modal('show');
+	        },
+	        error: function(data){
+	            // console.log(data);
+	        },
+	    });
+	});
+
+
 </script>
 	</body>
 	<!--end::Body-->

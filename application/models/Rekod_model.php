@@ -96,4 +96,9 @@ class Rekod_model extends CI_Model {
         return $query->num_rows();
     }  
 
+    function generate_csv_by_filter($requestData)
+    {
+        
+    }
+
 }

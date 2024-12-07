@@ -394,7 +394,7 @@
 							 <span class="path4"></span>
 							</i>
 						</span>
-						<span class="menu-title">Wad</span>
+						<span class="menu-title">Unit/Wad</span>
 					</a>
 					<!--end:Menu link-->
 				</div>
