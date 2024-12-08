@@ -326,8 +326,7 @@
                                     </td>
                                     <td>
 
-                                        <?= get_ref_code('wad', $employment['wad']); ?>
-
+                                        <?=$key['no_kp']?>
                                     </td>
                                     
                                     

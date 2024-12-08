@@ -407,7 +407,7 @@
                                         ?>
                                     </td>
                                     <td>
-                                        <?= $employment['gred']?>
+                                        <?= get_ref_code('gred', $employment['gred']); ?>
                                         
                                     </td>
                                     <td>

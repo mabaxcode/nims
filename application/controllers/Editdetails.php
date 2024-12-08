@@ -54,6 +54,9 @@ class Editdetails extends CI_Controller {
 			$where = array('user_id' => $nurse_id);
 			$update = array('umur' => $post['umur'], 'bangsa' => $post['bangsa'], 'status' => '1');
 			update_any_table($update, $where, 'personal_info');
+		} else {
+			$insert = array('umur' => $post['umur'], 'bangsa' => $post['bangsa'], 'status' => '1', 'user_id' => $nurse_id);
+			insert_any_table($insert, 'personal_info');
 		}
 
 		$update_user = array('name' => $post['name'], 'no_kp' => $post['no_ic']);

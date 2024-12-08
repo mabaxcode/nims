@@ -343,23 +343,9 @@
                                                             <!--end::Radio-->
                                                         </div>
                                                         <!--end::Input row-->
-                                                        <div class='separator separator-dashed my-5'></div>
+                                                        <!-- <div class='separator separator-dashed my-5'></div> -->
                                                         <!--begin::Input row-->
-                                                        <div class="d-flex fv-row">
-                                                            <!--begin::Radio-->
-                                                            <div class="form-check form-check-custom form-check-solid">
-                                                                <!--begin::Input-->
-                                                                <input class="form-check-input me-3" name="role" type="radio" value="2" id="kt_modal_update_role_option_1" />
-                                                                <!--end::Input-->
-                                                                <!--begin::Label-->
-                                                                <label class="form-check-label" for="kt_modal_update_role_option_1">
-                                                                    <div class="fw-bold text-gray-800">Sister</div>
-                                                                    <!-- <div class="text-gray-600">Best for developers or people primarily using the API</div> -->
-                                                                </label>
-                                                                <!--end::Label-->
-                                                            </div>
-                                                            <!--end::Radio-->
-                                                        </div>
+                                                        
                                                         <!--end::Input row-->
                                                         <div class='separator separator-dashed my-5'></div>
                                                         <!--begin::Input row-->
@@ -461,8 +447,8 @@
                                         ?>
                                     </td>
                                     <td>
-                                        <?= $employment['gred']?>
                                         
+                                         <?= get_ref_code('gred', $employment['gred']); ?>
                                     </td>
                                     <td>
                                         <?= $employment['no_ljm']?>
