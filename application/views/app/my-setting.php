@@ -4941,13 +4941,10 @@ var KTAccountSettingsSigninMethods = function() {
                     c()
                 }))), t && (m = FormValidation.formValidation(t, {
                     fields: {
-                        email: {
+                        no_kp: {
                             validators: {
                                 notEmpty: {
-                                    message: "Email is required"
-                                },
-                                emailAddress: {
-                                    message: "The value is not a valid email address"
+                                    message: "Sila masukkan no kad pengenalan"
                                 }
                             }
                         }
@@ -4993,21 +4990,21 @@ var KTAccountSettingsSigninMethods = function() {
                             currentpassword: {
                                 validators: {
                                     notEmpty: {
-                                        message: "Current Password is required"
+                                        message: "Sila isi katalaluan sekarang"
                                     }
                                 }
                             },
                             newpassword: {
                                 validators: {
                                     notEmpty: {
-                                        message: "New Password is required"
+                                        message: "Sila isi katalaluan baru"
                                     }
                                 }
                             },
                             confirmpassword: {
                                 validators: {
                                     notEmpty: {
-                                        message: "Confirm Password is required"
+                                        message: "Sila sahkan katalaluan"
                                     },
                                     identical: {
                                         compare: function() {

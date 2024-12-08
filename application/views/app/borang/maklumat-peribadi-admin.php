@@ -37,7 +37,7 @@
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8 fv-row">
-						<input type="number" name="no_ic" class="form-control form-control-lg" placeholder="No Kad Pengenalan" value="<?= $user['no_kp']?>" />
+						<input type="number" name="no_ic" maxlength="12" class="form-control form-control-lg" placeholder="No Kad Pengenalan" value="<?= $user['no_kp']?>" />
 					</div>
 					<!--end::Col-->
 				</div>

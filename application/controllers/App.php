@@ -355,7 +355,7 @@ class App extends CI_Controller {
 		$post = $this->input->post();
 
 	    $update_profile = array(
-	    	'email' => $post['email']
+	    	'no_kp' => $post['no_kp']
 	    );
 
 	    $whereUser = array('id' => $this->user_id );
@@ -365,7 +365,7 @@ class App extends CI_Controller {
 
 	    if ($update_process == true) {
 	    	// code...
-	    	$response = array('status' => true, 'msg' => 'Email telah dikemaskini !' );
+	    	$response = array('status' => true, 'msg' => 'Kad Pengenalan telah dikemaskini !' );
 	    	echo encode($response);
 	    }else{
 	    	$response = array('status' => false, 'msg' => 'Gagal untuk kemaskini !' );

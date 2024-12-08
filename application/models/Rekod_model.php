@@ -76,7 +76,7 @@ class Rekod_model extends CI_Model {
             $this->db->where('employment_info.jawatan', $requestData['inpt_jawatan']);
         }
         if (!empty($requestData['inpt_wad']) && isset($requestData['inpt_wad'])) {
-            $this->db->where('employment_info.wad', $requestData['inpt_gred']);
+            $this->db->where('employment_info.wad', $requestData['inpt_wad']);
         }
         
     }

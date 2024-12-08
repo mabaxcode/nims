@@ -158,8 +158,8 @@
 												<!--end::Card body-->
 												<!--begin::Actions-->
 												<div class="card-footer d-flex justify-content-end py-6 px-9">
-													<a href="<?=base_url('app/myProfile')?>" class="btn btn-light btn-active-light-primary me-2">Discard</a>
-													<button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save Changes</button>
+													<a href="<?=base_url('app/myProfile')?>" class="btn btn-light btn-active-light-primary me-2">Batal</a>
+													<button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Simpan</button>
 												</div>
 												<!--end::Actions-->
 											</form>
@@ -173,7 +173,7 @@
 										<!--begin::Card header-->
 										<div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_signin_method">
 											<div class="card-title m-0">
-												<h3 class="fw-bold m-0">Sign-in Method</h3>
+												<h3 class="fw-bold m-0">Maklumat Log Masuk</h3>
 											</div>
 										</div>
 										<!--end::Card header-->
@@ -185,8 +185,8 @@
 												<div class="d-flex flex-wrap align-items-center">
 													<!--begin::Label-->
 													<div id="kt_signin_email">
-														<div class="fs-6 fw-bold mb-1">Email Address</div>
-														<div class="fw-semibold text-gray-600"><?=$user['email']?></div>
+														<div class="fs-6 fw-bold mb-1">No. Kad Pengenalan</div>
+														<div class="fw-semibold text-gray-600"><?=$user['no_kp']?></div>
 													</div>
 													<!--end::Label-->
 													<!--begin::Edit-->
@@ -196,8 +196,8 @@
 															<div class="row mb-6">
 																<div class="col-lg-6 mb-4 mb-lg-0">
 																	<div class="fv-row mb-0">
-																		<label for="emailaddress" class="form-label fs-6 fw-bold mb-3">Enter New Email Address</label>
-																		<input type="email" class="form-control form-control-lg form-control-solid" id="emailaddress" placeholder="Email Address" name="email" value="<?=$user['email']?>" />
+																		<label for="emailaddress" class="form-label fs-6 fw-bold mb-3">No. Kad Pengenalan Baru</label>
+																		<input type="text" class="form-control form-control-lg form-control-solid" id="emailaddress" placeholder="Email Address" name="no_kp" value="<?=$user['no_kp']?>" />
 																	</div>
 																</div>
 																<?/*
@@ -210,7 +210,7 @@
 																*/?>
 															</div>
 															<div class="d-flex">
-																<button id="kt_signin_submit" type="button" class="btn btn-primary me-2 px-6">Update Email</button>
+																<button id="kt_signin_submit" type="button" class="btn btn-primary me-2 px-6">Kemaskini</button>
 																<button id="kt_signin_cancel" type="button" class="btn btn-color-gray-500 btn-active-light-primary px-6">Cancel</button>
 															</div>
 														</form>
@@ -219,7 +219,7 @@
 													<!--end::Edit-->
 													<!--begin::Action-->
 													<div id="kt_signin_email_button" class="ms-auto">
-														<button class="btn btn-light btn-active-light-primary">Change Email</button>
+														<button class="btn btn-light btn-active-light-primary">Tukar No. Kad Pengenalan</button>
 													</div>
 													<!--end::Action-->
 												</div>
@@ -231,7 +231,7 @@
 												<div class="d-flex flex-wrap align-items-center mb-10">
 													<!--begin::Label-->
 													<div id="kt_signin_password">
-														<div class="fs-6 fw-bold mb-1">Password</div>
+														<div class="fs-6 fw-bold mb-1">Katalaluan</div>
 														<div class="fw-semibold text-gray-600">************</div>
 													</div>
 													<!--end::Label-->
@@ -242,26 +242,26 @@
 															<div class="row mb-1">
 																<div class="col-lg-4">
 																	<div class="fv-row mb-0">
-																		<label for="currentpassword" class="form-label fs-6 fw-bold mb-3">Current Password</label>
+																		<label for="currentpassword" class="form-label fs-6 fw-bold mb-3">Katalaluan Sekarang</label>
 																		<input type="password" class="form-control form-control-lg form-control-solid" name="currentpassword" id="currentpassword" />
 																	</div>
 																</div>
 																<div class="col-lg-4">
 																	<div class="fv-row mb-0">
-																		<label for="newpassword" class="form-label fs-6 fw-bold mb-3">New Password</label>
+																		<label for="newpassword" class="form-label fs-6 fw-bold mb-3">Katalaluan Baru</label>
 																		<input type="password" class="form-control form-control-lg form-control-solid" name="newpassword" id="newpassword" />
 																	</div>
 																</div>
 																<div class="col-lg-4">
 																	<div class="fv-row mb-0">
-																		<label for="confirmpassword" class="form-label fs-6 fw-bold mb-3">Confirm New Password</label>
+																		<label for="confirmpassword" class="form-label fs-6 fw-bold mb-3">Sahkan Katalaluan Baru</label>
 																		<input type="password" class="form-control form-control-lg form-control-solid" name="confirmpassword" id="confirmpassword" />
 																	</div>
 																</div>
 															</div>
 															<div class="form-text mb-5">Password must be at least 8 character and contain symbols</div>
 															<div class="d-flex">
-																<button id="kt_password_submit" type="button" class="btn btn-primary me-2 px-6">Update Password</button>
+																<button id="kt_password_submit" type="button" class="btn btn-primary me-2 px-6">Kemaskini Katalaluan</button>
 																<button id="kt_password_cancel" type="button" class="btn btn-color-gray-500 btn-active-light-primary px-6">Cancel</button>
 															</div>
 														</form>
@@ -270,7 +270,7 @@
 													<!--end::Edit-->
 													<!--begin::Action-->
 													<div id="kt_signin_password_button" class="ms-auto">
-														<button class="btn btn-light btn-active-light-primary">Reset Password</button>
+														<button class="btn btn-light btn-active-light-primary">Reset Katalaluan</button>
 													</div>
 													<!--end::Action-->
 												</div>
