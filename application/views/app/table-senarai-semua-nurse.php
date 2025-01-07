@@ -13,14 +13,6 @@
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">
-                            <a href="index.html" class="text-muted text-hover-primary">Home</a>
-                        </li>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <li class="breadcrumb-item">
-                            <span class="bullet bg-gray-500 w-5px h-2px"></span>
-                        </li>
                         <!--end::Item-->
                         <!--begin::Item-->
                         <li class="breadcrumb-item text-muted">Pengurusan Pengguna</li>
@@ -72,12 +64,12 @@
                                 <i class="ki-duotone ki-filter fs-2">
                                     <span class="path1"></span>
                                     <span class="path2"></span>
-                                </i>Filter</button>
+                                </i>Tapis</button>
                                 <!--begin::Menu 1-->
                                 <div class="menu menu-sub menu-sub-dropdown w-300px w-md-325px" data-kt-menu="true">
                                     <!--begin::Header-->
                                     <div class="px-7 py-5">
-                                        <div class="fs-5 text-gray-900 fw-bold">Filter Options</div>
+                                        <div class="fs-5 text-gray-900 fw-bold">Pilih Tapisan</div>
                                     </div>
                                     <!--end::Header-->
                                     <!--begin::Separator-->
@@ -88,7 +80,7 @@
                                         <!--begin::Input group-->
                                         <div class="mb-10">
                                             <label class="form-label fs-6 fw-semibold">Status Borang :</label>
-                                            <select class="form-select form-select-solid fw-bold" data-kt-select2="true" data-placeholder="Select option" data-allow-clear="true" data-kt-user-table-filter="role" data-hide-search="true">
+                                            <select class="form-select form-select-solid fw-bold" data-kt-select2="true" data-placeholder="Sila Pilih Status Borang" data-allow-clear="true" data-kt-user-table-filter="role" data-hide-search="true">
                                                 <option></option>
                                                 <option value="Lengkap">Lengkap</option>
                                                 <option value="Tidak Lengkap">Tidak Lengkap</option>
@@ -104,8 +96,8 @@
                                       
                                         <!--begin::Actions-->
                                         <div class="d-flex justify-content-end">
-                                            <button type="reset" class="btn btn-light btn-active-light-primary fw-semibold me-2 px-6" data-kt-menu-dismiss="true" data-kt-user-table-filter="reset">Reset</button>
-                                            <button type="submit" class="btn btn-primary fw-semibold px-6" data-kt-menu-dismiss="true" data-kt-user-table-filter="filter">Apply</button>
+                                            <button type="reset" class="btn btn-light btn-active-light-primary fw-semibold me-2 px-6" data-kt-menu-dismiss="true" data-kt-user-table-filter="reset">Batal</button>
+                                            <button type="submit" class="btn btn-primary fw-semibold px-6" data-kt-menu-dismiss="true" data-kt-user-table-filter="filter">Tapis</button>
                                         </div>
                                         <!--end::Actions-->
                                     </div>
@@ -372,9 +364,9 @@
                                                 <!--end::Scroll-->
                                                 <!--begin::Actions-->
                                                 <div class="text-center pt-10">
-                                                    <button type="reset" class="btn btn-light me-3" onclick="$('#kt_modal_add_user').modal('hide');">Discard</button>
+                                                    <button type="reset" class="btn btn-light me-3" onclick="$('#kt_modal_add_user').modal('hide');">Batal</button>
                                                     <button type="submit" class="btn btn-primary add-new-nurse" data-kt-users-modal-action="submit">
-                                                        <span class="indicator-label">Submit</span>
+                                                        <span class="indicator-label">Tambah</span>
                                                         <span class="indicator-progress">Please wait... 
                                                         <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                                                     </button>
@@ -408,7 +400,7 @@
                                     <th class="min-w-125px">Gred</th>
                                     <th class="min-w-125px">No LJM</th>
                                     <th class="min-w-125px">Status Borang</th>
-                                    <th class="text-end min-w-100px">Actions</th>
+                                    <th class="text-end min-w-100px"></th>
                                 </tr>
                             </thead>
                             <tbody class="text-gray-600 fw-semibold">
@@ -463,16 +455,16 @@
                                         
                                     </td>
                                     <td class="text-end">
-                                        <a href="#" class="btn btn-light btn-active-light-primary btn-flex btn-center btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions 
+                                        <a href="#" class="btn btn-light btn-active-light-primary btn-flex btn-center btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Tindakan 
                                         <i class="ki-duotone ki-down fs-5 ms-1"></i></a>
                                         <!--begin::Menu-->
                                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4" data-kt-menu="true">
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-3">
-                                                <a href="<?= base_url('editdetails/editFor/'.$key['id'])?>" class="menu-link px-3">Edit</a>
+                                                <a href="<?= base_url('editdetails/editFor/'.$key['id'])?>" class="menu-link px-3">Kemaskini</a>
                                             </div>
                                             <div class="menu-item px-3">
-                                                <a href="javascript:void(0);" class="menu-link px-3 state-to-inactive" data-init="<?=$key['id']?>">Hapuskan</a>
+                                                <a href="javascript:void(0);" class="menu-link px-3 state-to-inactive" data-init="<?=$key['id']?>">Nyahaktif</a>
                                             </div>
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->

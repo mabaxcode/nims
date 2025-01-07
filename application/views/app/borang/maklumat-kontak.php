@@ -20,7 +20,7 @@
 				<!--begin::Input group-->
 				<div class="row mb-6">
 					<!--begin::Label-->
-					<label class="col-lg-4 col-form-label required fw-semibold fs-6">Phone No.</label>
+					<label class="col-lg-4 col-form-label required fw-semibold fs-6">No. Telefon</label>
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8 fv-row">

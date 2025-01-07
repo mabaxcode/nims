@@ -27,7 +27,49 @@ function validateMaklumat(formID)
                         message: "The value is not a valid email address"
                     }
                 }
-            }
+            },
+            nama_waris1: {
+                validators: {
+                    notEmpty: {
+                        message: "Sila isi nama waris pertama"
+                    }
+                }
+            },
+            nama_waris2: {
+                validators: {
+                    notEmpty: {
+                        message: "Sila isi nama waris kedua"
+                    }
+                }
+            },
+            no_kp_waris1: {
+                validators: {
+                    notEmpty: {
+                        message: "Sila isi no. kad pengenalan waris pertama"
+                    }
+                }
+            },
+            no_kp_waris2: {
+                validators: {
+                    notEmpty: {
+                        message: "Sila isi no. kad pengenalan waris kedua"
+                    }
+                }
+            },
+            no_tel_waris1: {
+                validators: {
+                    notEmpty: {
+                        message: "Sila isi no. telefon waris pertama"
+                    }
+                }
+            },
+            no_tel_waris2: {
+                validators: {
+                    notEmpty: {
+                        message: "Sila isi no. telefon waris pertama"
+                    }
+                }
+            },
         },
         plugins: {
             trigger: new FormValidation.plugins.Trigger,
@@ -89,7 +131,7 @@ $(document).on('click', '.simpan-maklumat-kontak', function (e) {
 
         } else {
             swal.fire({
-                text: "Before proceeding, please ensure that all mandatory fields have been completed.",
+                text: "Sila pastilan semua maklumat telah diisi.",
                 icon: "error",
                 buttonsStyling: false,
                 confirmButtonText: "Ok, got it!",

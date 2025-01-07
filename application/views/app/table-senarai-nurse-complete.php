@@ -41,9 +41,9 @@
                     <table class="table text-uppercase bt-0">
                         <tbody>
                             <tr>
-                                <th class="pt-5" style="width:11%;">KEYWORD</th>
+                                <th class="pt-5" style="width:11%;">Carian</th>
                                 <td>
-                                    <input type="text" class="form-control inpt_data dt-select" name="inpt_data" value="" placeholder="Name / No Kad Pengenalan">
+                                    <input type="text" class="form-control inpt_data dt-select" name="inpt_data" value="" placeholder="Name / No. Kad Pengenalan">
                                 </td>
                             </tr>
                             <tr>
@@ -103,8 +103,8 @@
                     <i class="fas fa-envelope-open-text fs-4"></i>
                     Cetak CSV
                     </a>
-                    <a class="btn btn-sm btn-warning font-weight-bold mr-2 mb-5 btn-reset-search-nurse">Reset</a>
-                    <a class="btn btn-sm btn-primary font-weight-bold mr-2 mb-5 btn-search">Search</a>
+                    <a class="btn btn-sm btn-warning font-weight-bold mr-2 mb-5 btn-reset-search-nurse">Set Semula</a>
+                    <a class="btn btn-sm btn-primary font-weight-bold mr-2 mb-5 btn-search">Cari</a>
                 </div>
                 <div class="col-lg-12 mb-5 mt-5" id="result-company-search">
                     <div class="tab-content mt-5">
@@ -119,10 +119,10 @@
                                                     <th class="" tabindex="0" rowspan="1" colspan="1" style="width: 0px;">NO</th>
                                                     <th class="" tabindex="0" rowspan="1" colspan="1" style="width: 0px;">NAMA</th>
                                                     <th class="" tabindex="0" rowspan="1" colspan="1" style="width: 0px;">EMAIL</th>
-                                                    <th class="" tabindex="0" rowspan="1" colspan="1" style="width: 0px;">PHONE NO</th>
-                                                    <th class="" rowspan="1" colspan="1"  style="width: 0px;">NO K/P</th>
+                                                    <th class="" tabindex="0" rowspan="1" colspan="1" style="width: 0px;">No. TELEFON</th>
+                                                    <th class="" rowspan="1" colspan="1"  style="width: 0px;">NO. K/P</th>
                                                     <th class="" tabindex="0" rowspan="1" colspan="1" style="width: 0px;">GRED</th>
-                                                    <th class="" rowspan="1" colspan="1"  style="width: 0px; text-align: right;">ACTION</th>
+                                                    <th class="" rowspan="1" colspan="1"  style="width: 0px; text-align: right;"></th>
 
                                                 </tr>
                                             </thead>

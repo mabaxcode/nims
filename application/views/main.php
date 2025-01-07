@@ -25,7 +25,7 @@ License: For each use you must have a valid license purchased only from above li
 	<meta property="og:url" content="https://keenthemes.com/metronic" />
 	<meta property="og:site_name" content="Metronic by Keenthemes" />
 	<link rel="canonical" href="http://preview.keenthemes.comauthentication/layouts/creative/sign-in.html" />
-	<link rel="shortcut icon" href="<?= base_url(); ?>assets/media/logos/favicon.ico" />
+	<link rel="shortcut icon" href="<?= base_url(); ?>assets/media/logos/trans-new.png" />
 	<!--begin::Fonts(mandatory for all pages)-->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
 	<!--end::Fonts-->
@@ -46,6 +46,7 @@ License: For each use you must have a valid license purchased only from above li
 			<!--begin::Authentication - Sign-in -->
 			<div class="d-flex flex-column flex-column-fluid flex-lg-row">
 				<!--begin::Aside-->
+				<?/*
 				<div class="d-flex flex-center w-lg-50 pt-15 pt-lg-0 px-10">
 					<!--begin::Aside-->
 					<div class="d-flex flex-center flex-lg-start flex-column">
@@ -60,6 +61,7 @@ License: For each use you must have a valid license purchased only from above li
 					</div>
 					<!--begin::Aside-->
 				</div>
+				*/?>
 				<!--begin::Aside-->
 				<!--begin::Body-->
 				<div class="d-flex flex-column-fluid flex-lg-row-auto justify-content-center justify-content-lg-end p-12 p-lg-20">
@@ -73,8 +75,8 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Heading-->
 								<div class="text-center mb-11">
 									<!--begin::Title-->
-									<img alt="Logo" src="<?= base_url(); ?>assets/media/logos/logo-new.png" width="100px" />
-									<h1 class="text-gray-900 fw-bolder mb-3">Log Masuk</h1>
+									<img alt="Logo" src="<?= base_url(); ?>assets/media/logos/trans-new.png" width="150px" />
+									<h2 class="text-gray-900 fw-bolder">Nurse Information System</h2>
 									<!-- <div class="text-gray-500 fw-semibold fs-6">Nurse Information Management System</div> -->
 									<!--end::Title-->
 									<!--begin::Subtitle-->
@@ -93,13 +95,13 @@ License: For each use you must have a valid license purchased only from above li
 						    
 								<!--end::Login options-->
 								<!--begin::Input group=-->
-								<div class="fv-row mb-8">
+								<div class="fv-row mb-3">
 									<!--begin::Email-->
-									<input type="text" placeholder="Nombor Kad Pengenalan" name="no_kp" autocomplete="off" class="form-control bg-transparent" />
+									<input type="text" placeholder="No. Kad Pengenalan" name="no_kp" autocomplete="off" class="form-control bg-transparent" />
 									<!--end::Email-->
 								</div>
 								<!--end::Input group=-->
-								<div class="fv-row mb-3">
+								<div class="fv-row mb-8">
 									<!--begin::Password-->
 									<input type="password" placeholder="Kata Laluan" name="password" autocomplete="off" class="form-control bg-transparent" />
 									<!--end::Password-->
@@ -120,8 +122,8 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--end::Submit button-->
 								<!--begin::Sign up-->
-								<div class="text-gray-500 text-center fw-semibold fs-6">Daftar akaun baru 
-								<a href="<?=base_url('main/createAccount')?>" class="link-primary">Daftar Akaun</a></div>
+								<div class="text-gray-500 text-center fw-semibold fs-6">Tidak mempunyai akaun ?
+								<a href="<?=base_url('main/createAccount')?>" class="link-primary">Daftar Akaun Baru</a></div>
 								<!--end::Sign up-->
 							</form>
 							<!--end::Form-->

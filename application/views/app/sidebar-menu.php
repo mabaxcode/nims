@@ -17,7 +17,7 @@
 								<span class="path4"></span>
 							</i>
 						</span>
-						<span class="menu-title">Home</span>
+						<span class="menu-title">Dashboard</span>
 					</a>
 				</div>
 

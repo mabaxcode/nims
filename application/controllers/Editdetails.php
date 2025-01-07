@@ -52,10 +52,31 @@ class Editdetails extends CI_Controller {
 
 		if ($check == true) {
 			$where = array('user_id' => $nurse_id);
-			$update = array('umur' => $post['umur'], 'bangsa' => $post['bangsa'], 'status' => '1');
+			$update = array(
+				'umur' => $post['umur'], 
+				'bangsa' => $post['bangsa'], 
+				'status' => '1', 
+				'address1' => $post['address1'],
+				'address2' => $post['address2'],
+				'postcode' => $post['postcode'],
+				'state' => $post['state'],
+				'city' => $post['city'],
+				'person_status' => $post['person_status'],
+			);
 			update_any_table($update, $where, 'personal_info');
 		} else {
-			$insert = array('umur' => $post['umur'], 'bangsa' => $post['bangsa'], 'status' => '1', 'user_id' => $nurse_id);
+			$insert = array(
+				'umur' => $post['umur'], 
+				'bangsa' => $post['bangsa'], 
+				'status' => '1', 
+				'user_id' => $nurse_id,
+				'address1' => $post['address1'],
+				'address2' => $post['address2'],
+				'postcode' => $post['postcode'],
+				'state' => $post['state'],
+				'city' => $post['city'],
+				'person_status' => $post['person_status'],
+			);
 			insert_any_table($insert, 'personal_info');
 		}
 
@@ -177,7 +198,17 @@ class Editdetails extends CI_Controller {
 		// echo "<pre>"; print_r($post); echo "</pre>"; exit;
 
 		$where = array('id' => $nurse_id);
-		$update = array('email' => $post['email'], 'phone_no' => $post['phone_no'], 'status' => '1');
+		$update = array(
+			'email' => $post['email'], 
+			'phone_no' => $post['phone_no'], 
+			'status' => '1',
+			'nama_waris1' => $post['nama_waris1'],
+			'nama_waris2' => $post['nama_waris2'],
+			'no_kp_waris1' => $post['no_kp_waris1'],
+			'no_kp_waris2' => $post['no_kp_waris2'],
+			'no_tel_waris1' => $post['no_tel_waris1'],
+			'no_tel_waris2' => $post['no_tel_waris2'],
+		);
 		update_any_table($update, $where, 'user_accounts');
 
 		# personal

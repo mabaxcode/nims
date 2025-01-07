@@ -13,7 +13,7 @@
 		<meta property="og:url" content="https://keenthemes.com/metronic" />
 		<meta property="og:site_name" content="Metronic by Keenthemes" />
 		<link rel="canonical" href="http://preview.keenthemes.comindex.html" />
-		<link rel="shortcut icon" href="<?= base_url(); ?>assets/media/logos/favicon.ico" />
+		<link rel="shortcut icon" href="<?= base_url(); ?>assets/media/logos/trans-new.png" />
 		<!--begin::Fonts(mandatory for all pages)-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
 		<!--end::Fonts-->
@@ -183,7 +183,7 @@
 										<!--end::Menu separator-->
 										<!--begin::Menu item-->
 										<div class="menu-item px-5">
-											<a href="<?=base_url('app/myProfile')?>" class="menu-link px-5">My Profile</a>
+											<a href="<?=base_url('app/myProfile')?>" class="menu-link px-5">Profile</a>
 										</div>
 										<!--end::Menu item-->
 					
@@ -231,10 +231,10 @@
 						<div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
 							<!--begin::Logo image-->
 							<a href="<?= base_url('app'); ?>">
-								<img alt="Logo" src="<?= base_url(); ?>assets/media/logos/logo-new.png" class="h-25px app-sidebar-logo-default" />
-								<img alt="Logo" src="<?= base_url(); ?>assets/media/logos/logo-new.png" class="h-20px app-sidebar-logo-minimize" />
+								<img alt="Logo" src="<?= base_url(); ?>assets/media/logos/trans-new.png" class="h-25px app-sidebar-logo-default" />
+								<img alt="Logo" src="<?= base_url(); ?>assets/media/logos/trans-new.png" class="h-20px app-sidebar-logo-minimize" />
 							</a>
-							<h5 class="text-muted">Nurse Information System</h5>
+							<h6 class="text-white">Nurse Information System</h6>
 							<!--end::Sidebar toggle-->
 						</div>
 						<!--end::Logo-->
@@ -4827,7 +4827,7 @@
 			    e.preventDefault();
 			    Swal.fire({
 			      // title: "Are you sure?",
-			      text: "Hapuskan Pengguna ?",
+			      text: "Nyahaktifkan Pengguna ?",
 			      icon: "warning",
 			      showCancelButton: true,
 			      confirmButtonColor: "#3085d6",

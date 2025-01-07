@@ -39,13 +39,6 @@ function validateMaklumatKerja(formID)
                     }
                 }
             },
-            tarikh_naik_pangkat: {
-                validators: {
-                    notEmpty: {
-                        message: "Sila isi tarikh kenaikan pangkat"
-                    }
-                }
-            },
             tarikh_bersara: {
                 validators: {
                     notEmpty: {

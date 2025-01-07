@@ -144,6 +144,13 @@ function validateAddNurse(formID)
                     }
                 }
             },
+            phone_no: {
+                validators: {
+                    notEmpty: {
+                        message: "Sila isi no telefon"
+                    }
+                }
+            },
             email: {
                 validators: {
                     regexp: {
@@ -238,10 +245,10 @@ $(document).on('click', '.add-new-nurse', function (e) {
 
         } else {
             swal.fire({
-                text: "Before proceeding, please ensure that all mandatory fields have been completed.",
+                text: "Sila pastikan semua maklumat telah diisi.",
                 icon: "error",
                 buttonsStyling: false,
-                confirmButtonText: "Ok, got it!",
+                confirmButtonText: "Ok",
                 customClass: {
                     confirmButton: "btn font-weight-bold btn-light-primary"
                 }

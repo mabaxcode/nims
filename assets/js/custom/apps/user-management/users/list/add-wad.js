@@ -82,7 +82,7 @@ $(document).on('click', '.add-new-wad', function (e) {
 
         } else {
             swal.fire({
-                text: "Before proceeding, please ensure that all mandatory fields have been completed.",
+                text: "Sila pastikan semua maklumat telah diisi.",
                 icon: "error",
                 buttonsStyling: false,
                 confirmButtonText: "Ok, got it!",

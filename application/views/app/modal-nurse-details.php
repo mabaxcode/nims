@@ -12,7 +12,7 @@
         </div>
 
         <div class="modal-body">
-            <p class="fs-3 text-gray-800 text-hover-primary fw-bold mb-3">Nama : <?=$user_accounts['name']?> <span class="badge badge-primary badge-lg"><?=$employment_info['no_ljm']?></span></p>
+            <p class="fs-3 text-gray-800 text-hover-primary fw-bold mb-3">Nama : <?=strtoupper($user_accounts['name'])?> <span class="badge badge-primary badge-lg"><?=$employment_info['no_ljm']?></span></p>
 
 
             <!--begin::Accordion-->
@@ -80,7 +80,7 @@
         </div>
 
         <div class="modal-footer">
-            <button type="button" class="btn btn-info" data-bs-dismiss="modal">Tutup</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tutup</button>
             <!-- <button type="button" class="btn btn-primary">Tutup</button> -->
         </div>
     </div>

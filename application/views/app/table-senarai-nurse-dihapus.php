@@ -13,14 +13,7 @@
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">
-                            <a href="index.html" class="text-muted text-hover-primary">Home</a>
-                        </li>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <li class="breadcrumb-item">
-                            <span class="bullet bg-gray-500 w-5px h-2px"></span>
-                        </li>
+                        
                         <!--end::Item-->
                         <!--begin::Item-->
                         <li class="breadcrumb-item text-muted">Pengurusan Pengguna</li>
@@ -368,7 +361,7 @@
                                     <th class="min-w-125px">Gred</th>
                                     <th class="min-w-125px">No LJM</th>
                                     <th class="min-w-125px">Status Borang</th>
-                                    <th class="text-end min-w-100px">Actions</th>
+                                    <th class="text-end min-w-100px"></th>
                                 </tr>
                             </thead>
                             <tbody class="text-gray-600 fw-semibold">

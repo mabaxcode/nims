@@ -4,7 +4,7 @@
                                         <!--begin::Modal header-->
                                         <div class="modal-header" id="kt_modal_add_user_header">
                                             <!--begin::Modal title-->
-                                            <h2 class="fw-bold">Kemaskini Jawatan</h2>
+                                            <h2 class="fw-bold">Kemaskini</h2>
                                             <!--end::Modal title-->
                                             <!--begin::Close-->
                                             <div class="btn btn-icon btn-sm btn-active-icon-primary" onclick="$('#modal_settting_jawatan').modal('hide');">

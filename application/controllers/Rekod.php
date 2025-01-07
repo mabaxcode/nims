@@ -42,7 +42,7 @@ class Rekod extends CI_Controller {
 			//photo    		= "<img class=\"img-fluid img-thumbnail\" width=\"60\" src=\"$img_path\">";
 			//$company_name 	= get_table_code("company", "account_id", "name", $key['account_id']);
 
-			$action = "<a class=\"btn btn-primary btn-sm view-nurse-details\" data-init=".$key['user_id']." style='float:right;'>View</a>";
+			$action = "<a class=\"btn btn-primary btn-sm view-nurse-details\" data-init=".$key['user_id']." style='float:right;'>Lihat</a>";
 			//$action = "<button class=\"btn btn-primary btn-sm cancel-app\" data-formid=\"$form_id\">CANCEL</button>";
 
 			$gredDesc = get_ref_code('gred', $key['gred']);
