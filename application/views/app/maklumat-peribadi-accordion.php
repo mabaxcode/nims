@@ -48,4 +48,16 @@
 		</div>
 		<!--end::Col-->
 	</div>
+	<div class="row mb-6">
+		<!--begin::Label-->
+		<label class="col-lg-4 col-form-label fw-semibold fs-6">
+			<span class="required">Status</span>
+		</label>
+		<!--end::Label-->
+		<!--begin::Col-->
+		<div class="col-lg-8 fv-row">
+			<input type="text" class="form-control form-control-lg" placeholder="Status" value="<?= $personal_info['person_status']?>" disabled />
+		</div>
+		<!--end::Col-->
+	</div>
 </div>

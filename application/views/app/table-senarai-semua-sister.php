@@ -1,12 +1,29 @@
 
-    <!--begin::Content wrapper-->
-    
+
+
+
+
+
+
+
+<div class="d-flex flex-column flex-column-fluid">
         <!--begin::Toolbar-->
-        <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
-            <!--begin::Toolbar container-->
-            <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
-                <!--begin::Page title-->
-                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+        
+        <!--end::Toolbar-->
+        <!--begin::Content-->
+        <div id="kt_app_content" class="app-content flex-column-fluid">
+            <!--begin::Content container-->
+            <div id="kt_app_content_container" class="app-container container-fluid">
+        
+                
+                <!--begin::Row-->
+                <div class="row g-5 g-xl-10">
+                    <div class="col-xl-12">
+                        <!--begin::Chart widget 15-->
+                        <div class="card card-flush h-xl-100">
+                            <!--begin::Header-->
+                            <div class="card-header pt-7">
+                                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                     <!--begin::Title-->
                     <h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">Senarai Sister</h1>
                     <!--end::Title-->
@@ -28,19 +45,14 @@
                     </ul>
                     <!--end::Breadcrumb-->
                 </div>
-                <!--end::Page title-->
+                            </div>
+                            <!--end::Header-->
+                            <!--begin::Body-->
+                            <div class="card-body pt-5">
 
-            </div>
-            <!--end::Toolbar container-->
-        </div>
-        <!--end::Toolbar-->
-        <!--begin::Content-->
-        <div id="kt_app_content" class="app-content flex-column-fluid">
-            <!--begin::Content container-->
-            <div id="kt_app_content_container" class="app-container container-xxl">
-                <!--begin::Card-->
-                <div class="card">
-                    <!--begin::Card header-->
+
+                                    
+                                <!--begin::Card header-->
                     <div class="card-header border-0 pt-6">
                         <!--begin::Card title-->
                         <div class="card-title">
@@ -359,17 +371,27 @@
                         <!--end::Table-->
                     </div>
                     <!--end::Card body-->
+
+
+                            </div>
+                            <!--end::Body-->
+                        </div>
+                        <!--end::Chart widget 15-->
+                    </div>
                 </div>
-                <!--end::Card-->
+                <!--end::Row-->
             </div>
             <!--end::Content container-->
         </div>
         <!--end::Content-->
-    
-    <!--end::Content wrapper-->
-    <!--begin::Footer-->
-    
-    <!--end::Footer-->
+    </div>
+
+
+
+
+
+
+
 
     <script type="text/javascript">
         $("#select2-wad").select2();

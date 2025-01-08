@@ -8,14 +8,14 @@ var KTSigninGeneral = function() {
                     no_kp: {
                         validators: {
                             notEmpty: {
-                                message: "IC No is required"
+                                message: "Sila isi No. Kad Pengenalan"
                             }
                         }
                     },
                     password: {
                         validators: {
                             notEmpty: {
-                                message: "The password is required hasdhb"
+                                message: "Sila isi Katalaluan"
                             }
                         }
                     }
@@ -40,7 +40,7 @@ var KTSigninGeneral = function() {
                         e.removeAttribute("data-kt-indicator"), e.disabled = !1,
                         t.submit();
                     }), 2e3)) : Swal.fire({
-                        text: "Sorry, looks like there are some errors detected, please try again.",
+                        text: "Maaf, Sila isi No. Kad Pengenalan dan Katalaluan anda untuk Log Masuk.",
                         icon: "error",
                         buttonsStyling: !1,
                         confirmButtonText: "Ok, got it!",
@@ -55,20 +55,20 @@ var KTSigninGeneral = function() {
                         if (e) {
                             t.submit();
                         } else Swal.fire({
-                            text: "Sorry, the email or password is incorrect, please try again.",
+                            text: "Maaf, Sila isi No. Kad Pengenalan dan Katalaluan anda untuk Log Masuk.",
                             icon: "error",
                             buttonsStyling: !1,
-                            confirmButtonText: "Ok, got it!",
+                            confirmButtonText: "Ok",
                             customClass: {
                                 confirmButton: "btn btn-primary"
                             }
                         })
                     })).catch((function(t) {
                         Swal.fire({
-                            text: "Sorry, looks like there are some errors detected, please try again.",
+                            text: "Maaf, Sila isi No. Kad Pengenalan dan Katalaluan anda untuk Log Masuk.",
                             icon: "error",
                             buttonsStyling: !1,
-                            confirmButtonText: "Ok, got it!",
+                            confirmButtonText: "Ok",
                             customClass: {
                                 confirmButton: "btn btn-primary"
                             }
@@ -76,10 +76,10 @@ var KTSigninGeneral = function() {
                     })).then((() => {
                         e.removeAttribute("data-kt-indicator"), e.disabled = !1
                     }))) : Swal.fire({
-                        text: "Sorry, looks like there are some errors detected, please try again.",
+                        text: "Maaf, Sila isi No. Kad Pengenalan dan Katalaluan anda untuk Log Masuk.",
                         icon: "error",
                         buttonsStyling: !1,
-                        confirmButtonText: "Ok, got it!",
+                        confirmButtonText: "Ok",
                         customClass: {
                             confirmButton: "btn btn-primary"
                         }

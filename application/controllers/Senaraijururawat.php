@@ -34,7 +34,7 @@ class Senaraijururawat extends CI_Controller {
 		$update_process = update_any_table($update, $where, 'user_accounts');
 
 		if ($update_process == true) {
-			echo encode(array('status' => true, 'msg' => 'Pengguna berjaya dihapuskan !'));
+			echo encode(array('status' => true, 'msg' => 'Pengguna berjaya dinyahaktifkan !'));
 		} else {
 			echo encode(array('status' => true, 'msg' => 'Gagal untuk hapus pengguna !'));
 		}

@@ -101,7 +101,7 @@
 				</div>
 				<div class="row mb-6">
 					<!--begin::Label-->
-					<label class="col-lg-4 col-form-label required fw-semibold fs-6">Tarikh Kenaikan Pangkat</label>
+					<label class="col-lg-4 col-form-label fw-semibold fs-6">Tarikh Kenaikan Pangkat</label>
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8 fv-row">
@@ -277,7 +277,7 @@
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8 fv-row">
-						<input type="text" name="bls" class="form-control form-control-lg" placeholder="BLS" value="<?= $employment['sls']?>" />
+						<input type="text" name="sls" class="form-control form-control-lg" placeholder="SLS" value="<?= $employment['sls']?>" />
 					</div>
 					<!--end::Col-->
 				</div>

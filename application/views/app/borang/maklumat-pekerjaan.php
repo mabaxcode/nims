@@ -103,7 +103,7 @@
 				</div>
 				<div class="row mb-6">
 					<!--begin::Label-->
-					<label class="col-lg-4 col-form-label required fw-semibold fs-6">Tarikh Kenaikan Pangkat</label>
+					<label class="col-lg-4 col-form-label fw-semibold fs-6">Tarikh Kenaikan Pangkat</label>
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8 fv-row">
@@ -243,6 +243,66 @@
 					</div>
 					<!--end::Col-->
 				</div>
+
+				<div class="row mb-6">
+					<!--begin::Label-->
+					<label class="col-lg-4 col-form-label fw-semibold fs-6">BLS</label>
+					<!--end::Label-->
+					<!--begin::Col-->
+					<div class="col-lg-8 fv-row">
+						<input type="text" name="bls" class="form-control form-control-lg" placeholder="BLS" value="<?= $employment['bls']?>" />
+					</div>
+					<!--end::Col-->
+				</div>
+				<div class="row mb-6">
+					<!--begin::Label-->
+					<label class="col-lg-4 col-form-label fw-semibold fs-6">Tarikh BLS</label>
+					<!--end::Label-->
+					<!--begin::Col-->
+					<div class="col-lg-8 fv-row">
+						<?
+						if ($employment['tarikh_bls']) {
+							$tarikh_bls =  date('Y-m-d', strtotime($employment['tarikh_bls']));
+						} else {
+							$tarikh_bls = '';
+						}
+						?>
+						<input type="date" name="tarikh_bls" class="form-control form-control-lg" placeholder="Tarikh BLS" value="<?=$tarikh_bls?>" />
+					</div>
+					<!--end::Col-->
+				</div>
+
+				<div class="row mb-6">
+					<!--begin::Label-->
+					<label class="col-lg-4 col-form-label fw-semibold fs-6">SLS</label>
+					<!--end::Label-->
+					<!--begin::Col-->
+					<div class="col-lg-8 fv-row">
+						<input type="text" name="sls" class="form-control form-control-lg" placeholder="SLS" value="<?= $employment['sls']?>" />
+					</div>
+					<!--end::Col-->
+				</div>
+				<div class="row mb-6">
+					<!--begin::Label-->
+					<label class="col-lg-4 col-form-label fw-semibold fs-6">Tarikh SLS</label>
+					<!--end::Label-->
+					<!--begin::Col-->
+					<div class="col-lg-8 fv-row">
+						<?
+						if ($employment['tarikh_sls']) {
+							$tarikh_sls =  date('Y-m-d', strtotime($employment['tarikh_sls']));
+						} else {
+							$tarikh_sls = '';
+						}
+						?>
+						<input type="date" name="tarikh_sls" class="form-control form-control-lg" placeholder="Tarikh SLS" value="<?=$tarikh_sls?>" />
+					</div>
+					<!--end::Col-->
+				</div>
+
+				<!-- end -->
+
+
 				<div class="row mb-6">
 					<!--begin::Label-->
 					<label class="col-lg-12 col-form-label fw-semibold fs-6"><b>Maklumat Kompetensi/Kelayakan Profesional</b></label>

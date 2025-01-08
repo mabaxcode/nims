@@ -56,7 +56,7 @@
 									<div id="kt_user_view_details" class="collapse show">
 										<div class="pb-5 fs-6">
 											<!--begin::Details item-->
-											<div class="fw-bold mt-5">Phone No.</div>
+											<div class="fw-bold mt-5">No. Telefon</div>
 											<div class="text-gray-600"><?=$user['phone_no']?></div>
 											<!--begin::Details item-->
 											<!--begin::Details item-->
@@ -142,7 +142,7 @@
 																			<td><?=$sister_data['email']?></td>
 																		</tr>
 																		<tr>
-																			<td>Phone No.</td>
+																			<td>No. Telefon</td>
 																			<td><?=$sister_data['phone_no']?><td>
 																			<!-- <td class="text-end">
 																				<button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px ms-auto" data-bs-toggle="modal" data-bs-target="#kt_modal_update_password">
@@ -1350,7 +1350,7 @@
 					<!--begin::Title-->
 					<div class="text-white mb-6 pt-6">
 						<!-- <span class="fs-4 fw-semibold me-2 d-block lh-1 pb-2 opacity-75">Get best offer</span> -->
-						<span class="fs-2qx fw-bold">Nurse Information Management System</span>
+						<span class="fs-2qx fw-bold">Nurse Information System</span>
 					</div>
 					<!--end::Title-->
 					<!--begin::Text-->

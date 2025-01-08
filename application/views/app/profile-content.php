@@ -1,41 +1,17 @@
 <div class="d-flex flex-column flex-column-fluid">
 							<!--begin::Toolbar-->
-							<div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+							<div id="kt_app_content_container" class="app-container container-fluid">
 								<!--begin::Toolbar container-->
-								<div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
-									<!--begin::Page title-->
-									<div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
-										<!--begin::Title-->
-										<h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">Profile Pengguna</h1>
-										<!--end::Title-->
-										<!--begin::Breadcrumb-->
-										<ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
-											<!--begin::Item-->
-											<li class="breadcrumb-item text-muted">
-												<a href="#" class="text-muted text-hover-primary">Home</a>
-											</li>
-											<!--end::Item-->
-											<!--begin::Item-->
-											<li class="breadcrumb-item">
-												<span class="bullet bg-gray-500 w-5px h-2px"></span>
-											</li>
-											<!--end::Item-->
-											<!--begin::Item-->
-											<li class="breadcrumb-item text-muted">Profile Pengguna</li>
-											<!--end::Item-->
-										</ul>
-										<!--end::Breadcrumb-->
-									</div>
-									<!--end::Page title-->
-									
-								</div>
+								 <!--begin::Header-->
+                     
 								<!--end::Toolbar container-->
 							</div>
 							<!--end::Toolbar-->
 							<!--begin::Content-->
-							<div id="kt_app_content" class="app-content flex-column-fluid">
+							
+          
 								<!--begin::Content container-->
-								<div id="kt_app_content_container" class="app-container container-xxl">
+								 <div id="kt_app_content_container" class="app-container container-fluid">
 									<!--begin::Navbar-->
 									<div class="card mb-5 mb-xl-10">
 										<div class="card-body pt-9 pb-0">
@@ -100,7 +76,7 @@
 													<a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="<?=base_url('app/myProfile')?>">Maklumat</a>
 												</li>
 												<li class="nav-item mt-2">
-													<a class="nav-link text-active-primary ms-0 me-10 py-5" href="<?=base_url('app/setting')?>">Setting</a>
+													<a class="nav-link text-active-primary ms-0 me-10 py-5" href="<?=base_url('app/setting')?>">Tetapan</a>
 												</li>
 
 												<!--end::Nav item-->
@@ -121,7 +97,7 @@
 											</div>
 											<!--end::Card title-->
 											<!--begin::Action-->
-											<a href="<?=base_url('app/setting')?>" class="btn btn-sm btn-primary align-self-center">Edit Profile</a>
+											<a href="<?=base_url('app/setting')?>" class="btn btn-sm btn-primary align-self-center">Kemaskini Profile</a>
 											<!--end::Action-->
 										</div>
 										<!--begin::Card header-->
@@ -130,7 +106,7 @@
 											<!--begin::Row-->
 											<div class="row mb-7">
 												<!--begin::Label-->
-												<label class="col-lg-4 fw-semibold text-muted">Full Name</label>
+												<label class="col-lg-4 fw-semibold text-muted">Nama</label>
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8">
@@ -146,14 +122,8 @@
 											<!--begin::Input group-->
 											<div class="row mb-7">
 												<!--begin::Label-->
-												<label class="col-lg-4 fw-semibold text-muted">Contact Phone 
-												<span class="ms-1" data-bs-toggle="tooltip" title="Phone number must be active">
-													<i class="ki-duotone ki-information fs-7">
-														<span class="path1"></span>
-														<span class="path2"></span>
-														<span class="path3"></span>
-													</i>
-												</span></label>
+												<label class="col-lg-4 fw-semibold text-muted">No. Telefon
+												</label>
 												<!--end::Label-->
 												<!--begin::Col-->
 												<div class="col-lg-8 d-flex align-items-center">

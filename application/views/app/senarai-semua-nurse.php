@@ -195,7 +195,7 @@
 										<!--end::Menu item-->
 										<!--begin::Menu item-->
 										<div class="menu-item px-5">
-											<a href="<?= base_url('main/logout');?>" class="menu-link px-5">Sign Out</a>
+											<a href="<?= base_url('main/logout');?>" class="menu-link px-5">Log Keluar</a>
 										</div>
 										<!--end::Menu item-->
 									</div>
@@ -4850,7 +4850,7 @@
 			                if (response.status == true) {
 
 			                    Swal.fire({
-			                      title: "Success!",
+			                      title: "Berjaya !",
 			                      text: response.msg,
 			                      icon: "success"
 			                    });

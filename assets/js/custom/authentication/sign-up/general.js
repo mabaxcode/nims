@@ -16,24 +16,24 @@ var KTSignupGeneral = function() {
                     name: {
                         validators: {
                             notEmpty: {
-                                message: "Name is required"
+                                message: "Sila isi nama"
                             }
                         }
                     },
                     no_kp: {
                         validators: {
                             notEmpty: {
-                                message: "IC No is required"
+                                message: "Sila isi No. Kad Pengenalan"
                             }
                         }
                     },
                     password: {
                         validators: {
                             notEmpty: {
-                                message: "The password is required"
+                                message: "Sila isi Katalaluan"
                             },
                             callback: {
-                                message: "Please enter valid password",
+                                message: "Katalaluan tidak sah",
                                 callback: function(e) {
                                     if (e.value.length > 0) return s()
                                 }
@@ -43,13 +43,13 @@ var KTSignupGeneral = function() {
                     "confirm-password": {
                         validators: {
                             notEmpty: {
-                                message: "The password confirmation is required"
+                                message: "Sila sahkan katalaluan"
                             },
                             identical: {
                                 compare: function() {
                                     return e.querySelector('[name="password"]').value
                                 },
-                                message: "The password and its confirm are not the same"
+                                message: "Katalaluan yang disahkan tidak sepadan"
                             }
                         }
                     }
@@ -73,10 +73,10 @@ var KTSignupGeneral = function() {
                         t.removeAttribute("data-kt-indicator"), t.disabled = !1, 
                         doRegAccount(regFrom);
                     }), 1500)) : Swal.fire({
-                        text: "Sorry, looks like there are some errors detected, please try again.",
+                        text: "Sila pastikan semua maklumat telah diisi sebelum membuat pendaftaran.",
                         icon: "error",
                         buttonsStyling: !1,
-                        confirmButtonText: "Ok, got it!",
+                        confirmButtonText: "Ok",
                         customClass: {
                             confirmButton: "btn btn-primary"
                         }
@@ -158,20 +158,20 @@ var KTSignupGeneral = function() {
                             const t = e.getAttribute("data-kt-redirect-url");
                             t && (location.href = t)
                         } else Swal.fire({
-                            text: "Sorry, looks like there are some errors detected, please try again.",
+                            text: "Sila pastikan semua maklumat telah diisi sebelum membuat pendaftaran.",
                             icon: "error",
                             buttonsStyling: !1,
-                            confirmButtonText: "Ok, got it!",
+                            confirmButtonText: "Ok",
                             customClass: {
                                 confirmButton: "btn btn-primary"
                             }
                         })
                     })).catch((function(e) {
                         Swal.fire({
-                            text: "Sorry, looks like there are some errors detected, please try again.",
+                            text: "Sila pastikan semua maklumat telah diisi sebelum membuat pendaftaran.",
                             icon: "error",
                             buttonsStyling: !1,
-                            confirmButtonText: "Ok, got it!",
+                            confirmButtonText: "Ok",
                             customClass: {
                                 confirmButton: "btn btn-primary"
                             }
@@ -179,10 +179,10 @@ var KTSignupGeneral = function() {
                     })).then((() => {
                         t.removeAttribute("data-kt-indicator"), t.disabled = !1
                     }))) : Swal.fire({
-                        text: "Sorry, looks like there are some errors detected, please try again.",
+                        text: "Sila pastikan semua maklumat telah diisi sebelum membuat pendaftaran.",
                         icon: "error",
                         buttonsStyling: !1,
-                        confirmButtonText: "Ok, got it!",
+                        confirmButtonText: "Ok",
                         customClass: {
                             confirmButton: "btn btn-primary"
                         }
@@ -214,7 +214,7 @@ function doRegAccount(regData)
 			        text: response.msg,
 			        icon: "success",
 			        buttonsStyling: !1,
-			        confirmButtonText: "Ok, got it!",
+			        confirmButtonText: "Ok",
 			        customClass: {
 			            confirmButton: "btn btn-primary"
 			        }
@@ -228,7 +228,7 @@ function doRegAccount(regData)
                     text: response.msg,
                     icon: "error",
                     buttonsStyling: !1,
-                    confirmButtonText: "Ok, got it!",
+                    confirmButtonText: "Ok",
                     customClass: {
                         confirmButton: "btn btn-primary"
                     }

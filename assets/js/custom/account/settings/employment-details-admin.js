@@ -94,7 +94,7 @@ $(document).on('click', '.simpan-maklumat-kerja', function (e) {
                             text: response.msg,
                             icon: "success",
                             buttonsStyling: !1,
-                            confirmButtonText: "Ok, got it!",
+                            confirmButtonText: "Ok",
                             customClass: {
                                 confirmButton: "btn btn-primary"
                             }
@@ -110,7 +110,7 @@ $(document).on('click', '.simpan-maklumat-kerja', function (e) {
                             text: response.msg,
                             icon: "error",
                             buttonsStyling: !1,
-                            confirmButtonText: "Ok, got it!",
+                            confirmButtonText: "Ok",
                             customClass: {
                                 confirmButton: "btn btn-primary"
                             }
@@ -124,7 +124,7 @@ $(document).on('click', '.simpan-maklumat-kerja', function (e) {
                 text: "Before proceeding, please ensure that all mandatory fields have been completed.",
                 icon: "error",
                 buttonsStyling: false,
-                confirmButtonText: "Ok, got it!",
+                confirmButtonText: "Ok",
                 customClass: {
                     confirmButton: "btn font-weight-bold btn-light-primary"
                 }

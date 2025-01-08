@@ -26,7 +26,7 @@ License: For each use you must have a valid license purchased only from above li
 		<meta property="og:url" content="https://keenthemes.com/metronic" />
 		<meta property="og:site_name" content="Metronic by Keenthemes" />
 		<link rel="canonical" href="http://preview.keenthemes.comauthentication/layouts/creative/sign-up.html" />
-		<link rel="shortcut icon" href="<?=base_url()?>assets/media/logos/favicon.ico" />
+		<link rel="shortcut icon" href="<?=base_url()?>assets/media/logos/trans-new.png" />
 		<!--begin::Fonts(mandatory for all pages)-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
 		<!--end::Fonts-->
@@ -50,6 +50,7 @@ License: For each use you must have a valid license purchased only from above li
 			<!--begin::Authentication - Sign-up -->
 			<div class="d-flex flex-column flex-column-fluid flex-lg-row">
 				<!--begin::Aside-->
+				<?/*
 				<div class="d-flex flex-center w-lg-50 pt-15 pt-lg-0 px-10">
 					<!--begin::Aside-->
 					<div class="d-flex flex-center flex-lg-start flex-column">
@@ -64,6 +65,7 @@ License: For each use you must have a valid license purchased only from above li
 					</div>
 					<!--begin::Aside-->
 				</div>
+				*/?>
 				<!--begin::Aside-->
 				<!--begin::Body-->
 				<div class="d-flex flex-column-fluid flex-lg-row-auto justify-content-center justify-content-lg-end p-12 p-lg-20">
@@ -76,11 +78,11 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Heading-->
 								<div class="text-center mb-11">
 									<!--begin::Title-->
-									<img alt="Logo" src="<?= base_url(); ?>assets/media/logos/logo-new.png" width="100px" />
-									<h1 class="text-gray-900 fw-bolder mb-3">Daftar Akaun</h1>
+									<img alt="Logo" src="<?= base_url(); ?>assets/media/logos/trans-new.png" width="150px" />
+									<h2 class="text-gray-900 fw-bolder">Nurse Information System</h2>
+									<!-- <div class="text-gray-500 fw-semibold fs-6">Nurse Information Management System</div> -->
 									<!--end::Title-->
 									<!--begin::Subtitle-->
-									<!-- <div class="text-gray-500 fw-semibold fs-6">Nurse Information Management System</div> -->
 									<!--end::Subtitle=-->
 								</div>
 								<!--begin::Heading-->
@@ -143,7 +145,9 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Wrapper-->
 									<!--begin::Hint-->
-									<div class="text-muted">Use 8 or more characters with a mix of letters, numbers & symbols.</div>
+									<div class="text-muted">Katalaluan hendaklah menggunakan 8 atau lebih aksara diikuti dengan huruf, nombor & simbol</div>
+
+
 									<!--end::Hint-->
 								</div>
 								<!--end::Input group=-->
@@ -182,7 +186,7 @@ License: For each use you must have a valid license purchased only from above li
 										<span class="indicator-label">Daftar</span>
 										<!--end::Indicator label-->
 										<!--begin::Indicator progress-->
-										<span class="indicator-progress">Please wait... 
+										<span class="indicator-progress">Sila tunggu... 
 										<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
 										<!--end::Indicator progress-->
 									</button>

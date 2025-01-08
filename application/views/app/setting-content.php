@@ -1,41 +1,16 @@
 <div class="d-flex flex-column flex-column-fluid">
 							<!--begin::Toolbar-->
-							<div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+							<div id="kt_app_content_container" class="app-container container-fluid">
 								<!--begin::Toolbar container-->
-								<div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
-									<!--begin::Page title-->
-									<div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
-										<!--begin::Title-->
-										<h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">Profile Pengguna</h1>
-										<!--end::Title-->
-										<!--begin::Breadcrumb-->
-										<ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
-											<!--begin::Item-->
-											<li class="breadcrumb-item text-muted">
-												<a href="#" class="text-muted text-hover-primary">Home</a>
-											</li>
-											<!--end::Item-->
-											<!--begin::Item-->
-											<li class="breadcrumb-item">
-												<span class="bullet bg-gray-500 w-5px h-2px"></span>
-											</li>
-											<!--end::Item-->
-											<!--begin::Item-->
-											<li class="breadcrumb-item text-muted">Profile Pengguna</li>
-											<!--end::Item-->
-										</ul>
-										<!--end::Breadcrumb-->
-									</div>
-									<!--end::Page title-->
-									
-								</div>
+								 <!--begin::Header-->
+                     
 								<!--end::Toolbar container-->
 							</div>
 							<!--end::Toolbar-->
 							<!--begin::Content-->
-							<div id="kt_app_content" class="app-content flex-column-fluid">
+							<div id="kt_app_content_container" class="app-container container-fluid">
 								<!--begin::Content container-->
-								<div id="kt_app_content_container" class="app-container container-xxl">
+								
 									<!--begin::Navbar-->
 									<div class="card mb-5 mb-xl-10">
 										<div class="card-body pt-9 pb-0">
@@ -83,7 +58,7 @@
 													<a class="nav-link text-active-primary ms-0 me-10 py-5" href="<?=base_url('app/myProfile')?>">Maklumat</a>
 												</li>
 												<li class="nav-item mt-2">
-													<a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="<?=base_url('app/setting')?>">Setting</a>
+													<a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="<?=base_url('app/setting')?>">Tetapan</a>
 												</li>
 
 												<!--end::Nav item-->
@@ -116,14 +91,8 @@
 													<div class="row mb-6">
 														<!--begin::Label-->
 														<label class="col-lg-4 col-form-label fw-semibold fs-6">
-															<span class="required">Full Name</span>
-															<span class="ms-1" data-bs-toggle="tooltip" title="Phone number must be active">
-																<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
-																	<span class="path1"></span>
-																	<span class="path2"></span>
-																	<span class="path3"></span>
-																</i>
-															</span>
+															<span class="required">Nama</span>
+															
 														</label>
 														<!--end::Label-->
 														<!--begin::Col-->
@@ -137,14 +106,8 @@
 													<div class="row mb-6">
 														<!--begin::Label-->
 														<label class="col-lg-4 col-form-label fw-semibold fs-6">
-															<span class="required">Contact Phone</span>
-															<span class="ms-1" data-bs-toggle="tooltip" title="Phone number must be active">
-																<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
-																	<span class="path1"></span>
-																	<span class="path2"></span>
-																	<span class="path3"></span>
-																</i>
-															</span>
+															<span class="required">No. Telefon</span>
+															
 														</label>
 														<!--end::Label-->
 														<!--begin::Col-->
@@ -211,7 +174,7 @@
 															</div>
 															<div class="d-flex">
 																<button id="kt_signin_submit" type="button" class="btn btn-primary me-2 px-6">Kemaskini</button>
-																<button id="kt_signin_cancel" type="button" class="btn btn-color-gray-500 btn-active-light-primary px-6">Cancel</button>
+																<button id="kt_signin_cancel" type="button" class="btn btn-color-gray-500 btn-active-light-primary px-6">Batal</button>
 															</div>
 														</form>
 														<!--end::Form-->
@@ -259,10 +222,10 @@
 																	</div>
 																</div>
 															</div>
-															<div class="form-text mb-5">Password must be at least 8 character and contain symbols</div>
+															<div class="form-text mb-5">Katalaluan hendaklah mempunyai 8 aksara dan ada simbol</div>
 															<div class="d-flex">
 																<button id="kt_password_submit" type="button" class="btn btn-primary me-2 px-6">Kemaskini Katalaluan</button>
-																<button id="kt_password_cancel" type="button" class="btn btn-color-gray-500 btn-active-light-primary px-6">Cancel</button>
+																<button id="kt_password_cancel" type="button" class="btn btn-color-gray-500 btn-active-light-primary px-6">Batal</button>
 															</div>
 														</form>
 														<!--end::Form-->
@@ -270,7 +233,7 @@
 													<!--end::Edit-->
 													<!--begin::Action-->
 													<div id="kt_signin_password_button" class="ms-auto">
-														<button class="btn btn-light btn-active-light-primary">Reset Katalaluan</button>
+														<button class="btn btn-light btn-active-light-primary">Set Semula Katalaluan</button>
 													</div>
 													<!--end::Action-->
 												</div>
@@ -282,7 +245,7 @@
 										</div>
 										<!--end::Content-->
 									</div>
-								</div>
+								
 								<!--end::Content container-->
 							</div>
 							<!--end::Content-->

@@ -2,7 +2,7 @@
 							<!--begin::Toolbar-->
 							<div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
 								<!--begin::Toolbar container-->
-								<div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+								<div id="kt_app_content_container" class="app-container container-fluid">
 									<!--begin::Page title-->
 									<div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
 										<!--begin::Title-->
@@ -130,7 +130,7 @@
 							<!--begin::Content-->
 							<div id="kt_app_content" class="app-content flex-column-fluid">
 								<!--begin::Content container-->
-								<div id="kt_app_content_container" class="app-container container-xxl">
+								<div id="kt_app_content_container" class="app-container container-fluid">
 									<!--begin::Layout-->
 									<div class="d-flex flex-column flex-lg-row">
 										<!--begin::Sidebar-->
@@ -503,7 +503,7 @@
 									                                    <th class="min-w-125px">Gred</th>
 									                                    <th class="min-w-125px">No LJM</th>
 									                                    <th class="min-w-125px">Status Borang</th> -->
-									                                    <th class="text-end min-w-100px">Actions</th>
+									                                    <th class="text-end min-w-100px"></th>
 									                                </tr>
 									                            </thead>
 									                            <tbody class="text-gray-600 fw-semibold">
@@ -538,16 +538,16 @@
 									                                    	<?/*
 									                                        <a href="javascript:void(0);" class="btn btn-light btn-active-light-primary btn-flex btn-center btn-sm view-nurse-details" data-init="<?=$employment['user_id']?>">View</a>
 									                                        */?>
-									                                        <a href="#" class="btn btn-light btn-active-light-primary btn-flex btn-center btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions 
+									                                        <a href="#" class="btn btn-light btn-active-light-primary btn-flex btn-center btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Tindakan 
 										                                        <i class="ki-duotone ki-down fs-5 ms-1"></i></a>
 										                                        <!--begin::Menu-->
 										                                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4" data-kt-menu="true">
 										                                            <!--begin::Menu item-->
 										                                            <div class="menu-item px-3">
-										                                                <a href="javascript:void(0);" class="menu-link px-3 view-nurse-details" data-init="<?=$employment['user_id']?>">View</a>
+										                                                <a href="javascript:void(0);" class="menu-link px-3 view-nurse-details" data-init="<?=$employment['user_id']?>">Lihat</a>
 										                                            </div>
 										                                            <div class="menu-item px-3">
-										                                                <a href="<?= base_url('editdetails/editFor/'.$employment['user_id'])?>" class="menu-link px-3">Edit</a>
+										                                                <a href="<?= base_url('editdetails/editFor/'.$employment['user_id'])?>" class="menu-link px-3">Kemaskini</a>
 										                                            </div>
 										                                            <!--end::Menu item-->
 										                                            <!--begin::Menu item-->

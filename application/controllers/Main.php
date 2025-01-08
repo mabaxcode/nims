@@ -58,7 +58,7 @@ class Main extends CI_Controller {
 
 		if ($user_login == false) {
 
-			$this->session->set_flashdata('info', 'Its look like your username or password is incorrect.');
+			$this->session->set_flashdata('info', 'Sila masukkan No. Kad Pengenalan dan Kataluan yang betul');
 			redirect();
 
 		} else {
@@ -103,7 +103,7 @@ class Main extends CI_Controller {
 		$icExist = $this->DbMain->check_no_ic(array('no_kp' => $data['no_kp']));
 
 		if ($icExist['status'] == true) {
-			$response  = array('status' => false, 'msg' => 'This IC No is already exist');
+			$response  = array('status' => false, 'msg' => 'No. Kad Pengenalan ini telah wujud');
 		} else {
 
 			# do register account
@@ -121,9 +121,9 @@ class Main extends CI_Controller {
 			// print_r($insert); exit;
 
 			if ($insert == true) {
-				$response    = array('status' => true, 'msg' => 'Account has been successfully created !');
+				$response    = array('status' => true, 'msg' => 'Akaun berjaya didaftarkan. Sila Log Masuk ke menggunakan No. Kad Pengenalan !');
 			} else {
-				$response = array('status' => false, 'msg' => 'Something when wrong !');
+				$response = array('status' => false, 'msg' => 'Gagal untuk daftar !');
 			}
 
 		}

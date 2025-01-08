@@ -1,4 +1,4 @@
-<div id="kt_app_content_container" class="app-container container-xxl">
+<div id="kt_app_content_container" class="app-container container-fluid">
 <!--begin::Navbar-->
 <div class="card mb-5 mb-xl-10">
 	<div class="card-body pt-9 pb-0">

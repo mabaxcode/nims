@@ -136,6 +136,10 @@ class Editdetails extends CI_Controller {
 				'status' => '1',
 				'jawatan' => $post['jawatan'],
 				'gred' => $post['gred'],
+				'bls' => $post['bls'],
+				'tarikh_bls' => $post['tarikh_bls'],
+				'sls' => $post['sls'],
+				'tarikh_sls' => $post['tarikh_sls'],
 			);
 			update_any_table($update, $where, 'employment_info');
 
@@ -162,6 +166,10 @@ class Editdetails extends CI_Controller {
 				'status' => '1',
 				'jawatan' => $post['jawatan'],
 				'gred' => $post['gred'],
+				'bls' => $post['bls'],
+				'tarikh_bls' => $post['tarikh_bls'],
+				'sls' => $post['sls'],
+				'tarikh_sls' => $post['tarikh_sls'],
 			);
 
 			// echo "<pre>"; print_r($insert); exit;
